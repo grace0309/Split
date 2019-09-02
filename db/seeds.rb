@@ -117,14 +117,17 @@ regex = /[\u{203C}\u{2049}\u{20E3}\u{2122}\u{2139}\u{2194}-\u{2199}\u{21A9}-\u{2
 html_doc.search('.tgme_widget_message_bubble').each do |post|
   image_element = post.search('.tgme_widget_message_photo_wrap')
   image = image_element.map{ |n| n['style'][/url\((.+)\)/, 1] }
+  if image[0]
+  image_re = image[0].gsub(/'/,"")
   text_element = post.search('.tgme_widget_message_text')
   content = text_element.text.strip.gsub(/(Telegram: @goodlobang)/, '').gsub(/More info: @goodlobangpolice/, '').gsub(/Join now: @goodlobangpolice/,'')
   element = content.split(regex)
   filtered_content = element.reject {|item| item == "" || item == " " || item ==  "️"}
   filtered_content.delete_at(0)
   filtered_content_join = filtered_content.join("\n")
-  deal = Deal.new(title: filtered_content[0], image_url: image, description: filtered_content_join )
+  deal = Deal.new(title: filtered_content[0], image_url: image_re, description: filtered_content_join )
   deal.save
+  end
 end
 
 puts 'Finished'

@@ -9,6 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :transactions, only: [ :show, :edit, :update, :destroy]
+  resources :deals, only: [:index]
   get "/dashboard", to: "pages#dashboard", as: :dashboard
 
 end
