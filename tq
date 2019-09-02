@@ -1,0 +1,315 @@
+=> [1;34m#(Element:0x2b0a67605ddc {[0m
+  name = [31m[1;31m"[0m[31mdiv[1;31m"[0m[31m[0m,
+  attributes = [ [1;34m#(Attr:0x2b0a67487488 {[0m name = [31m[1;31m"[0m[31mclass[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mtgme_widget_message_bubble[1;31m"[0m[31m[0m })],
+  children = [
+    [1;34m#(Text [0m[31m[1;31m"[0m[31m[1;35m\n[0m[31m    [1;31m"[0m[31m[0m),
+    [1;34m#(Element:0x2b0a6750e140 {[0m
+      name = [31m[1;31m"[0m[31mi[1;31m"[0m[31m[0m,
+      attributes = [
+        [1;34m#(Attr:0x2b0a67533648 {[0m name = [31m[1;31m"[0m[31mclass[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mtgme_widget_message_bubble_tail[1;31m"[0m[31m[0m })],
+      children = [
+        [1;34m#(Text [0m[31m[1;31m"[0m[31m[1;35m\n[0m[31m      [1;31m"[0m[31m[0m),
+        [1;34m#(Element:0x2b0a675591b8 {[0m
+          name = [31m[1;31m"[0m[31msvg[1;31m"[0m[31m[0m,
+          attributes = [
+            [1;34m#(Attr:0x2b0a67564f18 {[0m name = [31m[1;31m"[0m[31mclass[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mbubble_icon[1;31m"[0m[31m[0m }),
+            [1;34m#(Attr:0x2b0a67564ef0 {[0m name = [31m[1;31m"[0m[31mwidth[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m9px[1;31m"[0m[31m[0m }),
+            [1;34m#(Attr:0x2b0a67564ec8 {[0m name = [31m[1;31m"[0m[31mheight[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m20px[1;31m"[0m[31m[0m }),
+            [1;34m#(Attr:0x2b0a67564e50 {[0m name = [31m[1;31m"[0m[31mviewbox[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m0 0 9 20[1;31m"[0m[31m[0m })],
+          children = [
+            [1;34m#(Text [0m[31m[1;31m"[0m[31m[1;35m\n[0m[31m        [1;31m"[0m[31m[0m),
+            [1;34m#(Element:0x2b0a675a34e8 {[0m
+              name = [31m[1;31m"[0m[31mg[1;31m"[0m[31m[0m,
+              attributes = [ [1;34m#(Attr:0x2b0a675a2688 {[0m name = [31m[1;31m"[0m[31mfill[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mnone[1;31m"[0m[31m[0m })],
+              children = [
+                [1;34m#(Text [0m[31m[1;31m"[0m[31m[1;35m\n[0m[31m          [1;31m"[0m[31m[0m),
+                [1;34m#(Element:0x2b0a675bd0f0 {[0m
+                  name = [31m[1;31m"[0m[31mpath[1;31m"[0m[31m[0m,
+                  attributes = [
+                    [1;34m#(Attr:0x2b0a675bc6c8 {[0m name = [31m[1;31m"[0m[31mclass[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mbackground[1;31m"[0m[31m[0m }),
+                    [1;34m#(Attr:0x2b0a675bc68c {[0m name = [31m[1;31m"[0m[31mfill[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m#ffffff[1;31m"[0m[31m[0m }),
+                    [1;34m#(Attr:0x2b0a675bc678 {[0m
+                      name = [31m[1;31m"[0m[31md[1;31m"[0m[31m[0m,
+                      value = [31m[1;31m"[0m[31mM8,1 L9,1 L9,20 L8,20 L8,18 C7.807,15.161 7.124,12.233 5.950,9.218 C5.046,6.893 3.504,4.733 1.325,2.738 L1.325,2.738 C0.917,2.365 0.89,1.732 1.263,1.325 C1.452,1.118 1.72,1 2,1 L8,1 Z[1;31m"[0m[31m[0m
+                      })]
+                  }),
+                [1;34m#(Text [0m[31m[1;31m"[0m[31m[1;35m\n[0m[31m          [1;31m"[0m[31m[0m),
+                [1;34m#(Element:0x2b0a675eb98c {[0m
+                  name = [31m[1;31m"[0m[31mpath[1;31m"[0m[31m[0m,
+                  attributes = [
+                    [1;34m#(Attr:0x2b0a675ead48 {[0m name = [31m[1;31m"[0m[31mclass[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mborder_1x[1;31m"[0m[31m[0m }),
+                    [1;34m#(Attr:0x2b0a675ead20 {[0m name = [31m[1;31m"[0m[31mfill[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m#d7e3ec[1;31m"[0m[31m[0m }),
+                    [1;34m#(Attr:0x2b0a675eacf8 {[0m
+                      name = [31m[1;31m"[0m[31md[1;31m"[0m[31m[0m,
+                      value = [31m[1;31m"[0m[31mM9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0 L9,0 L9,20 L7,20 L7,20 L7.002,18.068 C6.816,15.333 6.156,12.504 5.018,9.58 C4.172,7.406 2.72,5.371 0.649,3.475 C-0.165,2.729 -0.221,1.464 0.525,0.649 C0.904,0.236 1.439,0 2,0 Z[1;31m"[0m[31m[0m
+                      })]
+                  }),
+                [1;34m#(Text [0m[31m[1;31m"[0m[31m[1;35m\n[0m[31m          [1;31m"[0m[31m[0m),
+                [1;34m#(Element:0x2b0a67615034 {[0m
+                  name = [31m[1;31m"[0m[31mpath[1;31m"[0m[31m[0m,
+                  attributes = [
+                    [1;34m#(Attr:0x2b0a6761447c {[0m name = [31m[1;31m"[0m[31mclass[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mborder_2x[1;31m"[0m[31m[0m }),
+                    [1;34m#(Attr:0x2b0a67614468 {[0m
+                      name = [31m[1;31m"[0m[31md[1;31m"[0m[31m[0m,
+                      value = [31m[1;31m"[0m[31mM9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.5 L9,0.5 L9,20 L7.5,20 L7.5,20 L7.501,18.034 C7.312,15.247 6.64,12.369 5.484,9.399 C4.609,7.15 3.112,5.052 0.987,3.106 C0.376,2.547 0.334,1.598 0.894,0.987 C1.178,0.677 1.579,0.5 2,0.5 Z[1;31m"[0m[31m[0m
+                      })]
+                  }),
+                [1;34m#(Text [0m[31m[1;31m"[0m[31m[1;35m\n[0m[31m          [1;31m"[0m[31m[0m),
+                [1;34m#(Element:0x2b0a6762cedc {[0m
+                  name = [31m[1;31m"[0m[31mpath[1;31m"[0m[31m[0m,
+                  attributes = [
+                    [1;34m#(Attr:0x2b0a6762c1d0 {[0m name = [31m[1;31m"[0m[31mclass[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mborder_3x[1;31m"[0m[31m[0m }),
+                    [1;34m#(Attr:0x2b0a6762c1bc {[0m
+                      name = [31m[1;31m"[0m[31md[1;31m"[0m[31m[0m,
+                      value = [31m[1;31m"[0m[31mM9,1 L2,1 C1.72,1 1.452,1.118 1.263,1.325 C0.89,1.732 0.917,2.365 1.325,2.738 C3.504,4.733 5.046,6.893 5.95,9.218 C7.124,12.233 7.807,15.161 8,18 L8,20 L9,20 L9,1 Z M2,0.667 L9,0.667 L9,20 L7.667,20 L7.667,20 L7.668,18.023 C7.477,15.218 6.802,12.324 5.64,9.338 C4.755,7.064 3.243,4.946 1.1,2.983 C0.557,2.486 0.52,1.643 1.017,1.1 C1.269,0.824 1.626,0.667 2,0.667 Z[1;31m"[0m[31m[0m
+                      })]
+                  }),
+                [1;34m#(Text [0m[31m[1;31m"[0m[31m[1;35m\n[0m[31m        [1;31m"[0m[31m[0m)]
+              }),
+            [1;34m#(Text [0m[31m[1;31m"[0m[31m[1;35m\n[0m[31m      [1;31m"[0m[31m[0m)]
+          }),
+        [1;34m#(Text [0m[31m[1;31m"[0m[31m[1;35m\n[0m[31m    [1;31m"[0m[31m[0m)]
+      }),
+    [1;34m#(Text [0m[31m[1;31m"[0m[31m[1;35m\n[0m[31m    [1;31m"[0m[31m[0m),
+    [1;34m#(Element:0x2b0a6766fa98 {[0m
+      name = [31m[1;31m"[0m[31mdiv[1;31m"[0m[31m[0m,
+      attributes = [
+        [1;34m#(Attr:0x2b0a6766ea94 {[0m name = [31m[1;31m"[0m[31mclass[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mtgme_widget_message_author[1;31m"[0m[31m[0m })],
+      children = [
+        [1;34m#(Element:0x2b0a6767a538 {[0m
+          name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+          attributes = [
+            [1;34m#(Attr:0x2b0a67685dac {[0m name = [31m[1;31m"[0m[31mclass[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mtgme_widget_message_owner_name[1;31m"[0m[31m[0m }),
+            [1;34m#(Attr:0x2b0a67685d70 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mhttps://t.me/goodlobang[1;31m"[0m[31m[0m })],
+          children = [
+            [1;34m#(Element:0x2b0a6767f100 {[0m
+              name = [31m[1;31m"[0m[31mspan[1;31m"[0m[31m[0m,
+              attributes = [ [1;34m#(Attr:0x2b0a6767e548 {[0m name = [31m[1;31m"[0m[31mdir[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mauto[1;31m"[0m[31m[0m })],
+              children = [
+                [1;34m#(Text [0m[31m[1;31m"[0m[31mGoodLobang[1;31m"[0m[31m[0m),
+                [1;34m#(Element:0x2b0a6768e7a4 {[0m
+                  name = [31m[1;31m"[0m[31mi[1;31m"[0m[31m[0m,
+                  attributes = [
+                    [1;34m#(Attr:0x2b0a676a35a0 {[0m name = [31m[1;31m"[0m[31mclass[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31memoji[1;31m"[0m[31m[0m }),
+                    [1;34m#(Attr:0x2b0a676a358c {[0m
+                      name = [31m[1;31m"[0m[31mstyle[1;31m"[0m[31m[0m,
+                      value = [31m[1;31m"[0m[31mbackground-image:url('//telegram.org/img/emoji/40/F09F918D.png')[1;31m"[0m[31m[0m
+                      })],
+                  children = [ [1;34m#(Element:0x2b0a676b71b8 {[0m name = [31m[1;31m"[0m[31mb[1;31m"[0m[31m[0m, children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31m👍[1;31m"[0m[31m[0m)] })]
+                  })]
+              })]
+          })]
+      }),
+    [1;34m#(Text [0m[31m[1;31m"[0m[31m[1;35m\n[0m[31m[1;35m\n[0m[31m[1;35m\n[0m[31m[1;31m"[0m[31m[0m),
+    [1;34m#(Element:0x2b0a67605698 {[0m
+      name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+      attributes = [
+        [1;34m#(Attr:0x2b0a67255f70 {[0m name = [31m[1;31m"[0m[31mclass[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mtgme_widget_message_photo_wrap[1;31m"[0m[31m[0m }),
+        [1;34m#(Attr:0x2b0a67255f0c {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mhttps://t.me/goodlobang/628[1;31m"[0m[31m[0m }),
+        [1;34m#(Attr:0x2b0a67255ea8 {[0m
+          name = [31m[1;31m"[0m[31mstyle[1;31m"[0m[31m[0m,
+          value = [31m[1;31m"[0m[31mwidth:800px;background-image:url('https://cdn5.telesco.pe/file/uuKFrYhASpkpZx811MM0pVbM2-Yh93vsTc_kvNCar2uTHUY1qFB_HbvUYlBfJwkAeY8-N2krgjMFO1Pr_jpeUgbkDBNVsUVj4Hqr6y7-BQrmtDvT7cNvns-GQRmZjynonVZLtjxwyDB-VkmQdvRAO10hyJjBxJZTPfPnJq0YCVMvdUQ8mLBUNjbjA7YPKVCBlX3ekO0myHOJ3VKYvCdTKQluuCaCEGE6MIyio8axWM8eVpnw5-RT1eom-KfMiiSrlVhuz4dOYeLFESj2yVrlM5TO8tKBIXPjFE8ZymoR8LTMRc1_MVkNMMrUX2qN57lM5HyAKwkOQjd3yHcooN3sRw.jpg')[1;31m"[0m[31m[0m
+          })],
+      children = [
+        [1;34m#(Text [0m[31m[1;31m"[0m[31m[1;35m\n[0m[31m  [1;31m"[0m[31m[0m),
+        [1;34m#(Element:0x2b0a672f0264 {[0m
+          name = [31m[1;31m"[0m[31mdiv[1;31m"[0m[31m[0m,
+          attributes = [
+            [1;34m#(Attr:0x2b0a673c61d4 {[0m name = [31m[1;31m"[0m[31mclass[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mtgme_widget_message_photo[1;31m"[0m[31m[0m }),
+            [1;34m#(Attr:0x2b0a673c60e4 {[0m name = [31m[1;31m"[0m[31mstyle[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mpadding-top:100%[1;31m"[0m[31m[0m })]
+          }),
+        [1;34m#(Text [0m[31m[1;31m"[0m[31m[1;35m\n[0m[31m[1;31m"[0m[31m[0m)]
+      }),
+    [1;34m#(Text [0m[31m[1;31m"[0m[31m[1;35m\n[0m[31m[1;31m"[0m[31m[0m),
+    [1;34m#(Element:0x2b0a6741075c {[0m
+      name = [31m[1;31m"[0m[31mdiv[1;31m"[0m[31m[0m,
+      attributes = [
+        [1;34m#(Attr:0x2b0a67414564 {[0m
+          name = [31m[1;31m"[0m[31mclass[1;31m"[0m[31m[0m,
+          value = [31m[1;31m"[0m[31mtgme_widget_message_text js-message_text[1;31m"[0m[31m[0m
+          }),
+        [1;34m#(Attr:0x2b0a67414550 {[0m name = [31m[1;31m"[0m[31mdir[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mauto[1;31m"[0m[31m[0m })],
+      children = [
+        [1;34m#(Element:0x2b0a67444b24 {[0m
+          name = [31m[1;31m"[0m[31mi[1;31m"[0m[31m[0m,
+          attributes = [
+            [1;34m#(Attr:0x2b0a6744d1ac {[0m name = [31m[1;31m"[0m[31mclass[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31memoji[1;31m"[0m[31m[0m }),
+            [1;34m#(Attr:0x2b0a6744d15c {[0m
+              name = [31m[1;31m"[0m[31mstyle[1;31m"[0m[31m[0m,
+              value = [31m[1;31m"[0m[31mbackground-image:url('//telegram.org/img/emoji/40/F09F9AA8.png')[1;31m"[0m[31m[0m
+              })],
+          children = [ [1;34m#(Element:0x2b0a67486bb4 {[0m name = [31m[1;31m"[0m[31mb[1;31m"[0m[31m[0m, children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31m🚨[1;31m"[0m[31m[0m)] })]
+          }),
+        [1;34m#(Text [0m[31m[1;31m"[0m[31m [1;31m"[0m[31m[0m),
+        [1;34m#(Element:0x2b0a6750f784 {[0m name = [31m[1;31m"[0m[31mb[1;31m"[0m[31m[0m, children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31mGoodLobang Police [1;31m"[0m[31m[0m)] }),
+        [1;34m#(Element:0x2b0a675395d4 {[0m
+          name = [31m[1;31m"[0m[31mi[1;31m"[0m[31m[0m,
+          attributes = [
+            [1;34m#(Attr:0x2b0a67538918 {[0m name = [31m[1;31m"[0m[31mclass[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31memoji[1;31m"[0m[31m[0m }),
+            [1;34m#(Attr:0x2b0a67538904 {[0m
+              name = [31m[1;31m"[0m[31mstyle[1;31m"[0m[31m[0m,
+              value = [31m[1;31m"[0m[31mbackground-image:url('//telegram.org/img/emoji/40/F09F9AA8.png')[1;31m"[0m[31m[0m
+              })],
+          children = [ [1;34m#(Element:0x2b0a67575b38 {[0m name = [31m[1;31m"[0m[31mb[1;31m"[0m[31m[0m, children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31m🚨[1;31m"[0m[31m[0m)] })]
+          }),
+        [1;34m#(Element:0x2b0a6757d554 {[0m name = [31m[1;31m"[0m[31mbr[1;31m"[0m[31m[0m }),
+        [1;34m#(Element:0x2b0a67585a38 {[0m name = [31m[1;31m"[0m[31mbr[1;31m"[0m[31m[0m }),
+        [1;34m#(Element:0x2b0a6758bf8c {[0m
+          name = [31m[1;31m"[0m[31mi[1;31m"[0m[31m[0m,
+          attributes = [
+            [1;34m#(Attr:0x2b0a6758b348 {[0m name = [31m[1;31m"[0m[31mclass[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31memoji[1;31m"[0m[31m[0m }),
+            [1;34m#(Attr:0x2b0a6758b334 {[0m
+              name = [31m[1;31m"[0m[31mstyle[1;31m"[0m[31m[0m,
+              value = [31m[1;31m"[0m[31mbackground-image:url('//telegram.org/img/emoji/40/E29EA1.png')[1;31m"[0m[31m[0m
+              })],
+          children = [ [1;34m#(Element:0x2b0a675a2f84 {[0m name = [31m[1;31m"[0m[31mb[1;31m"[0m[31m[0m, children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31m➡️[1;31m"[0m[31m[0m)] })]
+          }),
+        [1;34m#(Text [0m[31m[1;31m"[0m[31m Find some deals too good to be true? [1;31m"[0m[31m[0m),
+        [1;34m#(Element:0x2b0a675b7998 {[0m name = [31m[1;31m"[0m[31mbr[1;31m"[0m[31m[0m }),
+        [1;34m#(Text [0m[31m[1;31m"[0m[31m [1;31m"[0m[31m[0m),
+        [1;34m#(Element:0x2b0a675bc538 {[0m name = [31m[1;31m"[0m[31mbr[1;31m"[0m[31m[0m }),
+        [1;34m#(Element:0x2b0a675c2a8c {[0m
+          name = [31m[1;31m"[0m[31mi[1;31m"[0m[31m[0m,
+          attributes = [
+            [1;34m#(Attr:0x2b0a675c9d64 {[0m name = [31m[1;31m"[0m[31mclass[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31memoji[1;31m"[0m[31m[0m }),
+            [1;34m#(Attr:0x2b0a675c9d3c {[0m
+              name = [31m[1;31m"[0m[31mstyle[1;31m"[0m[31m[0m,
+              value = [31m[1;31m"[0m[31mbackground-image:url('//telegram.org/img/emoji/40/F09F9283.png')[1;31m"[0m[31m[0m
+              })],
+          children = [ [1;34m#(Element:0x2b0a675dce50 {[0m name = [31m[1;31m"[0m[31mb[1;31m"[0m[31m[0m, children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31m💃[1;31m"[0m[31m[0m)] })]
+          }),
+        [1;34m#(Text [0m[31m[1;31m"[0m[31m Join [1;31m"[0m[31m[0m),
+        [1;34m#(Element:0x2b0a675eafc8 {[0m
+          name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+          attributes = [
+            [1;34m#(Attr:0x2b0a675ea550 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mhttps://t.me/goodlobangpolice[1;31m"[0m[31m[0m }),
+            [1;34m#(Attr:0x2b0a675ea53c {[0m name = [31m[1;31m"[0m[31mtarget[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m_blank[1;31m"[0m[31m[0m })],
+          children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31m@goodlobangpolice[1;31m"[0m[31m[0m)]
+          }),
+        [1;34m#(Text [0m[31m[1;31m"[0m[31m. Discuss & receive live update on the status of your favourite GoodLobang! [1;31m"[0m[31m[0m),
+        [1;34m#(Element:0x2b0a6760f580 {[0m name = [31m[1;31m"[0m[31mbr[1;31m"[0m[31m[0m }),
+        [1;34m#(Element:0x2b0a6760e054 {[0m name = [31m[1;31m"[0m[31mbr[1;31m"[0m[31m[0m }),
+        [1;34m#(Element:0x2b0a67614ad0 {[0m
+          name = [31m[1;31m"[0m[31mi[1;31m"[0m[31m[0m,
+          attributes = [
+            [1;34m#(Attr:0x2b0a6761410c {[0m name = [31m[1;31m"[0m[31mclass[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31memoji[1;31m"[0m[31m[0m }),
+            [1;34m#(Attr:0x2b0a676140f8 {[0m
+              name = [31m[1;31m"[0m[31mstyle[1;31m"[0m[31m[0m,
+              value = [31m[1;31m"[0m[31mbackground-image:url('//telegram.org/img/emoji/40/E29D97.png')[1;31m"[0m[31m[0m
+              })],
+          children = [ [1;34m#(Element:0x2b0a6762612c {[0m name = [31m[1;31m"[0m[31mb[1;31m"[0m[31m[0m, children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31m❗[1;31m"[0m[31m[0m)] })]
+          }),
+        [1;34m#(Text [0m[31m[1;31m"[0m[31m Spamming is strictly prohibited. [1;31m"[0m[31m[0m),
+        [1;34m#(Element:0x2b0a676475c0 {[0m name = [31m[1;31m"[0m[31mbr[1;31m"[0m[31m[0m }),
+        [1;34m#(Element:0x2b0a6764921c {[0m
+          name = [31m[1;31m"[0m[31mi[1;31m"[0m[31m[0m,
+          attributes = [
+            [1;34m#(Attr:0x2b0a6764b6d4 {[0m name = [31m[1;31m"[0m[31mclass[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31memoji[1;31m"[0m[31m[0m }),
+            [1;34m#(Attr:0x2b0a6764b6c0 {[0m
+              name = [31m[1;31m"[0m[31mstyle[1;31m"[0m[31m[0m,
+              value = [31m[1;31m"[0m[31mbackground-image:url('//telegram.org/img/emoji/40/E29D97.png')[1;31m"[0m[31m[0m
+              })],
+          children = [ [1;34m#(Element:0x2b0a676671a4 {[0m name = [31m[1;31m"[0m[31mb[1;31m"[0m[31m[0m, children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31m❗[1;31m"[0m[31m[0m)] })]
+          }),
+        [1;34m#(Text [0m[31m[1;31m"[0m[31m We will remove the deal on [1;31m"[0m[31m[0m),
+        [1;34m#(Element:0x2b0a6765e11c {[0m
+          name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+          attributes = [
+            [1;34m#(Attr:0x2b0a6767b640 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mhttps://t.me/goodlobang[1;31m"[0m[31m[0m }),
+            [1;34m#(Attr:0x2b0a6767b62c {[0m name = [31m[1;31m"[0m[31mtarget[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m_blank[1;31m"[0m[31m[0m })],
+          children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31m@goodlobang[1;31m"[0m[31m[0m)]
+          }),
+        [1;34m#(Text [0m[31m[1;31m"[0m[31m once verified to be misleading by [1;31m"[0m[31m[0m),
+        [1;34m#(Element:0x2b0a67686a7c {[0m
+          name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+          attributes = [
+            [1;34m#(Attr:0x2b0a67689d80 {[0m name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mhttps://t.me/goodlobangpolice[1;31m"[0m[31m[0m }),
+            [1;34m#(Attr:0x2b0a67689d6c {[0m name = [31m[1;31m"[0m[31mtarget[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31m_blank[1;31m"[0m[31m[0m })],
+          children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31m@goodlobangpolice[1;31m"[0m[31m[0m)]
+          }),
+        [1;34m#(Element:0x2b0a676ac3a8 {[0m name = [31m[1;31m"[0m[31mbr[1;31m"[0m[31m[0m }),
+        [1;34m#(Element:0x2b0a676b2398 {[0m name = [31m[1;31m"[0m[31mbr[1;31m"[0m[31m[0m }),
+        [1;34m#(Element:0x2b0a676b64ac {[0m
+          name = [31m[1;31m"[0m[31mi[1;31m"[0m[31m[0m,
+          attributes = [
+            [1;34m#(Attr:0x2b0a66e6b284 {[0m name = [31m[1;31m"[0m[31mclass[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31memoji[1;31m"[0m[31m[0m }),
+            [1;34m#(Attr:0x2b0a66e6b0e0 {[0m
+              name = [31m[1;31m"[0m[31mstyle[1;31m"[0m[31m[0m,
+              value = [31m[1;31m"[0m[31mbackground-image:url('//telegram.org/img/emoji/40/F09F938D.png')[1;31m"[0m[31m[0m
+              })],
+          children = [ [1;34m#(Element:0x2b0a67254080 {[0m name = [31m[1;31m"[0m[31mb[1;31m"[0m[31m[0m, children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31m📍[1;31m"[0m[31m[0m)] })]
+          }),
+        [1;34m#(Text [0m[31m[1;31m"[0m[31m Click the discuss button & join now![1;31m"[0m[31m[0m),
+        [1;34m#(Element:0x2b0a672d8e34 {[0m
+          name = [31m[1;31m"[0m[31mi[1;31m"[0m[31m[0m,
+          attributes = [
+            [1;34m#(Attr:0x2b0a672dc0d4 {[0m name = [31m[1;31m"[0m[31mclass[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31memoji[1;31m"[0m[31m[0m }),
+            [1;34m#(Attr:0x2b0a672dc0ac {[0m
+              name = [31m[1;31m"[0m[31mstyle[1;31m"[0m[31m[0m,
+              value = [31m[1;31m"[0m[31mbackground-image:url('//telegram.org/img/emoji/40/E2AC87.png')[1;31m"[0m[31m[0m
+              })],
+          children = [ [1;34m#(Element:0x2b0a673e9314 {[0m name = [31m[1;31m"[0m[31mb[1;31m"[0m[31m[0m, children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31m⬇️[1;31m"[0m[31m[0m)] })]
+          })]
+      }),
+    [1;34m#(Text [0m[31m[1;31m"[0m[31m[1;35m\n[0m[31m[1;35m\n[0m[31m[1;31m"[0m[31m[0m),
+    [1;34m#(Element:0x2b0a6740ccec {[0m
+      name = [31m[1;31m"[0m[31mdiv[1;31m"[0m[31m[0m,
+      attributes = [
+        [1;34m#(Attr:0x2b0a6740f21c {[0m
+          name = [31m[1;31m"[0m[31mclass[1;31m"[0m[31m[0m,
+          value = [31m[1;31m"[0m[31mtgme_widget_message_footer compact js-message_footer[1;31m"[0m[31m[0m
+          })],
+      children = [
+        [1;34m#(Text [0m[31m[1;31m"[0m[31m[1;35m\n[0m[31m[1;35m\n[0m[31m[1;31m"[0m[31m[0m),
+        [1;34m#(Element:0x2b0a67430214 {[0m
+          name = [31m[1;31m"[0m[31mdiv[1;31m"[0m[31m[0m,
+          attributes = [
+            [1;34m#(Attr:0x2b0a67438784 {[0m
+              name = [31m[1;31m"[0m[31mclass[1;31m"[0m[31m[0m,
+              value = [31m[1;31m"[0m[31mtgme_widget_message_info short js-message_info[1;31m"[0m[31m[0m
+              })],
+          children = [
+            [1;34m#(Text [0m[31m[1;31m"[0m[31m[1;35m\n[0m[31m  [1;31m"[0m[31m[0m),
+            [1;34m#(Element:0x2b0a67462534 {[0m
+              name = [31m[1;31m"[0m[31mspan[1;31m"[0m[31m[0m,
+              attributes = [
+                [1;34m#(Attr:0x2b0a67471890 {[0m name = [31m[1;31m"[0m[31mclass[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mtgme_widget_message_views[1;31m"[0m[31m[0m })],
+              children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31m38.0K[1;31m"[0m[31m[0m)]
+              }),
+            [1;34m#(Element:0x2b0a675060d0 {[0m
+              name = [31m[1;31m"[0m[31mspan[1;31m"[0m[31m[0m,
+              attributes = [ [1;34m#(Attr:0x2b0a675093c0 {[0m name = [31m[1;31m"[0m[31mclass[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mcopyonly[1;31m"[0m[31m[0m })],
+              children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31m views[1;31m"[0m[31m[0m)]
+              }),
+            [1;34m#(Element:0x2b0a67538b0c {[0m
+              name = [31m[1;31m"[0m[31mspan[1;31m"[0m[31m[0m,
+              attributes = [
+                [1;34m#(Attr:0x2b0a67539200 {[0m name = [31m[1;31m"[0m[31mclass[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mtgme_widget_message_meta[1;31m"[0m[31m[0m })],
+              children = [
+                [1;34m#(Text [0m[31m[1;31m"[0m[31medited  [1;31m"[0m[31m[0m),
+                [1;34m#(Element:0x2b0a6756a6e8 {[0m
+                  name = [31m[1;31m"[0m[31ma[1;31m"[0m[31m[0m,
+                  attributes = [
+                    [1;34m#(Attr:0x2b0a6756c04c {[0m name = [31m[1;31m"[0m[31mclass[1;31m"[0m[31m[0m, value = [31m[1;31m"[0m[31mtgme_widget_message_date[1;31m"[0m[31m[0m }),
+                    [1;34m#(Attr:0x2b0a6756d44c {[0m
+                      name = [31m[1;31m"[0m[31mhref[1;31m"[0m[31m[0m,
+                      value = [31m[1;31m"[0m[31mhttps://t.me/goodlobang/628[1;31m"[0m[31m[0m
+                      })],
+                  children = [
+                    [1;34m#(Element:0x2b0a67584890 {[0m
+                      name = [31m[1;31m"[0m[31mtime[1;31m"[0m[31m[0m,
+                      attributes = [
+                        [1;34m#(Attr:0x2b0a675841c4 {[0m
+                          name = [31m[1;31m"[0m[31mdatetime[1;31m"[0m[31m[0m,
+                          value = [31m[1;31m"[0m[31m2019-08-28T02:40:49+00:00[1;31m"[0m[31m[0m
+                          })],
+                      children = [ [1;34m#(Text [0m[31m[1;31m"[0m[31m02:40[1;31m"[0m[31m[0m)]
+                      })]
+                  })]
+              }),
+            [1;34m#(Text [0m[31m[1;31m"[0m[31m[1;35m\n[0m[31m[1;31m"[0m[31m[0m)]
+          }),
+        [1;34m#(Text [0m[31m[1;31m"[0m[31m[1;35m\n[0m[31m[1;31m"[0m[31m[0m)]
+      }),
+    [1;34m#(Text [0m[31m[1;31m"[0m[31m[1;35m\n[0m[31m  [1;31m"[0m[31m[0m)]
+  })

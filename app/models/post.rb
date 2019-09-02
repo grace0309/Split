@@ -8,5 +8,7 @@ class Post < ApplicationRecord
   validates :quota, presence: true
   validates :starting_contribution, presence: true
   validates :category, presence: true
-  validates :units, presence: true, inclusion: { in: [dollars, pieces, people]}
+  validates :units, presence: true
+
+  mount_uploader :photo, PhotoUploader
 end
