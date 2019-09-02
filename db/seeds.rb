@@ -90,7 +90,7 @@ puts 'Fashion posts'
 end
 
 puts 'Food posts'
-3.times do
+5.times do
   post = generator(food, 'Food')
   disc_per = rand(10..20)
   post.discount = "1 for 1!"

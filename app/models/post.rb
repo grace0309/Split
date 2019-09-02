@@ -10,5 +10,5 @@ class Post < ApplicationRecord
   validates :category, presence: true
   validates :units, presence: true
 
-  mount_uploader :image_url, PhotoUploader
+  mount_uploader :photo, PhotoUploader
 end
