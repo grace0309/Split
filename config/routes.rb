@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'deals/new'
+  get 'deals/create'
   devise_for :users
   root to: 'posts#index'
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
@@ -7,6 +9,7 @@ Rails.application.routes.draw do
   end
 
   resources :transactions, only: [ :show, :edit, :update, :destroy]
+  resources :deals, only: [:index]
   get "/dashboard", to: "pages#dashboard", as: :dashboard
 
 end
