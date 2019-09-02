@@ -1,5 +1,11 @@
-<% @deals.each do |deal| %>
-<img src="<%=deal.image_url %>" alt="">
-  <h2><%= deal.title %><h2>
-<% end %>
-
+<div class="container">
+  <div class="row">
+      <% @deals.each do |deal| %>
+    <div class="col-xs-12 col-sm-6 col-md-3">
+      <div class="card-deal mt-5" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=deal.image_url %>)">
+      <%= deal.title %>
+      </div>
+    </div>
+      <% end %>
+  </div>
+</div>
