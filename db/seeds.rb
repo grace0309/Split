@@ -36,8 +36,8 @@ Category.create(name: 'Food')
 Category.create(name: 'Technology')
 
 beauty = ['Watsons', 'Guardian', 'Sephora', 'Sasa', 'Innisfree', 'The Face Shop', 'Lush']
-fashion = ['H&M', 'Uniqlo', 'Mango', 'SuperDry', 'TopShop', 'Zara', 'Bata', 'Charles & Keith', 'Addidas', 'Skechers', 'Cotton On']
-food = ['MacDonalds', 'A&W', 'Jollibee', 'KFC', 'Burger King', 'Paradise Dynasty', 'Crystal Jade', 'Starbucks']
+fashion = ['H&M', 'Uniqlo', 'Mango', 'SuperDry', 'TopShop', 'Zara', 'Bata', 'Charles & Keith']
+food = ['MacDonalds', 'A&W', 'Jollibee', 'Starbucks']
 technology = ['Harvey Norman', 'Challenger', 'Best Denki', 'Courts', 'Parisilk']
 
 def generator(category, name)
@@ -72,7 +72,7 @@ puts 'Technology posts'
   starting_contribution = (disc_per*10)*rand(0.1..0.5).round(2)
   post.starting_contribution = starting_contribution
   post.total_contribution = starting_contribution
-  post.units  = 'dollars'
+  post.units  = 'Dollars'
   post.save
 end
 
@@ -85,7 +85,7 @@ puts 'Fashion posts'
   starting_contribution = (disc_per*10)*rand(0.1..0.5).round(2)
   post.starting_contribution = starting_contribution
   post.total_contribution = starting_contribution
-  post.units  = 'pieces'
+  post.units  = 'Pieces'
   post.save
 end
 
@@ -98,7 +98,7 @@ puts 'Food posts'
   starting_contribution = 1
   post.starting_contribution = starting_contribution
   post.total_contribution = starting_contribution
-  post.units  = 'items'
+  post.units  = 'People'
   post.save
 end
 
