@@ -1,0 +1,50 @@
+<%=simple_form_for (@post) do |f| %>
+<%= f.error_notification %>
+<%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+
+<div class="form-inputs">
+    <%= f.input :store_name, label: 'Store'%>
+</div>
+
+<div class="form-inputs">
+    <%= f.input :details, label: 'Details'%>
+</div>
+
+<div class="form-inputs">
+    <%= f.association :category,collection: Category.all, label_method: :name, value_method: :id %>
+</div>
+
+<div class="form-inputs">
+    <%= f.input :discount, label: 'Discount Tagline'%>
+</div>
+
+<div class="form-inputs">
+    <%= f.input :quota, label: 'Amount Needed'%>
+</div>
+
+<div class="form-inputs">
+  <%= f.input :units, :collection => %w[Dollars \ Pieces \ People] %>
+</div>
+
+<div class="form-inputs">
+    <%= f.input :starting_contribution, label: 'How much are you buying?'%>
+</div>
+
+<div class="form-inputs">
+    <%= f.hidden_field :start_time, value: Time.now %>
+</div>
+
+<div class="form-inputs">
+    <%= f.input :end_time%>
+</div>
+
+<div class="form-inputs">
+    <%= f.input :photo%>
+    <%= f.input :photo_cache, as: :hidden %>
+</div>
+
+<div class="form-actions">
+    <%= f.button :submit,  class: "btn btn-primary"%>
+</div>
+
+<% end %>
