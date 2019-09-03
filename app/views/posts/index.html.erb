@@ -1,3 +1,16 @@
+
+<% @posts.each do |post| %>
+<% if post.status == true %>
+<%= post.store_name %>
+<p class="timer">
+  <span class="end_time_data" data-time="<%=post.end_time%>"></span>
+  <span class="hours"></span>:
+  <span class="minutes"></span>:
+  <span class="seconds"></span>
+</p>
+<% end %>
+<% end %>
+
  <% @posts.each do |post|%>
   <% if post.status == false %>
     <%= link_to post_path(post) do %>
