@@ -1,7 +1,13 @@
-
 <% @posts.each do |post| %>
 <% if post.status == true %>
-<%= post.store_name %>
+<%= link_to post_path(post) do %>
+<h3>
+  <%= post.store_name %>
+</h3>
+<p>
+  <%= post.discount %>
+</p>
+<% end %>
 <p class="timer">
   <span class="end_time_data" data-time="<%=post.end_time%>"></span>
   <span class="hours"></span>:
@@ -10,12 +16,3 @@
 </p>
 <% end %>
 <% end %>
-
- <% @posts.each do |post|%>
-  <% if post.status == false %>
-    <%= link_to post_path(post) do %>
-      <h3><%= post.store_name %></h3>
-      <p><%= post.discount %></p>
-    <% end %>
-   <% end %>
- <% end %>
