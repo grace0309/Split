@@ -1,39 +1,63 @@
 class TransactionsController < ApplicationController
-  def index
-    @transactions = Transaction.all
-  end
+  before_action :find_transaction, only: [:show, :destroy, :edit, :update]
+  before_action :find_post, only: [:new, :create]
+  # before_action :active?
 
   def show
   end
 
   def new
-    @post = Post.find(params[:post_id])
     @transaction = Transaction.new(post: @post)
   end
 
   def create
-    @post = Post.find(params[:post_id])
-    @transaction = Transaction.new(post: @post)
+    @user = current_user
+    @transaction = Transaction.new(post: @post, user: @user)
+    if @transaction.update(transaction_params)
+      add_contribution
+    else
+      render :new
+    end
   end
 
   def edit
+    @post = @transaction.post
   end
 
   def update
-    @transaction.update(booking_params)
+    @post = @transaction.post
+    delete_contribution
+    @transaction.update(transaction_params)
+    add_contribution
   end
 
   def destroy
+    @post = @transaction.post
+    delete_contribution
     @transaction.destroy
   end
 
   private
 
-  def set_post
+  def find_transaction
     @transaction = Transaction.find(params[:id])
   end
 
-  def post_params
-    params.require(:transaction).permit()
+  def find_post
+    @post = Post.find(params[:post_id])
+  end
+
+  def add_contribution
+    @post.total_contribution += @transaction.contribution
+    @post.save
+  end
+
+  def delete_contribution
+    @post.total_contribution -= @transaction.contribution
+    @post.save
+  end
+
+  def transaction_params
+    params.require(:transaction).permit(:contribution)
   end
 end
