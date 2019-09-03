@@ -1,0 +1,9 @@
+<% @posts.each do |post| %>
+<div class="end_time_data" data-time="<%=post.end_time%>"></div>
+<%= post.store_name %>
+<p class="timer">
+  <span class="hours"></span>:
+  <span class="minutes"></span>:
+  <span class="seconds"></span>
+</p>
+<% end %>
