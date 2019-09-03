@@ -85,7 +85,7 @@ puts 'Fashion posts'
 10.times do
   post = generator(fashion, 'Fashion')
   disc_per = rand(10..20)
-  post.discount = "Enjoy #{disc_per}% off. Min #{rand(2...5)} pieces"
+  post.discount = "Enjoy #{disc_per}% off storewide. Min #{rand(2...5)} pieces"
   post.quota = disc_per*10
   starting_contribution = (disc_per*10)*rand(0.1..0.5).round(2)
   post.starting_contribution = starting_contribution
@@ -98,7 +98,7 @@ puts 'Food posts'
 5.times do
   post = generator(food, 'Food')
   disc_per = rand(10..20)
-  post.discount = "1 for 1!"
+  post.discount = "1 for 1! Good deals come in pairs"
   post.quota = 2
   starting_contribution = 1
   post.starting_contribution = starting_contribution
@@ -107,7 +107,7 @@ puts 'Food posts'
   post.save
 end
 
-puts 'creating Deals'
+puts 'Creating Deals'
 url = "https://t.me/s/goodlobang"
 html_file = open(url).read
 html_doc = Nokogiri::HTML(html_file)
