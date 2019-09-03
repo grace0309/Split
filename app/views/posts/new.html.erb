@@ -7,15 +7,11 @@
 </div>
 
 <div class="form-inputs">
-    <%= f.input :details, label: 'Details', placeholder: "Perhaps we can exchange some beauty tips too!" %>
-</div>
-
-<div class="form-inputs">
     <%= f.association :category,collection: Category.all, label_method: :name, value_method: :id %>
 </div>
 
 <div class="form-inputs">
-    <%= f.input :discount, label: 'Discount Tagline', placeholder: "Get 20% with minimum spending of $150" %>
+    <%= f.input :discount, label: 'Discount on', placeholder: "Get 20% with minimum spending of $150" %>
 </div>
 
 <div class="form-inputs">
@@ -36,6 +32,10 @@
 
 <div class="form-inputs">
     <%= f.input :end_time,as: :string, label: 'How long can you wait?',wrapper_html: { class: "inline_field_wrapper" } %>
+</div>
+
+<div class="form-inputs">
+    <%= f.input :details, as: :text, label: 'Details', placeholder: "Perhaps we can exchange some beauty tips too!" %>
 </div>
 
 <div class="form-inputs">

@@ -3,11 +3,7 @@
 <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
 
 <div class="form-inputs">
-    <%= f.input :store_name, label: 'Store'%>
-</div>
-
-<div class="form-inputs">
-    <%= f.input :details, label: 'Details'%>
+    <%= f.input :store_name, label: 'Store', placeholder: "Sephora" %>
 </div>
 
 <div class="form-inputs">
@@ -15,11 +11,11 @@
 </div>
 
 <div class="form-inputs">
-    <%= f.input :discount, label: 'Discount Tagline'%>
+    <%= f.input :discount, label: 'Discount on', placeholder: "Get 20% with minimum spending of $150" %>
 </div>
 
 <div class="form-inputs">
-    <%= f.input :quota, label: 'Amount Needed'%>
+    <%= f.input :quota, label: 'Amount Needed', placeholder: 150 %>
 </div>
 
 <div class="form-inputs">
@@ -35,11 +31,15 @@
 </div>
 
 <div class="form-inputs">
-    <%= f.input :end_time%>
+    <%= f.input :end_time,as: :string, label: 'How long can you wait?',wrapper_html: { class: "inline_field_wrapper" } %>
 </div>
 
 <div class="form-inputs">
-    <%= f.input :photo%>
+    <%= f.input :details, as: :text, label: 'Details', placeholder: "Perhaps we can exchange some beauty tips too!" %>
+</div>
+
+<div class="form-inputs">
+    <%= f.input :photo, label: 'Photo' %>
     <%= f.input :photo_cache, as: :hidden %>
 </div>
 

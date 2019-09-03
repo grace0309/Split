@@ -1,3 +1,5 @@
+<p>Store Name:<%= @post.store_name %></p>
+<p>Total_contribution<%= @post.total_contribution %></p>
 
 <p class="timer">
   <span class="end_time_data" data-time="<%=@post.end_time%>"></span>
@@ -5,8 +7,6 @@
   <span class="minutes"></span>:
   <span class="seconds"></span>
 </p>
-<p><%= @post.store_name %></p>
-<p><%= @post.total_contribution %></p>
 
 <p><%= link_to 'Back', posts_path %></p>
 <p><%= link_to 'Destroy', post_path, method: :delete, data: { confirm: "Are you sure you want to delete your post?"} %>
