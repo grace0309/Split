@@ -1,31 +1,48 @@
 // Specific CSS for your home-page
 // Extra small devices (portrait phones, less than 576px)
-@media (max-width: 575px) {
+@media (min-width: 375px) {
   .container{
-    width: 25%
-  }
+      display: flex;
+      font-size: 20px;
+    }
+
+  .cards{
+    grid-template-columns: 1fr 1fr;
+    }
   }
 
 // Small devices (landscape phones, less than 768px)
-@media (max-width: 767px) {
+@media (min-width: 567px) {
   .container{
-      width: 50%
+      display: flex;
+      font-size:20px
+    }
+    .cards{
+    grid-template-columns: 1fr 1fr;
     }
   }
 
 // Medium devices (tablets, less than 992px)
-@media (max-width: 991px) {
+@media (min-width: 991px) {
   .container{
-      width: 75%
+      display: flex;
+      font-size: 25px;
+  }
+    .cards{
+    grid-template-columns: 1fr 1fr;
   }
 }
 
 // Large devices (desktops, less than 1200px)
-@media (max-width: 1199px) {
+@media (min-width: 1199px) {
   .container{
-      width: 100%
+     display: flex;
+     font-size: 25px;
     }
-  }
+    .cards{
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+}
 
 // Extra large devices (large desktops)
 // No media query since the extra-large breakpoint has no upper bound on its width

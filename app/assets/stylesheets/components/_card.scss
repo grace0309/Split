@@ -1,14 +1,19 @@
 .card-deal {
   background-size: cover;
   background-position: center;
-  height: 180px;
+  height: 150px;
+  border-radius: 1px;
+  margin: 15px 10px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: space-around;
   color: white;
-  font-size: 24px;
-  font-weight: bold;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  border-radius: 5px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  font-weight: bolder;
+  text-shadow: 0 0 10px rgba(0,0,0,0.7);
+}
+
+.cards{
+  flex-grow: 1;
+  display:grid;
 }
