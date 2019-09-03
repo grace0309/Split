@@ -17,7 +17,7 @@ class Post < ApplicationRecord
     self.status == true
   end
 
-  def post_complete?
+  def post_complete
     if self.total_contribution >= self.quota
       self.status = false
       self.save

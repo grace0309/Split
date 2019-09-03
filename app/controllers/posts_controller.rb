@@ -9,34 +9,37 @@ class PostsController < ApplicationController
   end
 
   def show
+    authorize @post
   end
 
   def new
     @post = Post.new
+    authorize @post
   end
 
   def create
     @post = Post.new(post_params)
-    @post.category_id = params[:post][:category_id]
-    @post.user_id = current_user.id
-    @post.save
+    authorize @post
+    @post.user = current_user
     if @post.save
       redirect_to post_path(@post)
     else
       render :new
     end
-    @posts = Post.all
   end
 
   def edit
+    authorize @post
   end
 
   def update
+    authorize @post
     @post.update(post_params)
     @posts = Post.all
   end
 
   def destroy
+    authorize @post
     @post.destroy
     @posts = Post.all
   end
@@ -48,7 +51,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:store_name, :details, :discount, :quota, :starting_contribution, :units, :photo)
+    params.require(:post).permit(:store_name, :details, :discount, :quota, :starting_contribution, :units, :photo, :category_id)
   end
 
 end

@@ -4,15 +4,18 @@ class TransactionsController < ApplicationController
   # before_action :active?
 
   def show
+    authorize @transaction
   end
 
   def new
     @transaction = Transaction.new(post: @post)
+    authorize @transaction
   end
 
   def create
     @user = current_user
     @transaction = Transaction.new(post: @post, user: @user)
+    authorize @transaction
     if @transaction.update(transaction_params)
       add_contribution
     else
@@ -21,10 +24,12 @@ class TransactionsController < ApplicationController
   end
 
   def edit
+    authorize @transaction
     @post = @transaction.post
   end
 
   def update
+    authorize @transaction
     @post = @transaction.post
     delete_contribution
     @transaction.update(transaction_params)
@@ -32,6 +37,7 @@ class TransactionsController < ApplicationController
   end
 
   def destroy
+    authorize @transaction
     @post = @transaction.post
     delete_contribution
     @transaction.destroy
@@ -49,6 +55,7 @@ class TransactionsController < ApplicationController
 
   def add_contribution
     @post.total_contribution += @transaction.contribution
+    @post.post_complete
     @post.save
   end
 
