@@ -50,7 +50,7 @@ def generator(category, name)
   store_name = category.sample
   category = Category.find_by(name: name)
   start_time = Time.now - 3600*rand(1..5)
-  end_time = start_time + 3600*rand(1..3)
+  end_time = start_time + 3600*rand(1..7)
   status = end_time > Time.now
   Post.new(user: user, store_name: store_name, category:category, start_time: start_time, end_time: end_time, status: status)
 end
