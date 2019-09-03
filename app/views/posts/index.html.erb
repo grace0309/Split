@@ -1,0 +1,8 @@
+ <% @posts.each do |post|%>
+  <% if post.status == false %>
+    <%= link_to post_path(post) do %>
+      <h3><%= post.store_name %></h3>
+      <p><%= post.discount %></p>
+    <% end %>
+   <% end %>
+ <% end %>
