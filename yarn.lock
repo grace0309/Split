@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@cometchat-pro/chat@^1.8.3":
+  version "1.8.7"
+  resolved "https://registry.yarnpkg.com/@cometchat-pro/chat/-/chat-1.8.7.tgz#13ad1d0d5d79823e126e2263d4d890e419b88182"
+  integrity sha512-YR5EcVNzoFEwZI6nKHevlvyIg1JiX2XADzm0xC46qlorAAtmHYsOVQNTx2C/RA6yqfAzCu7HV7AqkDjuvx6A4w==
+
 bootstrap@^4.3.1:
   version "4.3.1"
   resolved "https://registry.yarnpkg.com/bootstrap/-/bootstrap-4.3.1.tgz#280ca8f610504d99d7b6b4bfc4b68cec601704ac"

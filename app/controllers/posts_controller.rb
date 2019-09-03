@@ -3,6 +3,9 @@ class PostsController < ApplicationController
 
   def index
     @posts = Post.all
+    @posts.each do |post|
+      post.check_time
+    end
   end
 
   def show
@@ -47,4 +50,5 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:store_name, :details, :discount, :quota, :starting_contribution, :units, :photo)
   end
+
 end
