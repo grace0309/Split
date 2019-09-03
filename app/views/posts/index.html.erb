@@ -14,5 +14,10 @@
   <span class="minutes"></span>:
   <span class="seconds"></span>
 </p>
+<div class="progress">
+  <span class="total_contribution" data-contribution="<%=post.total_contribution%>"></span>
+  <span class="quota" data-quota="<%=post.quota%>"></span>
+  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 75%">75%</div>
+</div>
 <% end %>
 <% end %>
