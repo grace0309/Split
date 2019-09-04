@@ -9,7 +9,4 @@
   <% end %>
 </div>
 
-<%= simple_form_for([ @post, @message ], remote: true) do |form| %>
-  <%= form.input :message_content, as: :text %>
-  <%= form.button :submit %>
-<% end %>
+<%= render 'messages/form', post: @post, message: @message %>

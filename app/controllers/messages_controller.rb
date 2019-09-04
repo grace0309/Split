@@ -10,16 +10,17 @@ class MessagesController < ApplicationController
   end
 
   def create
-    @message.user_id = current_user.id
     @message = Message.new(messages_params)
+    @message.post = @post
+    @message.user_id = current_user.id
     if @message.save
       respond_to do |format|
-        format.html { redirect_to post_messages(@posts) }
+        format.html { redirect_to post_messages_path(@post) }
         format.js  # <-- will render `app/views/reviews/create.js.erb`
       end
     else
       respond_to do |format|
-        format.html { render 'messages/index' }
+        format.html { render 'messages/form' }
         format.js  # <-- idem
       end
     end
