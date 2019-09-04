@@ -24,3 +24,31 @@
 <p>
   <%= link_to 'Message', post_messages_path(@post) %>
 </p>
+<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
+<!-- Modal -->
+<div id="myModal" class="modal fade" role="dialog">
+  <div class="modal-dialog">
+    <!-- Modal content-->
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <% if current_user != @post.user %>
+        <% if @post.users.include?(current_user) %>
+        <p>
+          <%= render 'transactions/edit', post: @post, transaction: @transaction%>
+        </p>
+        <% else %>
+        <p>
+          <%= render 'transactions/new', post: @post, transaction: @transaction%>
+        </p>
+        <% end %>
+        <% end %>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
