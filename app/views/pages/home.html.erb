@@ -6,21 +6,25 @@
     </button>
   </div>
 <% end %>
-
-<% if @posts.empty? %>
-<h2>No posts found</h2>
-<% else %>
-  <% @posts.each do |post| %>
-  <p><%= post.content%></p>
-  <p><%= post.discount %></p>
-  <% end %>
-<% end %>
-
-<% if @deals.empty? %>
-<h2>No deals found</h2>
-<% else %>
-  <% @deals.each do |deal| %>
-  <p><%= deal.title %></p>
-  <p><%= deal.description %></p>
-  <% end %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col">
+    <% if @posts.empty? %>
+    <h2>No posts found</h2>
+    <% else %>
+      <% @posts.each do |post| %>
+      <p><%= post.store_name%></p>
+      <p><%= post.discount %></p>
+      <% end %>
+    <% end %>
+    <% if @deals.empty? %>
+    <h2>No deals found</h2>
+    <% else %>
+      <% @deals.each do |deal| %>
+      <p><%= deal.title %></p>
+      <p><%= deal.description %></p>
+      <% end %>
+    <% end %>
+    </div>
+  </div>
+</div>

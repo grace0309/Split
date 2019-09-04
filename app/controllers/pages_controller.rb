@@ -1,9 +1,7 @@
 class PagesController < ApplicationController
-  skip_before_action :authenticate_user!, only: [:home]
-
   def home
-    @posts = []
-    @deals = []
+    @posts = Post.all
+    @deals = Deal.all
     if params[:query].present?
       results = PgSearch.multisearch(params[:query])
       results.each do |result|
