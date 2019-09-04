@@ -5,7 +5,7 @@ const toggleDateInputs = function() {
   flatpickr('#post_end_time', {
     enableTime: true,
     minDate: 'today',
-
+    noCalendar: true
   });
 }
 

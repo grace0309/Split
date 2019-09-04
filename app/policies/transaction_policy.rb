@@ -10,7 +10,6 @@ class TransactionPolicy < ApplicationPolicy
 
   def new?
     if record.post.post_valid?
-
       return true
     else
       return false
