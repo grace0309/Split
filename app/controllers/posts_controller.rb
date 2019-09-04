@@ -9,6 +9,11 @@ class PostsController < ApplicationController
   end
 
   def show
+    if @post.users.include?(current_user)
+      @transaction = current_user.transactions.find_by(post: @post)
+    else
+      @transaction = Transaction.new
+    end
     authorize @post
   end
 
