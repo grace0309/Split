@@ -18,6 +18,7 @@ class TransactionsController < ApplicationController
     authorize @transaction
     if @transaction.update(transaction_params)
       add_contribution
+      redirect_to post_messages_path(@post)
     else
       render :new
     end
@@ -32,8 +33,10 @@ class TransactionsController < ApplicationController
     authorize @transaction
     @post = @transaction.post
     delete_contribution
-    @transaction.update(transaction_params)
-    add_contribution
+    if @transaction.update(transaction_params)
+      add_contribution
+      redirect_to post_messages_path(@post)
+    end
   end
 
   def destroy
