@@ -2,6 +2,7 @@ class Post < ApplicationRecord
   belongs_to :user
   belongs_to :category
   has_many :transactions, dependent: :destroy
+  has_many :messages, dependent: :destroy
 
   validates :store_name, presence: true
   validates :discount, presence: true
