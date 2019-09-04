@@ -1,8 +1,9 @@
 class MessagesController < ApplicationController
   before_action :set_posts, only: [ :index, :show, :new, :create ]
   def index
-    @messages = Message.all
-    @message = Message.new
+    @messages = Message.where(post: @post)
+    @message = Message.new(post: @post)
+    authorize @message
   end
 
   def new
