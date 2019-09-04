@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 ruby '2.6.3'
 
+gem 'pg_search', '~> 2.3.0'
 gem 'nokogiri'
 gem 'bootsnap', require: false
 gem 'devise'
