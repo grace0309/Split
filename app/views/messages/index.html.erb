@@ -1,0 +1,12 @@
+<% @messages.each do |message| %>
+<p><%= message.message_content %></p>
+<p><%= message.user.first_name %></p>
+<% end %>
+
+<div id="messages">
+    <% @post.messages.each do |message| %>
+      <%= render 'messages/show', message: message %>
+  <% end %>
+</div>
+
+<%= render 'messages/form', post: @post, message: @message %>

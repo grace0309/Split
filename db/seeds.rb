@@ -11,6 +11,7 @@ require 'pry-byebug'
 
 
 puts 'Destroying data...'
+Message.destroy_all
 Post.destroy_all
 Category.destroy_all
 User.destroy_all
@@ -129,6 +130,15 @@ html_doc.search('.tgme_widget_message_bubble').each do |post|
   deal.save
   end
 end
+
+puts 'Creating Messages'
+  10.times do
+    message_content = Faker::Quote.matz
+    message_user = User.all.sample
+    message_post = Post.first
+    message = Message.new(user: message_user, post: message_post, message_content: message_content )
+    message.save
+  end
 
 puts 'Finished'
 
