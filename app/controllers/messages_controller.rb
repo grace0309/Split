@@ -13,7 +13,7 @@ class MessagesController < ApplicationController
   def create
     @message = Message.new(messages_params)
     @message.post = @post
-    @message.user_id = current_user.id
+    @message.user = current_user
     if @message.save
       respond_to do |format|
         format.html { redirect_to post_messages_path(@post) }
