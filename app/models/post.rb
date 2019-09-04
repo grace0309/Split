@@ -8,6 +8,7 @@ class Post < ApplicationRecord
   validates :quota, presence: true
   validates :starting_contribution, presence: true
   validates :category, presence: true
+  validates :end_time, presence: true
   validates :units, presence: true
 
   mount_uploader :photo, PhotoUploader

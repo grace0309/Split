@@ -6,7 +6,7 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @review.user_id = current_user.id
+    @review.user = current_user
     @review.content = review_params[:content]
     if @review.save
       redirect_to root_path
@@ -30,7 +30,7 @@ class ReviewsController < ApplicationController
 
 private
   def new_review
-    @transaction = Transaction.find(params[:booking_id])
+    @transaction = Transaction.find(params[:transaction_id])
     @review = Review.new(transaction: @transaction)
   end
 
