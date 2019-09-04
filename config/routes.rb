@@ -8,8 +8,12 @@ Rails.application.routes.draw do
     resources :transactions, only: [ :create, :new]
   end
 
-  resources :transactions, only: [ :show, :edit, :update, :destroy]
+  resources :transactions, only: [ :show, :edit, :update, :destroy] do
+    resources :reviews, only: [ :create, :new]
+  end
+
   resources :deals, only: [:index]
+  resources :reviews, only: [ :edit, :update, :destroy]
   get "/dashboard", to: "pages#dashboard", as: :dashboard
 
 end
