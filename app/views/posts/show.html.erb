@@ -1,4 +1,5 @@
-<div>
+<!--photo -->
+  <div>
   <% if @post.photo.present? %>
     <img class = "post-img" src="<%= cl_image_tag @post.photo%>" alt="">
   <% else %>
@@ -6,7 +7,16 @@
   <% end %>
 </div>
 
+<!--details -->
 <div>
+<p class="timer timer-post">
+  <span class="end_time_data" data-time="<%=@post.end_time%>"></span>
+  <span class="hours"></span>:
+  <span class="minutes"></span>:
+  <span class="seconds"></span>mins left
+</p>
+</div>
+
   <p>Store Name:
   <%= @post.store_name %>
 </p>
@@ -18,10 +28,7 @@
   <span class="end_time_data" data-time="<%=@post.end_time%>"></span>
   <span class="hours"></span>:
   <span class="minutes"></span>:
-  <span class="seconds"></span>
-</p>
-<p>
-  <%= link_to 'Back', posts_path %>
+  <span class="seconds"></span>mins left
 </p>
 <p>
   <%= link_to 'Destroy', post_path, method: :delete, data: { confirm: "Are you sure you want to delete your post?"} %>
@@ -34,6 +41,8 @@
 <p>
   <%= link_to 'Message', post_messages_path(@post) %>
 </p>
+
+
 <button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
 <!-- Modal -->
 <div id="myModal" class="modal fade" role="dialog">
@@ -63,4 +72,3 @@
   </div>
 </div>
 
-</div>
