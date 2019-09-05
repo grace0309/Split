@@ -1,4 +1,22 @@
 .header{
-  height: 100px;
+  height: 80px;
   background-color: $white;
+  position: relative;
+}
+
+.main-title{
+  position: absolute;
+  bottom: 0px;
+  font-size: 35px;
+}
+
+.sub-title{
+  font-size: 20px;
+  position: absolute;
+  top : 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform    : translate(-50%, -50%);
+  text-align: center;
+  width: fit-content;
 }

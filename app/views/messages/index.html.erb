@@ -1,3 +1,4 @@
+<%= render partial: 'shared/header', locals: {:title => "Chat", :class => "sub-title"} %>
 <% @messages.each do |message| %>
 <p><%= message.message_content %></p>
 <p><%= message.user.first_name %></p>

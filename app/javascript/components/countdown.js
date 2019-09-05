@@ -1,7 +1,7 @@
 function calculate(i, endDate) {
     let days, hours, minutes, seconds;
     let startDate = Date.now();
-    console.log("calculating")
+    // console.log("calculating")
 
     // startDate = new Date(startDate.getUTCFullYear(),
     //   startDate.getUTCMonth(),
@@ -11,6 +11,8 @@ function calculate(i, endDate) {
     //   startDate.getUTCSeconds());
 
     let timeRemaining = parseInt((endDate - startDate) / 1000);
+
+    // console.log(timeRemaining)
 
     if (timeRemaining >= 0) {
       days            = parseInt(timeRemaining / 86400);
@@ -23,6 +25,14 @@ function calculate(i, endDate) {
       timeRemaining   = (timeRemaining % 60);
 
       seconds         = parseInt(timeRemaining);
+//
+      // console.log( document.querySelectorAll(".hours"))
+      // console.log(document.querySelectorAll(".hours")[i])
+      // console.log(document.querySelectorAll(".hours")[i].innerHTML)
+      // console.log(("0" + hours).slice(-2))
+      // console.log()
+      // console.log()
+
 
       document.querySelectorAll(".hours")[i].innerHTML   = ("0" + hours).slice(-2);
       document.querySelectorAll(".minutes")[i].innerHTML = ("0" + minutes).slice(-2);
@@ -38,7 +48,7 @@ function countdown() {
     let i;
     for (i = 0; i < endDates.length; i++) {
       let endDate = endDates[i].dataset.time;
-      console.log(endDate)
+      // console.log(endDate)
       endDate = new Date(endDate).getTime();
       if (isNaN(endDate)) {
         return;
