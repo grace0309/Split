@@ -1,74 +1,72 @@
-<!--photo -->
+<body id="post-show">
   <div>
   <% if @post.photo.present? %>
-    <img class = "post-img" src="<%= cl_image_tag @post.photo%>" alt="">
+  <img class="post-img" src="<%= cl_image_tag @post.photo%>" alt="">
   <% else %>
-    <%= image_tag "#{@post.store_name.downcase}.png", class: "post-img" %>
+  <%= image_tag "#{@post.store_name.downcase.strip}.png", class: "post-img" %>
   <% end %>
 </div>
 
-<!--details -->
-<div>
-<p class="timer timer-post">
-  <span class="end_time_data" data-time="<%=@post.end_time%>"></span>
-  <span class="hours"></span>:
-  <span class="minutes"></span>:
-  <span class="seconds"></span>mins left
-</p>
-</div>
-
-  <p>Store Name:
-  <%= @post.store_name %>
-</p>
-<p>Total_contribution
-  <%= @post.total_contribution %>
-</p>
-
-<p class="timer">
-  <span class="end_time_data" data-time="<%=@post.end_time%>"></span>
-  <span class="hours"></span>:
-  <span class="minutes"></span>:
-  <span class="seconds"></span>mins left
-</p>
-<p>
-  <%= link_to 'Destroy', post_path, method: :delete, data: { confirm: "Are you sure you want to delete your post?"} %>
-</p>
-<div class="progress">
-  <span class="total_contribution" data-contribution="<%=@post.total_contribution%>"></span>
-  <span class="quota" data-quota="<%=@post.quota%>"></span>
-  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 75%">75%</div>
-</div>
-<p>
-  <%= link_to 'Message', post_messages_path(@post) %>
-</p>
-
-
-<button type="button" class="btn btn-info btn-lg" data-toggle="modal" data-target="#myModal">Open Modal</button>
-<!-- Modal -->
-<div id="myModal" class="modal fade" role="dialog">
-  <div class="modal-dialog">
-    <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal">&times;</button>
-      </div>
-      <div class="modal-body">
-        <% if current_user != @post.user %>
-        <% if @post.users.include?(current_user) %>
-        <p>
-          <%= render 'transactions/edit', post: @post, transaction: @transaction%>
-        </p>
-        <% else %>
-        <p>
-          <%= render 'transactions/new', post: @post, transaction: @transaction%>
-        </p>
-        <% end %>
-        <% end %>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+<div class="post-card">
+  <!--timer -->
+  <div>
+    <p class="timer timer-post">
+      <span class="end_time_data" data-time="<%=@post.end_time%>"></span>
+      <span class="hours"></span>:
+      <span class="minutes"></span>:
+      <span class="seconds"></span>mins left
+    </p>
+  </div>
+  <!--progress bar -->
+    <p class="progress-bar-details mx-1"><%= (@post.quota - @post.total_contribution) %> <%= @post.units %> more to go!</p>
+  <div class="progress mb-3 mx-1">
+    <span class="total_contribution" data-contribution="<%=@post.total_contribution%>"></span>
+    <span class="quota" data-quota="<%=@post.quota%>"></span>
+    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 75%">75%</div>
+  </div>
+  <div>
+    <p class="post-heading border-bottom mx-4">
+      <%= @post.store_name %>
+    </p>
+  </div>
+  <!--details -->
+  <div class="post-details mx-4">
+    <p>Post by: <%= @post.user.first_name %></p>
+    <p>Discount: <%= @post.discount %></p>
+    <p>Quota:
+      <%= @post.quota %> <%=@post.units%></p>
+  </div>
+  <!--transaction -->
+  <button type="button" class="post-btn btn btn-lg" data-toggle="modal" data-target="#myModal">Join Now!</button>
+  <!-- Modal -->
+  <div id="myModal" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Ready to spree?</h2>
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+        </div>
+        <div class="modal-body">
+          <% if current_user != @post.user %>
+            <% if @post.users.include?(current_user) %>
+          <p>
+            <%= render 'transactions/edit', post: @post, transaction: @transaction%>
+          </p>
+          <% else %>
+          <p>
+            <%= render 'transactions/new', post: @post, transaction: @transaction%>
+          </p>
+            <% end %>
+          <% end %>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
+
+</body>
