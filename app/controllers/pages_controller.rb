@@ -19,4 +19,11 @@ class PagesController < ApplicationController
       end
     end
   end
+
+  def dashboard
+    @user = current_user
+    @posts = Post.where(user: current_user)
+    @transactions = Transaction.where(user: current_user)
+  end
+
 end
