@@ -8,5 +8,5 @@ timer()
 import { progress } from '../components/progress_bar';
 progress()
 
-import { refreshtimer } from '../components/chat_refresher';
-refreshtimer()
+// import { refreshtimer } from '../components/chat_refresher';
+// refreshtimer()
