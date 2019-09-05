@@ -9,7 +9,9 @@ class PagesController < ApplicationController
       results.each do |result|
         if result.searchable_type == 'Post'
           post = Post.find(result.searchable_id)
-          @posts << post
+          if post.status == true
+            @posts << post
+          end
         else
           deal = Deal.find(result.searchable_id)
           @deals << deal
