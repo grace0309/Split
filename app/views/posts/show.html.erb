@@ -1,9 +1,19 @@
-<p>Store Name:
+<div>
+  <% if @post.photo.present? %>
+    <img class = "post-img" src="<%= cl_image_tag @post.photo%>" alt="">
+  <% else %>
+    <%= image_tag "#{@post.store_name.downcase}.png", class: "post-img" %>
+  <% end %>
+</div>
+
+<div>
+  <p>Store Name:
   <%= @post.store_name %>
 </p>
 <p>Total_contribution
   <%= @post.total_contribution %>
 </p>
+
 <p class="timer">
   <span class="end_time_data" data-time="<%=@post.end_time%>"></span>
   <span class="hours"></span>:
@@ -51,4 +61,6 @@
       </div>
     </div>
   </div>
+</div>
+
 </div>
