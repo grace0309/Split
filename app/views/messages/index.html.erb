@@ -10,3 +10,14 @@
 </div>
 
 <%= render 'messages/form', post: @post, message: @message %>
+
+<% if current_user == @post.user %>
+<%=simple_form_for (@post) do |f| %>
+<div class="form-inputs">
+  <%= f.hidden_field :completed, value: false%>
+</div>
+<div class="form-actions">
+    <%= f.button :submit,  class: "btn btn-primary"%>
+</div>
+<% end %>
+<% end %>
