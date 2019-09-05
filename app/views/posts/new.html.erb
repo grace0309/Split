@@ -1,50 +1,35 @@
-<%=simple_form_for (@post) do |f| %>
-<%= f.error_notification %>
-<%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+<div class="container">
+  <div class="row justify-content-center">
+    <div class = "col-lg-6">
 
-<div class="form-inputs">
-    <%= f.input :store_name, label: 'Store', placeholder: "Sephora" %>
+      <div class="form-post">
+        <%=simple_form_for (@post) do |f| %>
+        <%= f.error_notification %>
+        <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
+        <div class="form-inputs">
+            <%= f.input :photo, label: '<i class="fas fa-camera"></i> Choose a photo'.html_safe %>
+            <%= f.input :photo_cache, as: :hidden %>
+
+            <%= f.input :discount, label: '<i class="fas fa-volume-up"></i> Share your discount'.html_safe, input_html: { class: 'new-input' } %>
+
+            <%= f.input :store_name, label: '<i class="fas fa-store"></i> Store'.html_safe, placeholder: "Sephora", input_html: { class: 'new-input' }%>
+            <%= f.association :category, collection: Category.all, value_method: :id, as: :radio_buttons, label: '<i class="fas fa-boxes"></i> Category'.html_safe %>
+            <div class="d-flex">
+              <%= f.input :quota, label: '<i class="fas fa-money-bill-wave"></i> Amount to raise'.html_safe, placeholder: 150, hint: "Type in the total amount you need",  wrapper_html: { class: "flex-grow-1" }, input_html: { class: 'new-input' } %>
+              <%= f.input :units, :collection => %w[Dollars \ Pieces \ People], label: "Units", wrapper_html: { class: "ml-3" }, input_html: { class: 'new-input' } %>
+            </div>
+            <%= f.input :starting_contribution, label: '<i class="fas fa-shopping-basket"></i> How much are you starting with?'.html_safe, hint: "Type in the amount you are contributing", input_html: { class: 'new-input' } %>
+            <%= f.hidden_field :start_time, value: Time.now %>
+            <%= f.input :end_time,as: :string, label: '<i class="far fa-clock"></i> How long can you wait?'.html_safe,wrapper_html: { class: "inline_field_wrapper" }, input_html: { class: 'new-input' } %>
+            <%= f.input :details, as: :text, label: '<i class="fas fa-pencil-alt"></i> Details'.html_safe, placeholder: "Perhaps we can exchange some beauty tips too!", input_html: { class: 'new-input' } %>
+        </div>
+
+        <div class="form-actions">
+            <%= f.button :submit, 'Share now', class: "btn btn-primary"%>
+        </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
 </div>
 
-<div class="form-inputs">
-    <%= f.association :category,collection: Category.all, label_method: :name, value_method: :id %>
-</div>
-
-<div class="form-inputs">
-    <%= f.input :discount, label: 'Discount on', placeholder: "Get 20% with minimum spending of $150" %>
-</div>
-
-<div class="form-inputs">
-    <%= f.input :quota, label: 'Amount Needed', placeholder: 150 %>
-</div>
-
-<div class="form-inputs">
-  <%= f.input :units, :collection => %w[Dollars \ Pieces \ People] %>
-</div>
-
-<div class="form-inputs">
-    <%= f.input :starting_contribution, label: 'How much are you buying?'%>
-</div>
-
-<div class="form-inputs">
-    <%= f.hidden_field :start_time, value: Time.now %>
-</div>
-
-<div class="form-inputs">
-    <%= f.input :end_time,as: :string, label: 'How long can you wait?',wrapper_html: { class: "inline_field_wrapper" } %>
-</div>
-
-<div class="form-inputs">
-    <%= f.input :details, as: :text, label: 'Details', placeholder: "Perhaps we can exchange some beauty tips too!" %>
-</div>
-
-<div class="form-inputs">
-    <%= f.input :photo, label: 'Photo' %>
-    <%= f.input :photo_cache, as: :hidden %>
-</div>
-
-<div class="form-actions">
-    <%= f.button :submit,  class: "btn btn-primary"%>
-</div>
-
-<% end %>
