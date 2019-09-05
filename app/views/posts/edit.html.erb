@@ -7,7 +7,7 @@
         <%= f.error_notification %>
         <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
         <div class="form-inputs">
-            <%= f.input :photo, label: 'Choose a photo' %>
+            <%= f.input :photo, label: '<i class="fas fa-camera"></i>Choose a photo'.html_safe %>
             <%= f.input :photo_cache, as: :hidden %>
 
             <%= f.input :discount, label: '<i class="fas fa-volume-up"></i> Share your discount'.html_safe, input_html: { class: 'new-input' } %>
@@ -25,7 +25,7 @@
         </div>
 
         <div class="form-actions">
-            <%= f.button :submit, 'Share now', class: "btn btn-primary"%>
+            <%= f.button :submit, 'Update', class: "btn btn-primary"%>
         </div>
         <% end %>
       </div>
