@@ -7,7 +7,6 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'open-uri'
 require 'nokogiri'
-require 'pry-byebug'
 
 
 puts 'Destroying data...'
