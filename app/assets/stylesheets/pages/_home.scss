@@ -1,7 +1,6 @@
 // Specific CSS for your home-page
 // Extra small devices (portrait phones, less than 576px)
 @media (min-width: 375px) {
-
   .cards{
     grid-template-columns: 1fr 1fr;
     }
@@ -14,12 +13,9 @@
 
 // Small devices (landscape phones, less than 768px)
 @media (min-width: 567px) {
+
   .cards{
   grid-template-columns: 1fr 1fr;
-  }
-  .carousel-item{
-  width:375px;
-  height: 300px;
   }
 }
 
