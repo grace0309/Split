@@ -1,3 +1,4 @@
+<%= render partial: 'shared/header', locals: {:title => "Hi, #{@user.first_name}", :myclass => "main-title" } %>
 <%= simple_form_for :search, url: root_path, method: :get do |f| %>
   <div class="search-form-control form-group">
     <input class="form-control string required" type="text" name="query" id="search_query" />
@@ -5,26 +6,35 @@
       <i class="fas fa-search"></i> Search
     </button>
   </div>
-<div class="container">
 <% end %>
-  <div class="row">
-    <div class="col">
-    <% if @posts.empty? %>
+<div class="container">
+  <% if @posts.empty? %>
     <h2>No posts found</h2>
-    <% else %>
-      <% @posts.each do |post| %>
-      <p><%= post.store_name%></p>
-      <p><%= post.discount %></p>
-      <% end %>
-    <% end %>
-    <% if @deals.empty? %>
-    <h2>No deals found</h2>
-    <% else %>
-      <% @deals.each do |deal| %>
-      <p><%= deal.title %></p>
-      <p><%= deal.description %></p>
-      <% end %>
+  <% else %>
+  <div class="cards">
+    <% @posts.first(6).each do |post| %>
+    <div class="card-product mx-2">
+      <img src=<%= "https://source.unsplash.com/600x400/?#{post.category}" %>>
+      <div class="card-product-infos">
+        <p><%= post.store_name%></p>
+        <p><%= post.discount %></p>
+        <p class="timer">
+        <span class="end_time_data" data-time="<%=post.end_time%>"></span>
+        <span class="hours"></span>:
+        <span class="minutes"></span>:
+        <span class="seconds"></span>
+      </p>
+      </div>
+    </div>
     <% end %>
     </div>
-  </div>
+  <% end %>
+    <% if @deals.empty? %>
+      <h2>No deals found</h2>
+    <% else %>
+    <div class="mt-4">
+      <h2><strong>Check out the latest featured promos</strong></h2>
+      <%= render partial: 'shared/carousel'%>
+    <% end %>
+    </div>
 </div>
