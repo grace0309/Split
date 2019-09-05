@@ -11,9 +11,12 @@
   <% if @posts.empty? %>
     <h2>No posts found</h2>
   <% else %>
+  <div class="my-3">
+      <h2><strong>Happening right now!</strong></h2>
+    </div>
   <div class="cards">
     <% @posts.first(6).each do |post| %>
-    <div class="card-product mx-2">
+    <div class="card-product mx-1 my-1">
       <img src=<%= "https://source.unsplash.com/600x400/?#{post.category}" %>>
       <div class="card-product-infos">
         <p><%= post.store_name%></p>
@@ -32,7 +35,7 @@
     <% if @deals.empty? %>
       <h2>No deals found</h2>
     <% else %>
-    <div class="mt-4">
+    <div class="my-4">
       <h2><strong>Check out the latest featured promos</strong></h2>
       <%= render partial: 'shared/carousel'%>
     <% end %>
