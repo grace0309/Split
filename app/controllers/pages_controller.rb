@@ -2,6 +2,8 @@ class PagesController < ApplicationController
   def home
     @posts = Post.all
     @deals = Deal.all
+    user_id = current_user.id
+    @user = User.find(user_id)
     if params[:query].present?
       results = PgSearch.multisearch(params[:query])
       results.each do |result|

@@ -1,3 +1,13 @@
-<div class="header">
-  <h1 class ="text-center">Split</h1>
+<div class="header px-4">
+  <% case params[:controller]
+    when "pages" %>
+    <span class="align-text-bottom">
+      <h1>Hi <%= @user.first_name %></h1>
+    </span>
+    <% when "posts" %>
+      <h1><%= "posts" %></h1>
+    <% when "dashboard" %>
+      <h1><%= "posts" %></h1>
+<% end %>
+
 </div>

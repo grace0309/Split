@@ -46,3 +46,16 @@
 
 // Extra large devices (large desktops)
 // No media query since the extra-large breakpoint has no upper bound on its width
+body {
+  background-color: $split-green;
+   min-height: 400px;
+   margin-bottom: 80px;
+   clear: both;
+   color: $split-blue;
+}
+
+.container {
+  position: relative;
+  min-height: 100vh;
+}
+
