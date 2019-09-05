@@ -1,7 +1,6 @@
 <div class="container">
   <div class="row justify-content-center">
     <div class = "col-lg-6">
-
       <div class="form-post">
         <%=simple_form_for (@post) do |f| %>
         <%= f.error_notification %>
@@ -20,7 +19,7 @@
             </div>
             <%= f.input :starting_contribution, label: '<i class="fas fa-shopping-basket"></i> How much are you starting with?'.html_safe, hint: "Type in the amount you are contributing", input_html: { class: 'new-input' } %>
             <%= f.hidden_field :start_time, value: Time.now %>
-            <%= f.input :end_time,as: :string, label: '<i class="far fa-clock"></i> How long can you wait?'.html_safe,wrapper_html: { class: "inline_field_wrapper" }, input_html: { class: 'new-input' } %>
+            <%= f.input :end_time,as: :string, label: '<i class="far fa-clock"></i> What time can you wait until?'.html_safe,wrapper_html: { class: "inline_field_wrapper" }, input_html: { class: 'new-input' } %>
             <%= f.input :details, as: :text, label: '<i class="fas fa-pencil-alt"></i> Details'.html_safe, placeholder: "Perhaps we can exchange some beauty tips too!", input_html: { class: 'new-input' } %>
         </div>
 
