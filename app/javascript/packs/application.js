@@ -10,3 +10,6 @@ progress()
 
 import { dashboardnav } from '../components/dashboardnav'
 dashboardnav()
+
+import { hideItems } from '../components/hidden'
+hideItems()

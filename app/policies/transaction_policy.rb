@@ -26,7 +26,6 @@ class TransactionPolicy < ApplicationPolicy
 
 
   def edit?
-    raise
     if record.user == user && record.post.post_valid?
       return true
     else
