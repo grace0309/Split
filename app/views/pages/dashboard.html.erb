@@ -1,0 +1,46 @@
+<div class="wrapper">
+  <nav class="tabs">
+    <div class="selector"></div>
+    <a href="#" class="active">Joined deals</a>
+    <a href="#">Completed deals</a>
+    <a href="#"></i>User Review</a>
+  </nav>
+</div>
+
+
+
+<h2>MY POSTS</h2>
+<% @posts.each do |post| %>
+  <div class="notification">
+    <div class="notification-content">
+      <p><small><%= post.start_time.strftime(" %d %b %Y") %></small></p>
+      <p><%= post.store_name %></p>
+      <p><%= post.discount %></p>
+    </div>
+
+    <div class="notification-actions">
+      <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
+      <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+    </div>
+  </div>
+<% end %>
+
+
+
+<h2>MY TRANSACTIONS</h2>
+<% @transactions.each do |transaction| %>
+  <div class="notification">
+    <div class="notification-content">
+      <p><small><%= transaction.post.store_name %></small></p>
+      <p><%= transaction.post.discount %></p>
+    </div>
+
+    <div class="notification-actions">
+      <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
+      <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+    </div>
+  </div>
+<% end %>
+
+
+USER REVIEWS
