@@ -1,9 +1,7 @@
 <body id="post-show">
   <div>
-  <% if @post.photo.present? %>
-  <img class="post-img" src="<%= cl_image_tag @post.photo%>" alt="">
-  <% else %>
-  <%= image_tag "#{@post.store_name.downcase.strip}.png", class: "post-img" %>
+  <% if @post.photo.present? == false && @post.category.name == 'Beauty' %>
+    <%= image_tag "#{@post.store_name.downcase.strip}.png", class: "post-img" %>
   <% end %>
 </div>
 
@@ -22,7 +20,7 @@
   <div class="progress mb-3 mx-1">
     <span class="total_contribution" data-contribution="<%=@post.total_contribution%>"></span>
     <span class="quota" data-quota="<%=@post.quota%>"></span>
-    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 75%">75%</div>
+    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: <%= "#{@post.total_contribution/@post.quota}%"  %>">75%</div>
   </div>
   <div>
     <p class="post-heading border-bottom mx-4">
