@@ -1,27 +1,53 @@
+<%= render partial: 'shared/header', locals: {:title => "Live deals", :myclass => "sub-title"} %>
 <div class="cards">
-    <% @posts.each do |post| %>
-  <div class="card-product mx-2 my-1">
-      <% if post.status == true %>
-        <%= link_to post_path(post) do %>
-        <h3>
-          <%= post.store_name %>
-        </h3>
-        <p>
-          <%= post.discount %>
-        </p>
-        <% end %>
-    <p class="timer">
-      <span class="end_time_data" data-time="<%=post.end_time%>"></span>
-      <span class="hours"></span>:
-      <span class="minutes"></span>:
-      <span class="seconds"></span>
-    </p>
-    <div class="progress">
-      <span class="total_contribution" data-contribution="<%=post.total_contribution%>"></span>
-      <span class="quota" data-quota="<%=post.quota%>"></span>
-      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 75%">75%</div>
+<% @posts.each do |post| %>
+<!-- Card -->
+<% if post.status == true %>
+<div class="card my-2">
+  <% if post.photo.present? %>
+    <div class="view overlay">
+  <!-- Card image -->
+      <img class="card-img-top" src="<%= cl_image_tag @post.photo%>" alt="post img">
+      <a>
+        <div class="mask rgba-white-slight"></div>
+      </a>
     </div>
-      <% end %>
-  </div>
+<% end %>
+  <!-- Button -->
+  <a class="btn-floating btn-action ml-auto mr-4 mdb-color lighten-3"><i class="fas fa-chevron-right pl-1"></i></a>
+
+  <!-- Card content -->
+    <%= link_to post_path(post) do %>
+      <div class="card-body">
+        <!-- Title -->
+        <h4 class="card-title"><%= post.store_name %></h4>
+        <hr>
+        <!-- Text -->
+        <p class="card-text"><%= post.discount %></p>
+         <div class="progress">
+          <span class="total_contribution" data-contribution="<%=post.total_contribution%>"></span>
+          <span class="quota" data-quota="<%=post.quota%>"></span>
+          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 75%">75%</div>
+        </div>
+      </div>
     <% end %>
+  <!-- Card footer -->
+  <div class="rounded-bottom mdb-color lighten-3 text-center pt-1">
+    <ul class="list-unstyled list-inline font-small mx-3">
+      <li class="list-inline-item  white-text">
+      <p class="timer">
+      <i class="far fa-clock pr-1"></i>
+        <span class="end_time_data" data-time="<%=post.end_time%>"></span>
+        <span class="hours"></span>:
+        <span class="minutes"></span>:
+        <span class="seconds"></span>
+      </p>
+      </li>
+      <li class="list-inline-item"><a href="#" class="white-text"><i class="far fa-comments pr-1"></i>12</a></li>
+    </ul>
+  </div>
+</div>
+  <% end %>
+<% end %>
+<!-- Card -->
 </div>
