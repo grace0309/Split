@@ -11,20 +11,26 @@
   <% if @posts.empty? %>
     <h2>No posts found</h2>
   <% else %>
+  <div class="my-3">
+      <h2><strong>Happening right now!</strong></h2>
+    </div>
   <div class="cards">
     <% @posts.first(6).each do |post| %>
-    <div class="card-product mx-2">
+    <div class="card-product mx-1 my-1">
       <img src=<%= "https://source.unsplash.com/600x400/?#{post.category}" %>>
+    <%= link_to post_path(post) do %>
       <div class="card-product-infos">
-        <p><%= post.store_name%></p>
-        <p><%= post.discount %></p>
+        <h2><%= post.store_name%></h2>
         <p class="timer">
+          Ends in:
         <span class="end_time_data" data-time="<%=post.end_time%>"></span>
         <span class="hours"></span>:
         <span class="minutes"></span>:
         <span class="seconds"></span>
-      </p>
+        </p>
+        <p><%= post.discount %></p>
       </div>
+    <% end %>
     </div>
     <% end %>
     </div>
@@ -32,7 +38,7 @@
     <% if @deals.empty? %>
       <h2>No deals found</h2>
     <% else %>
-    <div class="mt-4">
+    <div class="my-4">
       <h2><strong>Check out the latest featured promos</strong></h2>
       <%= render partial: 'shared/carousel'%>
     <% end %>
