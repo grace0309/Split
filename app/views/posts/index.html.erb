@@ -13,14 +13,15 @@
       </a>
     </div>
 <% end %>
-  <!-- Button -->
-  <a class="btn-floating btn-action ml-auto mr-4 mdb-color lighten-3"><i class="fas fa-chevron-right pl-1"></i></a>
 
   <!-- Card content -->
     <%= link_to post_path(post) do %>
       <div class="card-body">
         <!-- Title -->
-        <h4 class="card-title"><%= post.store_name %></h4>
+        <div class="d-flex">
+        <h4 class="card-title"><%= post.store_name %></h4> <!-- Button -->
+        <a class="btn-floating btn-action ml-auto mr-4 lighten-3"><i class="fas fa-chevron-right pl-1"></i></a>
+        </div>
         <hr>
         <!-- Text -->
         <p class="card-text"><%= post.discount %></p>
@@ -32,7 +33,7 @@
       </div>
     <% end %>
   <!-- Card footer -->
-  <div class="rounded-bottom mdb-color lighten-3 text-center pt-1">
+  <small class="rounded-bottom mdb-color lighten-3 text-center pt-1">
     <ul class="list-unstyled list-inline font-small mx-3">
       <li class="list-inline-item  white-text">
       <p class="timer">
@@ -45,7 +46,7 @@
       </li>
       <li class="list-inline-item"><a href="#" class="white-text"><i class="far fa-comments pr-1"></i>12</a></li>
     </ul>
-  </div>
+  </small>
 </div>
   <% end %>
 <% end %>
