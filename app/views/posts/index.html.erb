@@ -1,23 +1,27 @@
-<% @posts.each do |post| %>
-  <% if post.status == true %>
-    <%= link_to post_path(post) do %>
-    <h3>
-      <%= post.store_name %>
-    </h3>
-    <p>
-      <%= post.discount %>
+<div class="cards">
+    <% @posts.each do |post| %>
+  <div class="card-product mx-2 my-1">
+      <% if post.status == true %>
+        <%= link_to post_path(post) do %>
+        <h3>
+          <%= post.store_name %>
+        </h3>
+        <p>
+          <%= post.discount %>
+        </p>
+        <% end %>
+    <p class="timer">
+      <span class="end_time_data" data-time="<%=post.end_time%>"></span>
+      <span class="hours"></span>:
+      <span class="minutes"></span>:
+      <span class="seconds"></span>
     </p>
+    <div class="progress">
+      <span class="total_contribution" data-contribution="<%=post.total_contribution%>"></span>
+      <span class="quota" data-quota="<%=post.quota%>"></span>
+      <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 75%">75%</div>
+    </div>
+      <% end %>
+  </div>
     <% end %>
-<p class="timer">
-  <span class="end_time_data" data-time="<%=post.end_time%>"></span>
-  <span class="hours"></span>:
-  <span class="minutes"></span>:
-  <span class="seconds"></span>
-</p>
-<div class="progress">
-  <span class="total_contribution" data-contribution="<%=post.total_contribution%>"></span>
-  <span class="quota" data-quota="<%=post.quota%>"></span>
-  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 75%">75%</div>
 </div>
-  <% end %>
-<% end %>
