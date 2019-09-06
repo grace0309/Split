@@ -3,46 +3,115 @@
 <div class="wrapper">
   <nav class="tabs">
     <div class="selector"></div>
-    <a href="#" class="active">Joined deals</a>
-    <a href="#">Completed deals</a>
+    <a href="#" class="active">Ongoing</a>
+    <a href="#">History</a>
     <a href="#"></i>User Review</a>
   </nav>
 </div>
 
 
-
-<h2>MY POSTS</h2>
+<!-- Deals active and deals joined -->
+<div class="ongoing">
+<h2>Ongoing Posts</h2>
 <% @posts.each do |post| %>
+<% if post.status == true && post.completed == false %>
   <div class="notification">
     <div class="notification-content">
-      <p><small><%= post.start_time.strftime(" %d %b %Y") %></small></p>
-      <p><%= post.store_name %></p>
-      <p><%= post.discount %></p>
+      <%= link_to post_path(post) do %>
+        <p><small><%= post.start_time.strftime(" %d %b %Y") %></small></p>
+        <p><%= post.store_name %></p>
+        <p><%= post.discount %></p>
+        <% end %>
     </div>
-
     <div class="notification-actions">
-      <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
-      <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+      <%= link_to edit_post_path(post) do %>
+        Edit <i class="fas fa-pencil-alt"></i>
+      <% end %>
+      <%= link_to  post_path(post), method: :delete do %>
+        Delete <i class="far fa-trash-alt"></i>
+      <% end %>
+    </div>
+  </div>
+  <% end %>
+  <% end %>
+
+  <h2>Ongoing Transaction</h2>
+  <% @transactions.each do |transaction| %>
+  <% if transaction.post.status == true && transaction.post.completed == false %>
+    <div class="notification">
+      <div class="notification-content">
+        <%= link_to post_path(transaction.post) do %>
+          <p><small><%= transaction.post.store_name %></small></p>
+          <p><%= transaction.post.discount %></p>
+        <% end %>
+      </div>
+      <div class="notification-actions">
+      <%= link_to edit_transaction_path(transaction.post) do %>
+        Edit <i class="fas fa-pencil-alt"></i>
+      <% end %>
+      <%= link_to transaction_path(transaction.post), method: :delete do %>
+          Delete <i class="far fa-trash-alt"></i>
+      <% end %>
+      </div>
+    </div>
+    <% end %>
+  <% end %>
+</div>
+
+<div class="history hidden">
+<h2>Past Posts</h2>
+<% @posts.each do |post| %>
+<% if post.status == false && post.completed == true %>
+  <div class="notification">
+    <div class="notification-content">
+      <%= link_to post_path(post) do %>
+        <p><small>Completed</small></p>
+        <p><%=  post.store_name%></p>
+        <p><%= post.discount %></p>
+      <% end %>
+    </div>
+  </div>
+<% else post.status == false && post.completed == false %>
+  <div class="notification">
+    <div class="notification-content">
+      <%= link_to post_path(post) do %>
+        <p><small>Completed</small></p>
+        <p><%=  post.store_name%></p>
+        <p><%= post.discount %></p>
+    <% end %>
     </div>
   </div>
 <% end %>
+<% end %>
 
-
-
-<h2>MY TRANSACTIONS</h2>
+<h2>Past Transactions</h2>
 <% @transactions.each do |transaction| %>
+<% if transaction.post.status == false && transaction.post.completed == true %>
   <div class="notification">
     <div class="notification-content">
-      <p><small><%= transaction.post.store_name %></small></p>
-      <p><%= transaction.post.discount %></p>
+      <%= link_to post_path(transaction.post) do %>
+        <p><small>Completed</small></p>
+        <p><%= transaction.post.store_name %></p>
+        <p><%= transaction.post.discount %></p>
+      <% end %>
     </div>
-
-    <div class="notification-actions">
-      <a href="#">Edit <i class="fas fa-pencil-alt"></i></a>
-      <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+  </div>
+<% else transaction.post.status == false && transaction.post.completed == false %>
+  <div class="notification">
+    <div class="notification-content">
+      <%= link_to post_path(transaction.post) do %>
+        <p><small>Expired</small></p>
+        <p><%= transaction.post.store_name %></p>
+        <p><%= transaction.post.discount %></p>
+     <% end %>
     </div>
   </div>
 <% end %>
+<% end %>
+</div>
 
 
-USER REVIEWS
+
+<!--history: deals expired and deals joined before -->
+
+<!-- Reviews from other user -->
