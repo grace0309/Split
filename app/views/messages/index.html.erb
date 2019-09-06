@@ -1,8 +1,4 @@
-<%= render partial: 'shared/header', locals: {:title => "Chat", :class => "sub-title"} %>
-<% @messages.each do |message| %>
-<p><%= message.message_content %></p>
-<p><%= message.user.first_name %></p>
-<% end %>
+<%= render partial: 'shared/header', locals: {:title => "#{@message.post.user.first_name}, #{@message.post.store_name}", :myclass => "sub-title"} %>
 
 <div id="messages">
     <% @post.messages.each do |message| %>
@@ -18,7 +14,7 @@
   <%= f.hidden_field :completed, value: false%>
 </div>
 <div class="form-actions">
-    <%= f.button :submit,  class: "btn btn-primary"%>
+    <%= f.button :submit, label: 'Send', class: "btn btn-primary"%>
 </div>
 <% end %>
 <% end %>

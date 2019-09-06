@@ -1,0 +1,64 @@
+#messages {
+  display: flex;
+  flex-direction: column;
+}
+
+.speech-other {
+  align-self: flex-start;
+  position: relative;
+  background: white;
+  border-radius: .4em;
+  color: black;
+  margin: 5px 20px 20px 20px;
+  padding: 5px 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1)
+}
+
+.speech-other:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 30px;
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-top-color: white;
+  border-bottom: 0;
+  border-left: 0;
+  margin-left: -10px;
+  margin-bottom: -20px;
+}
+
+.speech-other #user {
+  font-weight: bold;
+}
+
+.speech-me {
+  align-self: flex-end;
+  position: relative;
+  background: $split-red;
+  border-radius: .4em;
+  color: white;
+  margin: 5px 20px 20px 20px;
+  padding: 5px 15px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1)A
+}
+
+.speech-me:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-top-color: $split-red;
+  border-bottom: 0;
+  border-right: 0;
+  margin-left: -10px;
+  margin-bottom: -20px;
+}
+
+.speech-me #user {
+  font-weight: bold;
+}
