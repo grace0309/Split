@@ -18,7 +18,7 @@
       <% end %>
     </div>
   <div class="cards">
-    <% @posts.first(6).each do |post| %>
+    <% @posts.sample(6).each do |post| %>
     <div class="card-product mx-2 my-1">
       <img src=<%= "https://source.unsplash.com/600x400/?#{post.category}" %>>
     <%= link_to post_path(post), html_options = {:class => "post-link"} do %>
