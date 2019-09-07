@@ -1,6 +1,7 @@
 class PagesController < ApplicationController
   def home
     @posts = Post.all
+    @posts_active = Post.where(status: true)
     @deals = Deal.all
     user_id = current_user.id
     @user = User.find(user_id)

@@ -19,20 +19,20 @@
       <% end %>
     </div>
   <div class="cards">
-    <% @posts.sample(6).each do |post| %>
+    <% @posts_active.sample(6).each do |post| %>
     <div class="card-product mx-2 my-1">
       <%= image_tag "#{post.store_name.downcase.delete(' ')}" %>
     <%= link_to post_path(post), html_options = {:class => "post-link"} do %>
       <div class="card-product-infos">
         <h2><%= post.store_name%></h2>
-        <p class="timer">
+        <strong><p class="timer">
           Ends in:
         <span class="end_time_data" data-time="<%=post.end_time%>"></span>
         <span class="hours"></span>:
         <span class="minutes"></span>:
         <span class="seconds"></span>
-        </p>
-        <p><%= post.discount %></p>
+        </p></strong>
+        <p><%= post.discount.truncate(20, separator: '') %></p>
       </div>
     <% end %>
     </div>
