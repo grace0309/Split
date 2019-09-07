@@ -1,5 +1,5 @@
 <%= render partial: 'shared/header', locals: {:title => "#{@user.first_name}'s Dashboard", :myclass => "sub-title"} %>
-
+<%= link_to "Log out", destroy_user_session_path, method: :delete %>
 <div class="wrapper">
   <nav class="tabs justify-content-center">
     <div class="selector"></div>
