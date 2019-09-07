@@ -1,11 +1,7 @@
 <body id="post-show">
   <div>
-  <% if @post.photo.present? %>
-  <img class="post-img" src="<%= cl_image_tag @post.photo%>" alt="">
-  <% else %>
-  <%= image_tag "#{@post.store_name.downcase.strip}.png", class: "post-img" %>
-  <% end %>
-</div>
+    <%= image_tag "#{@post.store_name.downcase.delete(' ')}", class: "post-img" %>
+  </div>
 
 <div class="post-card">
   <!--timer -->

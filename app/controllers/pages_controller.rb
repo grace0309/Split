@@ -28,7 +28,7 @@ class PagesController < ApplicationController
 
   def chats
     @user = current_user
+    @posts = @user.posts
     @transactions = @user.transactions
-    @posts = Post.all
   end
 end

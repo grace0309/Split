@@ -21,7 +21,7 @@
   <div class="cards">
     <% @posts.sample(6).each do |post| %>
     <div class="card-product mx-2 my-1">
-      <img src=<%= "https://source.unsplash.com/600x400/?#{post.category}" %>>
+      <%= image_tag "#{post.store_name.downcase.delete(' ')}" %>
     <%= link_to post_path(post), html_options = {:class => "post-link"} do %>
       <div class="card-product-infos">
         <h2><%= post.store_name%></h2>
