@@ -12,13 +12,18 @@
 
 <!-- Deals active and deals joined -->
 <div class="ongoing">
-<h2>Ongoing Posts</h2>
+<h2 class="mx-1">You have posted ...</h2>
 <% @posts.each do |post| %>
 <% if post.status == true && post.completed == false %>
   <div class="notification">
     <div class="notification-content">
       <%= link_to post_path(post) do %>
-        <p><small><%= post.start_time.strftime(" %d %b %Y") %></small></p>
+        <p class="timer"><small>
+          <span class="end_time_data" data-time="<%=post.end_time%>"></span>
+          <span class="hours"></span>:
+          <span class="minutes"></span>:
+          <span class="seconds"></span>
+        </small></p>
         <p><%= post.store_name %></p>
         <p><%= post.discount %></p>
         <% end %>
@@ -34,14 +39,20 @@
   </div>
   <% end %>
   <% end %>
-
-  <h2>Ongoing Transaction</h2>
+<br>
+  <h2 class="mx-1">You have joined ... </h2>
   <% @transactions.each do |transaction| %>
   <% if transaction.post.status == true && transaction.post.completed == false %>
     <div class="notification">
       <div class="notification-content">
+        <p class="timer"><small>
+          <span class="end_time_data" data-time="<%=transaction.post.end_time%>"></span>
+          <span class="hours"></span>:
+          <span class="minutes"></span>:
+          <span class="seconds"></span>
+        </small></p>
         <%= link_to post_path(transaction.post) do %>
-          <p><small><%= transaction.post.store_name %></small></p>
+          <p><%= transaction.post.store_name %></p>
           <p><%= transaction.post.discount %></p>
         <% end %>
       </div>
@@ -58,33 +69,32 @@
   <% end %>
 </div>
 
+<!--history: deals expired and deals joined before -->
 <div class="history hidden">
-<h2>Past Posts</h2>
+<h2 class="mx-1">Ended Deals</h2>
 <% @posts.each do |post| %>
-<% if post.status == false && post.completed == true %>
+<% if post.status == true && post.completed == true %>
   <div class="notification">
     <div class="notification-content">
       <%= link_to post_path(post) do %>
         <p><small>Completed</small></p>
         <p><%=  post.store_name%></p>
-        <p><%= post.discount %></p>
+        <p><%= post.discount%> </p>
       <% end %>
     </div>
   </div>
-<% else post.status == false && post.completed == false %>
+<% else post.status == true && post.completed == false %>
   <div class="notification">
     <div class="notification-content">
       <%= link_to post_path(post) do %>
-        <p><small>Completed</small></p>
+        <p><small>Expired</small></p>
         <p><%=  post.store_name%></p>
-        <p><%= post.discount %></p>
+        <p><%= post.discount%></p>
     <% end %>
     </div>
   </div>
 <% end %>
 <% end %>
-
-<h2>Past Transactions</h2>
 <% @transactions.each do |transaction| %>
 <% if transaction.post.status == false && transaction.post.completed == true %>
   <div class="notification">
@@ -110,8 +120,5 @@
 <% end %>
 </div>
 
-
-
-<!--history: deals expired and deals joined before -->
 
 <!-- Reviews from other user -->
