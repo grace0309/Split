@@ -6,12 +6,18 @@
 
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
       <div class="form-inputs">
-        <%= f.input :email, label: '<i class="far fa-envelope-open"></i>'.html_safe, placeholder:"email", input_html: { class: 'new-input' } %>
-        <%= f.input :password, label: '<i class="fas fa-unlock-alt"></i>'.html_safe, placeholder:"password", input_html: { class: 'new-input' } %>
+        <div class="d-flex">
+        <i class="far fa-envelope-open mr-2"></i>
+        <%= f.input :email, label: false,  placeholder:"email", input_html: { class: 'new-input' } %>
+        </div>
+        <div class="d-flex">
+        <i class="fas fa-unlock-alt mr-2"></i>
+        <%= f.input :password, label: false, placeholder:"password", input_html: { class: 'new-input' } %>
+        </div>
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
       </div>
 
-      <div class="form-actions btn btn-outline-secondary btn-block">
+      <div class="form-actions btn btn-outline-secondary w-100 ">
         <%= f.button :submit, "Log in" %>
       </div>
     <% end %>

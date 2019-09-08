@@ -16,12 +16,13 @@
 
 .new-input {
   border: 0px;
-  border-bottom: solid 1px gray;
+  border-bottom: solid 1px $split-blue;
   border-radius: 0;
-  background-color: white;
+  background-color: white ;
   opacity: 0.5;
 }
 
 .new-input:hover {
   opacity: 1;
 }
+
