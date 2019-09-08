@@ -13,3 +13,6 @@ dashboardnav()
 
 import { hideItems } from '../components/hidden'
 hideItems()
+
+import { display } from '../components/displaypic'
+display()

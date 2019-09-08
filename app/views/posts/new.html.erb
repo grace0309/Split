@@ -1,5 +1,4 @@
 <%= render partial: 'shared/header', locals: {:title => "Share & find splitees", :myclass => "sub-title"} %>
-
 <div class="container">
   <div class="row justify-content-center">
     <div class = "col-lg-6">
@@ -8,8 +7,9 @@
         <%= f.error_notification %>
         <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
         <div class="form-inputs">
-            <%= f.input :photo, label: '<i class="fas fa-camera"></i> Choose a photo'.html_safe %>
+            <%= f.input :photo, as: :file, label: '<i class="fas fa-camera"></i> Choose a photo'.html_safe, input_html: { id: 'files'} %>
             <%= f.input :photo_cache, as: :hidden %>
+            <img class="container mb-2" id="image" />
             <%= f.input :discount, label: '<i class="fas fa-volume-up"></i> Share your discount'.html_safe, placeholder:"e.g $120 to get 20\% off", input_html: { class: 'new-input' } %>
             <%= f.input :store_name, label: '<i class="fas fa-store"></i> Store'.html_safe, placeholder: "e.g Isetan/Sephora", input_html: { class: 'new-input' }%>
             <%= f.association :category, collection: Category.all, value_method: :id, as: :radio_buttons, label: '<i class="fas fa-boxes"></i> Category'.html_safe %>
