@@ -12,7 +12,7 @@
             <%= f.input :photo_cache, as: :hidden %>
             <%= f.input :discount, label: '<i class="fas fa-volume-up"></i> Share your discount'.html_safe, placeholder:"e.g $120 to get 20\% off", input_html: { class: 'new-input' } %>
             <%= f.input :store_name, label: '<i class="fas fa-store"></i> Store'.html_safe, placeholder: "e.g Isetan/Sephora", input_html: { class: 'new-input' }%>
-            <%= f.association :category, collection: Category.all, value_method: :id, as: :radio_buttons, label: '<i class="fas fa-boxes"></i> Category'.html_safe %>
+            <%= f.association :category, collection: Category.all, value_method: :id, as: :radio_buttons, label: '<i class="fas fa-boxes"></i> Category'.html_safe, :wrapper => :horizontal_collection_inline,input_html: { class: 'new-input' } %>
             <div class="d-flex">
               <%= f.input :quota, label: '<i class="fas fa-money-bill-wave"></i> Target to raise'.html_safe, placeholder:"Total you need",  wrapper_html: { class: "flex-grow-1" }, input_html: { class: 'new-input' } %>
               <%= f.input :units, :collection => %w[Dollars \ Pieces \ People], label: "Units", wrapper_html: { class: "ml-3" }, input_html: { class: 'new-input' } %>
