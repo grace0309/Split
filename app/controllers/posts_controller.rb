@@ -42,12 +42,15 @@ class PostsController < ApplicationController
     authorize @post
     @post.update(post_params)
     @posts = Post.all
+    redirect_to dashboard_path
+
   end
 
   def destroy
     authorize @post
     @post.destroy
     @posts = Post.all
+    redirect_to dashboard_path
   end
 
   private
