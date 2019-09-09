@@ -8,11 +8,13 @@ class PagesController < ApplicationController
   end
 
   def search
-    user_id = current_user.id
-    @user = User.find(user_id)
     if params[:query].present?
       @post_results = Post.global_search(params[:query])
       @deal_results = Deal.deal_search(params[:query])
+    elsif params[:location].present? && params[:location][:lat] != '' && params[:location][:long] != ''
+      place = Geocoder.search([params[:location][:lat], params[:location][:long]]).first.suburb
+      @location_greeting = "You are searching in #{place}"
+      @post_results = Post.near([params[:location][:lat], params[:location][:long]], 1)
     else
       redirect_to root_path
     end

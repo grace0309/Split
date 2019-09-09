@@ -13,6 +13,7 @@
             <%= f.input :discount, label: '<i class="fas fa-volume-up"></i> Share your discount'.html_safe, input_html: { class: 'new-input' } %>
 
             <%= f.input :store_name, label: '<i class="fas fa-store"></i> Store'.html_safe, placeholder: "Sephora", input_html: { class: 'new-input' }%>
+            <%= f.input :address, label: '<i class="fas fa-location-arrow"></i> Location'.html_safe, placeholder: "Orchard Ion", input_html: { class: 'new-input' }%>
             <%= f.association :category, collection: Category.all, value_method: :id, as: :radio_buttons, label: '<i class="fas fa-boxes"></i> Category'.html_safe %>
             <div class="d-flex">
               <%= f.input :quota, label: '<i class="fas fa-money-bill-wave"></i> Amount to raise'.html_safe, placeholder: 150, hint: "Type in the total amount you need",  wrapper_html: { class: "flex-grow-1" }, input_html: { class: 'new-input' } %>
