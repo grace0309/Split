@@ -14,6 +14,12 @@ class ApplicationController < ActionController::Base
     redirect_to(root_path)
   end
 
+  def favourite_text
+    return @favourite_exists ? "❤️" : "♡"
+  end
+
+  helper_method :favourite_text
+
   private
 
   def messages_index?

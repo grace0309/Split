@@ -1,0 +1,21 @@
+<body id="post-show">
+  <div>
+    <div class="post-img" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=@deal.image_url %>)">
+  </div>
+
+<div class="post-card">
+  <div>
+    <!-- heading -->
+    <p class="post-heading border-bottom mx-4 mt-5">
+      <%= @deal.title %>
+    </p>
+  </div>
+  <div class="mx-4 mb-2">
+    <%= link_to favourite_text, favourites_update_path(deal: @deal) , id: "favourite_link", remote: true %>
+  </div>
+  <!--details -->
+  <div class="post-details mx-4">
+    <p><%= @deal.description %></p>
+  </div>
+
+</body>
