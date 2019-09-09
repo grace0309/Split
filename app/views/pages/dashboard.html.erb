@@ -73,7 +73,7 @@
 <div class="history hidden">
 <h2 class="mx-1">Ended Deals</h2>
 <% @posts.each do |post| %>
-<% if post.status == true && post.completed == true %>
+<% if post.status == false && post.completed == true %>
   <div class="notification">
     <div class="notification-content">
       <%= link_to post_path(post) do %>
@@ -83,7 +83,7 @@
       <% end %>
     </div>
   </div>
-<% else post.status == true && post.completed == false %>
+<% else post.status == false && post.completed == false %>
   <div class="notification">
     <div class="notification-content">
       <%= link_to post_path(post) do %>
