@@ -1,14 +1,17 @@
 .header{
-  height: 80px;
-  background-color: white;
+  height: 150px;
+  background-color: $oomph;
   position: relative;
   box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  border-radius: 0px 0px 10px 10px;
 }
 
 .main-title{
   position: absolute;
-  bottom: 0px;
+  bottom: 25px;
   font-size: 35px;
+  left: 29px;
+  color:white;
 }
 
 .sub-title{
@@ -20,4 +23,5 @@
   transform    : translate(-50%, -50%);
   text-align: center;
   width: fit-content;
+  color:white;
 }
