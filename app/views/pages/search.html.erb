@@ -14,10 +14,10 @@
 </div>
 <% end %>
 <h2><%= @location_greeting %></h2>
-<div class="cards mt-5>
+<div class="cards mt-5 pt-1">
   <% @post_results.each do |result| %>
 <!-- Card -->
-<div class="card mx-2 my-2">
+<div class="card mx-1 my-1">
   <!-- Card content -->
     <%= link_to post_path(result) do %>
       <div class="card-body">
