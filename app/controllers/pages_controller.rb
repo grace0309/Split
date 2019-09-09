@@ -1,23 +1,20 @@
 class PagesController < ApplicationController
   def home
     @posts = Post.all
-    @posts_active = Post.where(status: true)
     @deals = Deal.all
     user_id = current_user.id
     @user = User.find(user_id)
+    @posts_active = Post.where(status: true)
+  end
+
+  def search
+    user_id = current_user.id
+    @user = User.find(user_id)
     if params[:query].present?
-      results = PgSearch.multisearch(params[:query])
-      results.each do |result|
-        if result.searchable_type == 'Post'
-          post = Post.find(result.searchable_id)
-          if post.status == true
-            @posts << post
-          end
-        else
-          deal = Deal.find(result.searchable_id)
-          @deals << deal
-        end
-      end
+      @post_results = Post.global_search(params[:query])
+      @deal_results = Deal.deal_search(params[:query])
+    else
+      redirect_to root_path
     end
   end
 
