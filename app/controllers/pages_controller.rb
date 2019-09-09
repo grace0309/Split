@@ -23,13 +23,17 @@ class PagesController < ApplicationController
 
   def dashboard
     @user = current_user
-    @posts = Post.where(user: @user)
-    @transactions = Transaction.where(user: @user)
+    @ongoing_posts = Post.where(user: @user, status: true)
+    @ongoing_transactions = @user.joined_posts.where(status: true)
+    @expired_posts = Post.where(user: @user, status: false)
+    @expired_transactions = @user.joined_posts.where(status: false)
+    @all_expired = @expired_posts + @expired_transactions
   end
 
   def chats
     @user = current_user
-    @posts = @user.posts
-    @transactions = @user.transactions
+    posts = @user.posts.pluck(:id)
+    joined_posts = @user.joined_posts.pluck(:id)
+    @posts = Message.where(post_id: (posts + joined_posts)).order(created_at: :desc).pluck(:post_id).uniq
   end
 end
