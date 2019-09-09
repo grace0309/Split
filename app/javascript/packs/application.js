@@ -17,3 +17,5 @@ hideItems()
 import { display } from '../components/displaypic'
 display()
 
+import { bindNearby } from '../components/navigator';
+bindNearby();
