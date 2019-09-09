@@ -29,7 +29,11 @@
   <div class="cards">
     <% @posts_active.sample(4).each do |post| %>
     <div class="card-product mx-2 my-1">
-      <%= image_tag "#{post.store_name.downcase.delete(' ')}" %>
+          <% if post.photo.present? %>
+        <%= cl_image_tag post.photo, class: "post-img" %>
+    <% else %>
+      <%= image_tag "#{post.store_name.downcase.delete(' ')}", class: "post-img" %>
+    <% end %>
     <%= link_to post_path(post), html_options = {:class => "post-link"} do %>
       <div class="card-product-infos">
         <h2><%= post.store_name%></h2>

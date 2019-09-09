@@ -26,12 +26,12 @@
   </div>
   <div>
     <p class="post-heading border-bottom mx-4">
-      <%= @post.store_name %>
+      <%= @post.store_name %>@<%= @post.address %>
     </p>
   </div>
   <!--details -->
   <div class="post-details mx-4">
-    <p>Post by: <%= @post.user.first_name %></p>
+    <p>Posted by: <%= @post.user.first_name %></p>
     <p>Discount: <%= @post.discount %></p>
     <p>Quota:
       <%= @post.quota %> <%=@post.units%></p>
