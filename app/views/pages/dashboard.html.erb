@@ -1,20 +1,20 @@
 <%= render partial: 'shared/header', locals: {:title => "#{@user.first_name}'s Dashboard", :myclass => "sub-title"} %>
 <%= link_to "Log out", destroy_user_session_path, method: :delete %>
-<div class="wrapper">
+
+<div class="wrapper-dash">
   <nav class="tabs justify-content-center">
     <div class="selector"></div>
     <a href="#" class="active">Ongoing</a>
     <a href="#">History</a>
-    <a href="#"></i>User Review</a>
   </nav>
 </div>
 
 
 <!-- Deals active and deals joined -->
 <div class="ongoing">
-<h2 class="mx-1">You have posted ...</h2>
-<% @posts.each do |post| %>
-<% if post.status == true && post.completed == false %>
+<!-- ONGOING POSTS -->
+<h2 class="mx-1">You posted:</h2>
+<% @ongoing_posts.each do |post| %>
   <div class="notification">
     <div class="notification-content">
       <%= link_to post_path(post) do %>
@@ -37,88 +37,60 @@
       <% end %>
     </div>
   </div>
-  <% end %>
-  <% end %>
-<br>
-  <h2 class="mx-1">You have joined ... </h2>
-  <% @transactions.each do |transaction| %>
-  <% if transaction.post.status == true && transaction.post.completed == false %>
-    <div class="notification">
-      <div class="notification-content">
-        <p class="timer"><small>
-          <span class="end_time_data" data-time="<%=transaction.post.end_time%>"></span>
-          <span class="hours"></span>:
-          <span class="minutes"></span>:
-          <span class="seconds"></span>
-        </small></p>
-        <%= link_to post_path(transaction.post) do %>
-          <p><%= transaction.post.store_name %></p>
-          <p><%= transaction.post.discount %></p>
-        <% end %>
-      </div>
-      <div class="notification-actions">
-      <%= link_to edit_transaction_path(transaction.post) do %>
-        Edit <i class="fas fa-pencil-alt"></i>
+<% end %>
+
+<!-- ONGOING TRANSACTIONS -->
+<h2 class="mx-1">You joined:</h2>
+<% @ongoing_transactions.each do |transaction_post| %>
+  <div class="notification">
+    <div class="notification-content">
+      <p class="timer"><small>
+        <span class="end_time_data" data-time="<%=transaction_post.end_time%>"></span>
+        <span class="hours"></span>:
+        <span class="minutes"></span>:
+        <span class="seconds"></span>
+      </small></p>
+      <%= link_to post_path(transaction_post) do %>
+        <p><%= transaction_post.store_name %></p>
+        <p><%= transaction_post.discount %></p>
       <% end %>
-      <%= link_to transaction_path(transaction.post), method: :delete do %>
-          Delete <i class="far fa-trash-alt"></i>
-      <% end %>
-      </div>
     </div>
+    <div class="notification-actions">
+    <%= link_to edit_transaction_path(@user.transactions.where(post: transaction_post)) do %>
+      Edit <i class="fas fa-pencil-alt"></i>
     <% end %>
-  <% end %>
+    <%= link_to transaction_path(@user.transactions.where(post: transaction_post)), method: :delete do %>
+        Delete <i class="far fa-trash-alt"></i>
+    <% end %>
+    </div>
+  </div>
+<% end %>
 </div>
 
 <!--history: deals expired and deals joined before -->
-<div class="history hidden">
+<div class="history">
 <h2 class="mx-1">Ended Deals</h2>
-<% @posts.each do |post| %>
-<% if post.status == true && post.completed == true %>
-  <div class="notification">
-    <div class="notification-content">
-      <%= link_to post_path(post) do %>
-        <p><small>Completed</small></p>
-        <p><%=  post.store_name%></p>
-        <p><%= post.discount%> </p>
+<% @all_expired.each do |post| %>
+  <% if post.completed == true %>
+    <div class="notification">
+      <div class="notification-content">
+        <%= link_to post_path(post) do %>
+          <p><small>Completed</small></p>
+          <p><%= post.store_name%></p>
+          <p><%= post.discount%> </p>
+        <% end %>
+      </div>
+    </div>
+  <% elsif post.completed == false %>
+    <div class="notification">
+      <div class="notification-content">
+        <%= link_to post_path(post) do %>
+          <p><small>Expired</small></p>
+          <p><%= post.store_name%></p>
+          <p><%= post.discount%></p>
       <% end %>
+      </div>
     </div>
-  </div>
-<% else post.status == true && post.completed == false %>
-  <div class="notification">
-    <div class="notification-content">
-      <%= link_to post_path(post) do %>
-        <p><small>Expired</small></p>
-        <p><%=  post.store_name%></p>
-        <p><%= post.discount%></p>
-    <% end %>
-    </div>
-  </div>
-<% end %>
-<% end %>
-<% @transactions.each do |transaction| %>
-<% if transaction.post.status == false && transaction.post.completed == true %>
-  <div class="notification">
-    <div class="notification-content">
-      <%= link_to post_path(transaction.post) do %>
-        <p><small>Completed</small></p>
-        <p><%= transaction.post.store_name %></p>
-        <p><%= transaction.post.discount %></p>
-      <% end %>
-    </div>
-  </div>
-<% else transaction.post.status == false && transaction.post.completed == false %>
-  <div class="notification">
-    <div class="notification-content">
-      <%= link_to post_path(transaction.post) do %>
-        <p><small>Expired</small></p>
-        <p><%= transaction.post.store_name %></p>
-        <p><%= transaction.post.discount %></p>
-     <% end %>
-    </div>
-  </div>
-<% end %>
+  <% end %>
 <% end %>
 </div>
-
-
-<!-- Reviews from other user -->

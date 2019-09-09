@@ -21,6 +21,11 @@ class Post < ApplicationRecord
   validates :units, presence: true
 
   mount_uploader :photo, PhotoUploader
+  after_create :set_first_messagae
+
+  def set_first_messagae
+    Message.create(message_content: 'Welcome friends!', post: self)
+  end
 
   def post_valid?
     self.status == true

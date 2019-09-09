@@ -1,6 +1,7 @@
-<%= render partial: 'shared/header', locals: {:title => "#{@user.first_name}'s Chats", :myclass => "sub-title"} %>
+<%#= render partial: 'shared/header', locals: {:title => "#{@user.first_name}'s Chats", :myclass => "sub-title"} %>
 
-<% @posts.each do |post| %>
+<% @posts.each do |id| %>
+  <% post = Post.find(id) %>
   <%= link_to post_messages_path(post) do %>
     <div class="notification chats">
       <img src= <%= "https://source.unsplash.com/900x900/?#{post.user.first_name}" %>, class="avatar-large" />
@@ -12,15 +13,15 @@
   <% end %>
 <% end %>
 
-<% @transactions.each do |transaction| %>
-  <%= link_to post_messages_path(transaction.post) do %>
+<!-- <%# @transactions.each do |transaction| %>
+  <%#= link_to post_messages_path(transaction.post) do %#>
     <div class="notification chats">
-      <img src= <%= "https://source.unsplash.com/900x900/?#{transaction.post.user.first_name}" %>, class="avatar-large" />
+      <img src= <%#= "https://source.unsplash.com/900x900/?#{transaction.post.user.first_name}" %#>, class="avatar-large" />
       <div class="notification-content">
-        <p id= 'chat-users'><%= transaction.post.user.first_name %>, <%= transaction.post.store_name %></p>
-        <p><small id= 'chat-content' ><%= transaction.post.messages.last.user.first_name %>: <%= transaction.post.messages.last.message_content.truncate(70, separator: ' ') %></small></p>
+        <p id= 'chat-users'><%#= transaction.post.user.first_name %#>, <%#= transaction.post.store_name %#></p>
+        <p><small id= 'chat-content' ><%#= transaction.post.messages.last.user.first_name %#>: <%#= transaction.post.messages.last.message_content.truncate(70, separator: ' ') %></small></p>
       </div>
     </div>
-  <% end %>
-<% end %>
+  <%# end %>
+<%# end %> -->
 
