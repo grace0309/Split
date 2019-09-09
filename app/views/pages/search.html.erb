@@ -1,0 +1,67 @@
+<%= render partial: 'shared/header', locals: {:title => "Hi, #{@user.first_name}", :myclass => "main-title" } %>
+<%= simple_form_for :search, url: search_path, method: :get do |f| %>
+<div class="search-form-control form-group d-flex">
+  <input class="form-control string required" type="text" name="query" id="search_query">
+  <button name="button" type="submit" class="btn">
+    <i class="fas fa-search"></i> Search
+  </button>
+  <button name="button" type="button" class="btn-location" id="nearby">
+    <i class="fas fa-map-marker-alt"></i>
+    Near me
+  </button>
+</div>
+<% end %>
+<div class="cards">
+  <% @post_results.each do |result| %>
+<!-- Card -->
+  <% if result.status == true %>
+<div class="card mx-2 my-2">
+  <% if result.photo.present? %>
+    <div class="view overlay">
+  <!-- Card image -->
+      <img class="card-img-top" src="<%= cl_image_tag @result.photo%>" alt="result img">
+      <a>
+        <div class="mask rgba-white-slight"></div>
+      </a>
+    </div>
+  <% end %>
+
+  <!-- Card content -->
+    <%= link_to post_path(result) do %>
+      <div class="card-body">
+        <!-- Title -->
+        <div class="d-flex">
+        <h4 class="card-title"><%= result.store_name %></h4> <!-- Button -->
+        <a class="btn-floating btn-action ml-auto mr-4 lighten-3"></a>
+        </div>
+        <hr>
+        <!-- Text -->
+        <p class="card-text"><%= result.discount %></p>
+         <div class="progress">
+          <span class="total_contribution" data-contribution="<%=result.total_contribution%>"></span>
+          <span class="quota" data-quota="<%=result.quota%>"></span>
+          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: <%= "#{result.total_contribution/result.quota}%"  %>"></div>
+        </div>
+      </div>
+    <% end %>
+  <!-- Card footer -->
+  <small class="rounded-bottom mdb-color lighten-3 text-center pt-1">
+    <ul class="list-unstyled list-inline font-small mx-3">
+      <li class="list-inline-item  white-text">
+      <p class="timer">
+      <i class="far fa-clock pr-1"></i>
+        <span class="end_time_data" data-time="<%=result.end_time%>"></span>
+        <span class="hours"></span>:
+        <span class="minutes"></span>:
+        <span class="seconds"></span>
+      </p>
+      </li>
+      <li class="list-inline-item"><a href="#" class="white-text">
+      <i class="fas fa-user-friends"></i> <%= result.transactions.length + 1 %></a></li>
+    </ul>
+  </small>
+</div>
+  <% end %>
+<% end %>
+<!-- Card -->
+</div>
