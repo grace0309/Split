@@ -21,7 +21,16 @@ class Post < ApplicationRecord
   validates :category, presence: true
   validates :units, presence: true
 
+  geocoded_by :address
+  after_validation :geocode, if: :will_save_change_to_address?
+
   mount_uploader :photo, PhotoUploader
+  after_create :set_first_messagae
+  before_save :check_time
+
+  def set_first_messagae
+    Message.create(message_content: "Thanks for joining #{self.store_name}, #{self.discount}, with me!", post: self, user: self.user)
+  end
 
   def post_valid?
     self.status == true
@@ -37,7 +46,13 @@ class Post < ApplicationRecord
   def check_time
     if self.end_time <= Time.now
       self.status = false
-      self.save
     end
+  end
+
+  def check_if_expired
+    if self.end_time <= Time.now
+      self.status = false
+    end
+    self.save
   end
 end

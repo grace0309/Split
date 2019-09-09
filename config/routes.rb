@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'favourites/update'
   get 'deals/new'
   get 'deals/create'
   devise_for :users
@@ -13,7 +14,7 @@ Rails.application.routes.draw do
     resources :reviews, only: [ :create, :new]
   end
 
-  resources :deals, only: [:index]
+  resources :deals, only: [:index, :show]
   resources :reviews, only: [ :edit, :update, :destroy]
   get "/dashboard", to: "pages#dashboard", as: :dashboard
   get "/chats", to: "pages#chats", as: :chats

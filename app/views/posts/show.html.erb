@@ -1,6 +1,10 @@
 <body id="post-show">
   <div>
-    <%= image_tag "#{@post.store_name.downcase.delete(' ')}", class: "post-img" %>
+    <% if @post.photo.present? %>
+        <%= cl_image_tag @post.photo, class: "post-img" %>
+    <% else %>
+      <%= image_tag "#{@post.store_name.downcase.delete(' ')}", class: "post-img" %>
+    <% end %>
   </div>
 
 <div class="post-card">
@@ -22,17 +26,18 @@
   </div>
   <div>
     <p class="post-heading border-bottom mx-4">
-      <%= @post.store_name %>
+      <%= @post.store_name %>@<%= @post.address %>
     </p>
   </div>
   <!--details -->
   <div class="post-details mx-4">
-    <p>Post by: <%= @post.user.first_name %></p>
+    <p>Posted by: <%= @post.user.first_name %></p>
     <p>Discount: <%= @post.discount %></p>
     <p>Quota:
       <%= @post.quota %> <%=@post.units%></p>
   </div>
   <!--transaction -->
+  <% if current_user != @post.user %>
   <button type="button" class="post-btn btn btn-lg" data-toggle="modal" data-target="#myModal">Join Now!</button>
   <!-- Modal -->
   <div id="myModal" class="modal fade" role="dialog">
@@ -44,7 +49,6 @@
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body">
-          <% if current_user != @post.user %>
             <% if @post.users.include?(current_user) %>
           <p>
             <%= render 'transactions/edit', post: @post, transaction: @transaction%>

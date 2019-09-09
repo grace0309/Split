@@ -1,19 +1,10 @@
 <%= render partial: 'shared/header', locals: {:title => "Live deals", :myclass => "sub-title"} %>
+
 <div class="cards">
 <% @posts.each do |post| %>
 <!-- Card -->
 <% if post.status == true %>
 <div class="card mx-2 my-2">
-  <% if post.photo.present? %>
-    <div class="view overlay">
-  <!-- Card image -->
-      <img class="card-img-top" src="<%= cl_image_tag @post.photo%>" alt="post img">
-      <a>
-        <div class="mask rgba-white-slight"></div>
-      </a>
-    </div>
-<% end %>
-
   <!-- Card content -->
     <%= link_to post_path(post) do %>
       <div class="card-body">

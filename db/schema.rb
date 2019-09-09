@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_09_04_103013) do
+ActiveRecord::Schema.define(version: 2019_09_09_070336) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -27,6 +27,15 @@ ActiveRecord::Schema.define(version: 2019_09_04_103013) do
     t.string "image_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "favourites", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "deal_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["deal_id"], name: "index_favourites_on_deal_id"
+    t.index ["user_id"], name: "index_favourites_on_user_id"
   end
 
   create_table "messages", force: :cascade do |t|
@@ -65,6 +74,9 @@ ActiveRecord::Schema.define(version: 2019_09_04_103013) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.boolean "completed", default: false
+    t.string "address"
+    t.float "latitude"
+    t.float "longitude"
     t.index ["category_id"], name: "index_posts_on_category_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
@@ -104,6 +116,8 @@ ActiveRecord::Schema.define(version: 2019_09_04_103013) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "favourites", "deals"
+  add_foreign_key "favourites", "users"
   add_foreign_key "messages", "posts"
   add_foreign_key "messages", "users"
   add_foreign_key "posts", "categories"

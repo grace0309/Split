@@ -46,6 +46,7 @@ def without_user(user)
 end
 
 def generate_posts(user, category_name, start_time, end_time)
+  address = ['Orchard Ion', 'Bishan Junction 8', 'Orchard Takashimaya', 'Jurong Westgate', 'Paya Lebar Square']
   if category_name == 'Beauty'
     beauty = ['Watsons', 'Guardian', 'Sephora', 'Sasa', 'Innisfree', 'The Face Shop', 'Lush']
     disc_per = rand(10..30)
@@ -79,12 +80,13 @@ def generate_posts(user, category_name, start_time, end_time)
     store_name = food.sample
     units  = 'People'
   end
+  chosen_address = address.sample
   category = Category.find_by(name: category_name)
   total_contribution = starting_contribution
   start_time = Time.now - 900*rand(start_time)
   end_time = start_time + 900*rand(end_time)
   status = end_time > Time.now
-  Post.create(user: user, discount: discount, store_name: store_name, category:category, quota: quota, units: units, starting_contribution: starting_contribution, total_contribution: total_contribution, start_time: start_time, end_time: end_time, status: status)
+  Post.create(user: user, discount: discount, store_name: store_name, category:category, quota: quota, units: units, starting_contribution: starting_contribution, total_contribution: total_contribution, start_time: start_time, end_time: end_time, address: chosen_address)
 end
 
 puts 'Beauty posts'
@@ -92,9 +94,8 @@ puts 'Beauty posts'
   users = User.all
   user = users.sample
   not_user = users - [user]
-  post = generate_posts(user, 'Beauty', 15, 50)
+  post = generate_posts(user, 'Beauty', 15, 30)
   # Creating dummy messages for now
-  Message.create(user: user, post: post, message_content: Faker::TvShows::HowIMetYourMother.catch_phrase)
   selected_not_user = not_user.sample
   Transaction.create(contribution: rand(20..50),post: post, user: selected_not_user)
   Message.create(user: selected_not_user, post: post, message_content: Faker::TvShows::StrangerThings.quote)
@@ -105,9 +106,8 @@ puts 'Technology posts'
   users = User.all
   user = users.sample
   not_user = users - [user]
-  post = generate_posts(user, 'Technology', 15, 50)
+  post = generate_posts(user, 'Technology', 15, 30)
   # Creating dummy messages for now
-  Message.create(user: user, post: post, message_content: Faker::TvShows::HowIMetYourMother.catch_phrase)
   selected_not_user = not_user.sample
   Transaction.create(contribution: rand(50..100),post: post, user: selected_not_user)
   Message.create(user: selected_not_user, post: post, message_content: Faker::TvShows::StrangerThings.quote)
@@ -118,9 +118,8 @@ puts 'Fashion posts'
   users = User.all
   user = users.sample
   not_user = users - [user]
-  post = generate_posts(user, 'Fashion', 15, 50)
+  post = generate_posts(user, 'Fashion', 15, 30)
   # Creating dummy messages for now
-  Message.create(user: user, post: post, message_content: Faker::TvShows::HowIMetYourMother.catch_phrase)
   selected_not_user = not_user.sample
   Transaction.create(contribution: rand(2..3),post: post, user: selected_not_user)
   Message.create(user: selected_not_user, post: post, message_content: Faker::TvShows::StrangerThings.quote)
@@ -131,9 +130,8 @@ puts 'Food posts'
   users = User.all
   user = users.sample
   not_user = users - [user]
-  post = generate_posts(user, 'Fashion', 15, 50)
+  post = generate_posts(user, 'Fashion', 15, 30)
   # Creating dummy messages for now
-  Message.create(user: user, post: post, message_content: Faker::TvShows::HowIMetYourMother.catch_phrase)
   # selected_not_user = not_user.sample
   # Transaction.create(contribution: rand(0..1),post: post, user: selected_not_user)
   # Message.create(user: selected_not_user, post: post, message_content: Faker::TvShows::StrangerThings.quote)
