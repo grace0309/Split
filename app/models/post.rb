@@ -22,6 +22,7 @@ class Post < ApplicationRecord
 
   mount_uploader :photo, PhotoUploader
   after_create :set_first_messagae
+  before_save :check_time
 
   def set_first_messagae
     Message.create(message_content: 'Welcome friends!', post: self)
@@ -41,7 +42,13 @@ class Post < ApplicationRecord
   def check_time
     if self.end_time <= Time.now
       self.status = false
-      self.save
     end
+  end
+
+  def check_if_expired
+    if self.end_time <= Time.now
+      self.status = false
+    end
+    self.save
   end
 end

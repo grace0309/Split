@@ -84,7 +84,7 @@ def generate_posts(user, category_name, start_time, end_time)
   start_time = Time.now - 900*rand(start_time)
   end_time = start_time + 900*rand(end_time)
   status = end_time > Time.now
-  Post.create(user: user, discount: discount, store_name: store_name, category:category, quota: quota, units: units, starting_contribution: starting_contribution, total_contribution: total_contribution, start_time: start_time, end_time: end_time, status: status)
+  Post.create(user: user, discount: discount, store_name: store_name, category:category, quota: quota, units: units, starting_contribution: starting_contribution, total_contribution: total_contribution, start_time: start_time, end_time: end_time)
 end
 
 puts 'Beauty posts'
