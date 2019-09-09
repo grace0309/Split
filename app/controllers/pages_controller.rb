@@ -23,6 +23,8 @@ class PagesController < ApplicationController
 
   def dashboard
     @user = current_user
+    @posts = Post.where(status: true)
+    @posts.each { |post| post.check_if_expired }
     @ongoing_posts = Post.where(user: @user, status: true)
     @ongoing_transactions = @user.joined_posts.where(status: true)
     @expired_posts = Post.where(user: @user, status: false)

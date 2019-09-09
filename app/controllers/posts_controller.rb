@@ -2,13 +2,14 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :destroy, :edit, :update]
 
   def index
+    @posts_true = Post.where(status: true)
+    @posts_true.each { |post| post.check_if_expired }
     @posts = Post.all
-    @posts.each do |post|
-      post.check_time
-    end
   end
 
   def show
+    #set your post
+    @post.check_if_expired
     if @post.users.include?(current_user)
       @transaction = current_user.transactions.find_by(post: @post)
     else
