@@ -6,6 +6,7 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :posts do
     resources :transactions, only: [ :create, :new]
+    resources :messages, only: [ :index, :new, :create ]
   end
 
   resources :transactions, only: [ :show, :edit, :update, :destroy] do
@@ -15,5 +16,6 @@ Rails.application.routes.draw do
   resources :deals, only: [:index]
   resources :reviews, only: [ :edit, :update, :destroy]
   get "/dashboard", to: "pages#dashboard", as: :dashboard
+  get "/chats", to: "pages#chats", as: :chats
 
 end

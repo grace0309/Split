@@ -15,3 +15,31 @@
   border-bottom: 2px solid grey;
   background-color: transparent;
 }
+.form-post {
+  background: white;
+  padding: 10px 20px;
+  margin-top: 10px;
+  border-radius: 3px;
+  box-shadow: -1px -1px 3px rgba(0,0,0,0.1);
+
+  h2 {
+    font-size: 25px;
+    font-weight: bold;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    text-align: center;
+  }
+}
+
+.new-input {
+  border: 0px;
+  border-bottom: solid 1px $split-blue;
+  border-radius: 0;
+  background-color: white ;
+  opacity: 0.5;
+}
+
+.new-input:hover {
+  opacity: 1;
+}
+

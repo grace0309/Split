@@ -1,1 +1,53 @@
-HELLO THERE
+<%= render partial: 'shared/header', locals: {:title => "Hi, #{@user.first_name}", :myclass => "main-title" } %>
+
+<%= simple_form_for :search, url: root_path, method: :get do |f| %>
+  <div class="search-form-control form-group">
+    <input class="form-control string required" type="text" name="query" id="search_query" />
+    <button name="button" type="submit" class="btn btn-flat">
+      <i class="fas fa-search"></i> Search
+    </button>
+  </div>
+<% end %>
+<div class="container">
+  <% if @posts.empty? %>
+    <h2>No posts found</h2>
+  <% else %>
+  <div class="my-1 d-flex justify-content-between">
+      <h2><strong>Happening right now!</strong></h2>
+      <%= link_to posts_path, html_options = {:class => "post-link"} do %>
+      <small>see all</small>
+      <% end %>
+    </div>
+  <div class="cards">
+    <% @posts_active.sample(6).each do |post| %>
+    <div class="card-product mx-2 my-1">
+      <%= image_tag "#{post.store_name.downcase.delete(' ')}" %>
+    <%= link_to post_path(post), html_options = {:class => "post-link"} do %>
+      <div class="card-product-infos">
+        <h2><%= post.store_name%></h2>
+        <strong><p class="timer">
+          Ends in:
+        <span class="end_time_data" data-time="<%=post.end_time%>"></span>
+        <span class="hours"></span>:
+        <span class="minutes"></span>:
+        <span class="seconds"></span>
+        </p></strong>
+        <p><%= post.discount.truncate(20, separator: '') %></p>
+      </div>
+    <% end %>
+    </div>
+    <% end %>
+    </div>
+  <% end %>
+    <% if @deals.empty? %>
+      <h2>No deals found</h2>
+    <% else %>
+    <div class="mt-3 d-flex justify-content-between">
+      <h2 class= "w-75"><strong>Browse these featured promos</strong></h2>
+      <%= link_to deals_path, html_options = {:class => "post-link"} do %>
+      <small>see all</small>
+      <% end %>
+    </div>
+      <%= render partial: 'shared/carousel'%>
+    <% end %>
+</div>

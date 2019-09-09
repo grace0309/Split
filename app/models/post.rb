@@ -2,6 +2,16 @@ class Post < ApplicationRecord
   belongs_to :user
   belongs_to :category
   has_many :transactions, dependent: :destroy
+  has_many :users, through: :transactions
+  has_many :messages, dependent: :destroy
+  include PgSearch::Model
+  multisearchable against: [ :store_name, :discount ],
+    associated_against: {
+      category: :name
+    },
+    using: {
+      tsearch: { prefix: true }
+    }
 
   validates :store_name, presence: true
   validates :discount, presence: true
@@ -11,7 +21,6 @@ class Post < ApplicationRecord
   validates :units, presence: true
 
   mount_uploader :photo, PhotoUploader
-
 
   def post_valid?
     self.status == true

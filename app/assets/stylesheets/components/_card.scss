@@ -1,6 +1,6 @@
 .card-deal {
   background-size: cover;
-  background-position: center;
+  background-position: center top;
   height: 150px;
   border-radius: 1px;
   margin: 15px 10px;
@@ -16,4 +16,47 @@
 .cards{
   flex-grow: 1;
   display:grid;
+}
+
+#main-deal{
+  background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3));
+  height: 200px;
+  width: 150px;
+}
+
+.card-product {
+  overflow: hidden;
+  height: 80px;
+  background-color: rgba(255, 255, 255, .0);
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  border-radius: 10px 0px 10px 0px;
+}
+
+.card-product img {
+  height: 100%;
+  width: 50px;
+  object-fit: cover;
+}
+
+.card-product h2 {
+  font-size: 12px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.card-product p {
+  font-size: 10px;
+  line-height: 1.2;
+  opacity: .7;
+  margin-bottom: 0;
+}
+
+.card-product-infos{
+  padding-left: 15px;
+}
+
+.card{
+  border-radius: 10px;
 }

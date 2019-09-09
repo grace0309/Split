@@ -1,0 +1,11 @@
+<% if message.user != current_user %>
+  <div class= 'speech-other'>
+    <%= message.message_content %>
+    <div id= 'user'><%= "- #{message.user.first_name}" %>
+    </div>
+  </div>
+<% else %>
+  <div class= 'speech-me'><%= message.message_content %>
+    <div id= 'user'><%= "- #{message.user.first_name}" %></div>
+  </div>
+<% end %>

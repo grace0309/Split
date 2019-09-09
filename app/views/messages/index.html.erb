@@ -1,0 +1,20 @@
+<%= render partial: 'shared/header', locals: {:title => "#{@message.post.user.first_name}, #{@message.post.store_name}", :myclass => "sub-title"} %>
+
+<div id="messages">
+    <% @post.messages.each do |message| %>
+      <%= render 'messages/show', message: message %>
+  <% end %>
+</div>
+
+<%= render 'messages/form', post: @post, message: @message %>
+
+<% if current_user == @post.user %>
+<%=simple_form_for (@post) do |f| %>
+<div class="form-inputs">
+  <%= f.hidden_field :completed, value: false%>
+</div>
+<div class="form-actions">
+    <%= f.button :submit, label: 'Send', class: "btn btn-primary"%>
+</div>
+<% end %>
+<% end %>

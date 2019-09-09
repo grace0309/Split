@@ -1,45 +1,34 @@
 // Specific CSS for your home-page
 // Extra small devices (portrait phones, less than 576px)
 @media (min-width: 375px) {
-  .container{
-      display: flex;
-      font-size: 20px;
-    }
-
   .cards{
     grid-template-columns: 1fr 1fr;
     }
+  .carousel-item{
+  width:375px;
+  height: 300px;
+  }
+
   }
 
 // Small devices (landscape phones, less than 768px)
 @media (min-width: 567px) {
-  .container{
-      display: flex;
-      font-size:20px
-    }
-    .cards{
-    grid-template-columns: 1fr 1fr;
-    }
+
+  .cards{
+  grid-template-columns: 1fr 1fr;
   }
+}
 
 // Medium devices (tablets, less than 992px)
 @media (min-width: 991px) {
-  .container{
-      display: flex;
-      font-size: 25px;
-  }
-    .cards{
+  .cards{
     grid-template-columns: 1fr 1fr;
   }
 }
 
 // Large devices (desktops, less than 1200px)
 @media (min-width: 1199px) {
-  .container{
-     display: flex;
-     font-size: 25px;
-    }
-    .cards{
+  .cards{
     grid-template-columns: 1fr 1fr 1fr 1fr;
     }
 }
@@ -48,4 +37,26 @@
 // No media query since the extra-large breakpoint has no upper bound on its width
 .container{
   height: 100vh;
+}
+body {
+  background-color: $split-orange;
+  background-image: radial-gradient(farthest-corner at 40px 100px,
+      $white 0%, $split-orange 100%);
+  background-repeat: no-repeat;
+  clear: both;
+  color: $split-blue;
+  font-family: 'muli', sans-serif;
+}
+
+.container {
+  position: relative;
+  margin-bottom: 80px;
+}
+
+h1{
+  font-size: 30px;
+}
+
+h2{
+  font-size: 20px;
 }

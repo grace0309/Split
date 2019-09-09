@@ -9,6 +9,11 @@ class PostsController < ApplicationController
   end
 
   def show
+    if @post.users.include?(current_user)
+      @transaction = current_user.transactions.find_by(post: @post)
+    else
+      @transaction = Transaction.new
+    end
     authorize @post
   end
 
@@ -20,6 +25,7 @@ class PostsController < ApplicationController
   def create
     @post = Post.new(post_params)
     authorize @post
+    @post.total_contribution = @post.starting_contribution
     @post.user = current_user
     if @post.save
       redirect_to post_path(@post)
@@ -36,12 +42,15 @@ class PostsController < ApplicationController
     authorize @post
     @post.update(post_params)
     @posts = Post.all
+    redirect_to dashboard_path
+
   end
 
   def destroy
     authorize @post
     @post.destroy
     @posts = Post.all
+    redirect_to dashboard_path
   end
 
   private
@@ -51,7 +60,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:store_name, :details, :discount, :quota, :starting_contribution, :units, :photo, :category_id)
+    params.require(:post).permit(:store_name, :details, :discount, :quota, :starting_contribution, :units, :photo, :category_id, :starting_time, :end_time)
   end
 
 end

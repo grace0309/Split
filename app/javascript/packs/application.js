@@ -7,3 +7,12 @@ timer()
 
 import { progress } from '../components/progress_bar';
 progress()
+
+import { dashboardnav } from '../components/dashboardnav'
+dashboardnav()
+
+import { hideItems } from '../components/hidden'
+hideItems()
+
+import { display } from '../components/displaypic'
+display()

@@ -1,0 +1,23 @@
+.header{
+  height: 80px;
+  background-color: $white;
+  position: relative;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+.main-title{
+  position: absolute;
+  bottom: 0px;
+  font-size: 35px;
+}
+
+.sub-title{
+  font-size: 20px;
+  position: absolute;
+  top : 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform    : translate(-50%, -50%);
+  text-align: center;
+  width: fit-content;
+}

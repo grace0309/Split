@@ -7,32 +7,14 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 require 'open-uri'
 require 'nokogiri'
-require 'pry-byebug'
 
 
 puts 'Destroying data...'
+Message.destroy_all
 Post.destroy_all
 Category.destroy_all
 User.destroy_all
 Deal.destroy_all
-
-puts 'Creating Users'
-users = []
-grace = User.create(email: 'gracecheung@split.com' , password: 123456, first_name: 'Grace', last_name: 'Cheung', avatar: 'https://avatars1.githubusercontent.com/u/52451336?v=4')
-may = User.create(email: 'mayong@split.com' , password: 123456, first_name: 'May', last_name: 'Ong', avatar: 'https://avatars3.githubusercontent.com/u/50539165?v=4')
-meixuan = User.create(email: 'meixuanoh@split.com' , password: 123456, first_name: 'Meixuan', last_name: 'Oh', avatar: 'https://avatars1.githubusercontent.com/u/51052975?v=4')
-[grace, may, meixuan].each do |name|
-  users << name
-end
-
-20.times do
-  name = Faker::Name.name
-  first_name = name.split.first
-  last_name = name.split.last
-  email = "#{first_name}#{last_name}@split.com"
-  new_user = User.create(email: email , password: 123456, first_name: first_name, last_name: last_name)
-  users << new_user
-end
 
 puts 'Creating Categories'
 Category.create(name: 'Fashion')
@@ -40,71 +22,121 @@ Category.create(name: 'Beauty')
 Category.create(name: 'Food')
 Category.create(name: 'Technology')
 
-beauty = ['Watsons', 'Guardian', 'Sephora', 'Sasa', 'Innisfree', 'The Face Shop', 'Lush']
-fashion = ['H&M', 'Uniqlo', 'Mango', 'SuperDry', 'TopShop', 'Zara', 'Bata', 'Charles & Keith']
-food = ['MacDonalds', 'A&W', 'Jollibee', 'Starbucks']
-technology = ['Harvey Norman', 'Challenger', 'Best Denki', 'Courts', 'Parisilk']
+puts 'Creating Users'
+grace = User.create(email: 'gracecheung@split.com' , password: 123456, first_name: 'Grace', last_name: 'Cheung', avatar: 'https://avatars1.githubusercontent.com/u/52451336?v=4')
+may = User.create(email: 'mayong@split.com' , password: 123456, first_name: 'May', last_name: 'Ong', avatar: 'https://avatars3.githubusercontent.com/u/50539165?v=4')
+meixuan = User.create(email: 'meixuanoh@split.com' , password: 123456, first_name: 'Meixuan', last_name: 'Oh', avatar: 'https://avatars1.githubusercontent.com/u/51052975?v=4')
 
-def generator(category, name)
-  user = User.all.sample
-  store_name = category.sample
-  category = Category.find_by(name: name)
-  start_time = Time.now - 3600*rand(1..5)
-  end_time = start_time + 3600*rand(1..7)
+7.times do
+  name = Faker::TvShows::ParksAndRec.character
+  first_name = name.split.first
+  last_name = name.split.last
+  email = "#{first_name}#{last_name}@split.com"
+  new_user = User.create(email: email , password: 123456, first_name: first_name, last_name: last_name)
+  # users << new_user
+end
+
+def select_user
+  users = User.all
+  user = users.sample
+end
+
+def without_user(user)
+  new_users = User.all - [user]
+end
+
+def generate_posts(user, category_name, start_time, end_time)
+  if category_name == 'Beauty'
+    beauty = ['Watsons', 'Guardian', 'Sephora', 'Sasa', 'Innisfree', 'The Face Shop', 'Lush']
+    disc_per = rand(10..30)
+    quota = disc_per*5
+    discount = "Get #{disc_per}% off with minimum spending of $#{quota}"
+    starting_contribution = quota*rand(0.1..0.5).round(2)
+    store_name = beauty.sample
+    units  = 'Dollars'
+  elsif category_name == 'Technology'
+    technology = ['Harvey Norman', 'Challenger', 'Best Denki', 'Courts', 'Parisilk']
+    disc_per = rand(10..20)
+    quota = disc_per*10
+    discount = "#{disc_per}% off! Minimum spend $#{quota}"
+    starting_contribution = quota*rand(0.1..0.5).round(2)
+    store_name = technology.sample
+    units  = 'Dollars'
+  elsif category_name == 'Fashion'
+    fashion = ['H&M', 'Uniqlo', 'Mango', 'SuperDry', 'TopShop', 'Zara', 'Bata', 'Charles & Keith']
+    disc_per = rand(10..20)
+    quota = rand(3..5)
+    discount = "Enjoy #{disc_per}% off storewide. Min #{quota} pieces"
+    starting_contribution = rand(1..2)
+    store_name = fashion.sample
+    units  = 'Pieces'
+  elsif category_name == 'Food'
+    food = ['McDonalds', 'Jollibee', 'Starbucks', 'Burger King']
+    discount = "1 for 1! Good deals come in pairs"
+    quota = 2
+    starting_contribution = 1
+    total_contribution = starting_contribution
+    store_name = food.sample
+    units  = 'People'
+  end
+  category = Category.find_by(name: category_name)
+  total_contribution = starting_contribution
+  start_time = Time.now - 900*rand(start_time)
+  end_time = start_time + 900*rand(end_time)
   status = end_time > Time.now
-  Post.new(user: user, store_name: store_name, category:category, start_time: start_time, end_time: end_time, status: status)
+  Post.create(user: user, discount: discount, store_name: store_name, category:category, quota: quota, units: units, starting_contribution: starting_contribution, total_contribution: total_contribution, start_time: start_time, end_time: end_time, status: status)
 end
 
 puts 'Beauty posts'
 10.times do
-  post = generator(beauty, 'Beauty')
-  disc_per = rand(5..15)
-  post.discount = "Get #{disc_per}% off with minimum spending of $#{disc_per*10}"
-  post.quota = disc_per*10
-  starting_contribution = (disc_per*10)*rand(0.1..0.5).round(2)
-  post.starting_contribution = starting_contribution
-  post.total_contribution = starting_contribution
-  post.units  = 'dollars'
-  post.save
+  users = User.all
+  user = users.sample
+  not_user = users - [user]
+  post = generate_posts(user, 'Beauty', 15, 50)
+  # Creating dummy messages for now
+  Message.create(user: user, post: post, message_content: Faker::TvShows::HowIMetYourMother.catch_phrase)
+  selected_not_user = not_user.sample
+  Transaction.create(contribution: rand(20..50),post: post, user: selected_not_user)
+  Message.create(user: selected_not_user, post: post, message_content: Faker::TvShows::StrangerThings.quote)
 end
 
 puts 'Technology posts'
-10.times do
-  post = generator(technology, 'Technology')
-  disc_per = rand(10..20)
-  post.discount = "Get #{disc_per}% off with minimum spending of $#{disc_per*10}"
-  post.quota = disc_per*10
-  starting_contribution = (disc_per*10)*rand(0.1..0.5).round(2)
-  post.starting_contribution = starting_contribution
-  post.total_contribution = starting_contribution
-  post.units  = 'Dollars'
-  post.save
+8.times do
+  users = User.all
+  user = users.sample
+  not_user = users - [user]
+  post = generate_posts(user, 'Technology', 15, 50)
+  # Creating dummy messages for now
+  Message.create(user: user, post: post, message_content: Faker::TvShows::HowIMetYourMother.catch_phrase)
+  selected_not_user = not_user.sample
+  Transaction.create(contribution: rand(50..100),post: post, user: selected_not_user)
+  Message.create(user: selected_not_user, post: post, message_content: Faker::TvShows::StrangerThings.quote)
 end
 
 puts 'Fashion posts'
 10.times do
-  post = generator(fashion, 'Fashion')
-  disc_per = rand(10..20)
-  post.discount = "Enjoy #{disc_per}% off storewide. Min #{rand(2...5)} pieces"
-  post.quota = disc_per*10
-  starting_contribution = (disc_per*10)*rand(0.1..0.5).round(2)
-  post.starting_contribution = starting_contribution
-  post.total_contribution = starting_contribution
-  post.units  = 'Pieces'
-  post.save
+  users = User.all
+  user = users.sample
+  not_user = users - [user]
+  post = generate_posts(user, 'Fashion', 15, 50)
+  # Creating dummy messages for now
+  Message.create(user: user, post: post, message_content: Faker::TvShows::HowIMetYourMother.catch_phrase)
+  selected_not_user = not_user.sample
+  Transaction.create(contribution: rand(2..3),post: post, user: selected_not_user)
+  Message.create(user: selected_not_user, post: post, message_content: Faker::TvShows::StrangerThings.quote)
 end
 
 puts 'Food posts'
 5.times do
-  post = generator(food, 'Food')
-  disc_per = rand(10..20)
-  post.discount = "1 for 1! Good deals come in pairs"
-  post.quota = 2
-  starting_contribution = 1
-  post.starting_contribution = starting_contribution
-  post.total_contribution = starting_contribution
-  post.units  = 'People'
-  post.save
+  users = User.all
+  user = users.sample
+  not_user = users - [user]
+  post = generate_posts(user, 'Fashion', 15, 50)
+  # Creating dummy messages for now
+  Message.create(user: user, post: post, message_content: Faker::TvShows::HowIMetYourMother.catch_phrase)
+  # selected_not_user = not_user.sample
+  # Transaction.create(contribution: rand(0..1),post: post, user: selected_not_user)
+  # Message.create(user: selected_not_user, post: post, message_content: Faker::TvShows::StrangerThings.quote)
 end
 
 puts 'Creating Deals'
