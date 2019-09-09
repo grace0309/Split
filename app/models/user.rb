@@ -1,6 +1,7 @@
 class User < ApplicationRecord
   has_many :posts
   has_many :transactions
+
   has_many :reviews
   has_many :messages
   has_many :favourites
@@ -9,4 +10,9 @@ class User < ApplicationRecord
 
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+
+  def joined_posts
+    post_ids = self.transactions.pluck(:post_id)
+    Post.where(id: post_ids)
+  end
 end

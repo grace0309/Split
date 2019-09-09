@@ -92,9 +92,8 @@ puts 'Beauty posts'
   users = User.all
   user = users.sample
   not_user = users - [user]
-  post = generate_posts(user, 'Beauty', 15, 50)
+  post = generate_posts(user, 'Beauty', 15, 30)
   # Creating dummy messages for now
-  Message.create(user: user, post: post, message_content: Faker::TvShows::HowIMetYourMother.catch_phrase)
   selected_not_user = not_user.sample
   Transaction.create(contribution: rand(20..50),post: post, user: selected_not_user)
   Message.create(user: selected_not_user, post: post, message_content: Faker::TvShows::StrangerThings.quote)
@@ -105,9 +104,8 @@ puts 'Technology posts'
   users = User.all
   user = users.sample
   not_user = users - [user]
-  post = generate_posts(user, 'Technology', 15, 50)
+  post = generate_posts(user, 'Technology', 15, 30)
   # Creating dummy messages for now
-  Message.create(user: user, post: post, message_content: Faker::TvShows::HowIMetYourMother.catch_phrase)
   selected_not_user = not_user.sample
   Transaction.create(contribution: rand(50..100),post: post, user: selected_not_user)
   Message.create(user: selected_not_user, post: post, message_content: Faker::TvShows::StrangerThings.quote)
@@ -118,9 +116,8 @@ puts 'Fashion posts'
   users = User.all
   user = users.sample
   not_user = users - [user]
-  post = generate_posts(user, 'Fashion', 15, 50)
+  post = generate_posts(user, 'Fashion', 15, 30)
   # Creating dummy messages for now
-  Message.create(user: user, post: post, message_content: Faker::TvShows::HowIMetYourMother.catch_phrase)
   selected_not_user = not_user.sample
   Transaction.create(contribution: rand(2..3),post: post, user: selected_not_user)
   Message.create(user: selected_not_user, post: post, message_content: Faker::TvShows::StrangerThings.quote)
@@ -131,9 +128,8 @@ puts 'Food posts'
   users = User.all
   user = users.sample
   not_user = users - [user]
-  post = generate_posts(user, 'Fashion', 15, 50)
+  post = generate_posts(user, 'Fashion', 15, 30)
   # Creating dummy messages for now
-  Message.create(user: user, post: post, message_content: Faker::TvShows::HowIMetYourMother.catch_phrase)
   # selected_not_user = not_user.sample
   # Transaction.create(contribution: rand(0..1),post: post, user: selected_not_user)
   # Message.create(user: selected_not_user, post: post, message_content: Faker::TvShows::StrangerThings.quote)
