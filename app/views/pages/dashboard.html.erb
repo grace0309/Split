@@ -6,6 +6,7 @@
     <div class="selector"></div>
     <a href="#" class="active">Ongoing</a>
     <a href="#">History</a>
+    <a href="#">Favourites</a>
   </nav>
 </div>
 
@@ -68,7 +69,7 @@
 </div>
 
 <!--history: deals expired and deals joined before -->
-<div class="history">
+<div class="history hidden">
 <h2 class="mx-1">Ended Deals</h2>
 <% @all_expired.each do |post| %>
   <% if post.completed == true %>
@@ -94,3 +95,19 @@
   <% end %>
 <% end %>
 </div>
+
+<!--favourite: current user favourite posts -->
+<div class="favourites hidden">
+<h2 class="mx-1">Favourites</h2>
+<% current_user.favourites.each do |favourite| %>
+    <div class="notification">
+      <div class="notification-content">
+        <%= link_to deal_path(favourite.deal) do %>
+          <p><%= favourite.deal.title%></p>
+        <% end %>
+      </div>
+    </div>
+<% end %>
+</div>
+</div>
+

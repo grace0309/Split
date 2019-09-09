@@ -1,6 +1,6 @@
 <%= render partial: 'shared/header', locals: {:title => "Featured promos", :myclass => "sub-title"} %>
 <div class="container">
- <div class="cards">
+ <div class="cards ongoing">
      <% @deals.each do |deal| %>
      <div class="card-deal text-center pr-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=deal.image_url %>)">
       <%= link_to deal_path(deal) do %>

@@ -9,6 +9,8 @@ const wrap = document.querySelector(".wrapper-dash");
     hidden.classList.remove("hidden")
     let unhidden = document.querySelector(".history");
     unhidden.classList.add("hidden")
+    let unhidden1 = document.querySelector(".favourites");
+    unhidden1.classList.add("hidden")
     }
 
     if (class_active === "History") {
@@ -16,6 +18,17 @@ const wrap = document.querySelector(".wrapper-dash");
     hidden.classList.remove("hidden")
     let unhidden = document.querySelector(".ongoing");
     unhidden.classList.add("hidden")
+    let unhidden1 = document.querySelector(".favourites");
+    unhidden1.classList.add("hidden")
+    }
+
+        if (class_active === "Favourites") {
+    let hidden = document.querySelector(".favourites");
+    hidden.classList.remove("hidden")
+    let unhidden = document.querySelector(".ongoing");
+    unhidden.classList.add("hidden")
+    let unhidden1 = document.querySelector(".history");
+    unhidden1.classList.add("hidden")
     }
 
   });
