@@ -1,9 +1,9 @@
 .card-deal {
   background-size: cover;
   background-position: center top;
-  height: 150px;
+  height: 200px;
   border-radius: 1px;
-  margin: 15px 10px;
+  margin: 10px 5px;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
   display: flex;
   align-items: center;
@@ -11,6 +11,7 @@
   color: white;
   font-weight: bolder;
   text-shadow: 0 0 10px rgba(0,0,0,0.7);
+  border-radius: 10px;
 }
 
 .cards{

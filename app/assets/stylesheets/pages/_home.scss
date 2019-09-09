@@ -36,8 +36,10 @@
 // Extra large devices (large desktops)
 // No media query since the extra-large breakpoint has no upper bound on its width
 .container{
+  position: relative;
   height: 100vh;
 }
+
 body {
   background-color: $split-orange;
   background-image: radial-gradient(farthest-corner at 40px 100px,
@@ -48,10 +50,6 @@ body {
   font-family: 'muli', sans-serif;
 }
 
-.container {
-  position: relative;
-  margin-bottom: 80px;
-}
 
 h1{
   font-size: 30px;
