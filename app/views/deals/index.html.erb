@@ -2,10 +2,10 @@
 <div class="container">
   <div class="cards">
       <% @deals.each do |deal| %>
-
-      <div class="card-deal text-center" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=deal.image_url %>)">
-      <%= deal.title %>
-    </div>
+      <div class="card-deal text-center pr-3" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(<%=deal.image_url %>)">
+        <i class="far fa-heart align-self-start mx-2 my-2"></i>
+        <%= deal.title %>
+      </div>
       <% end %>
   </div>
 </div>
