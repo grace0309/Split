@@ -17,5 +17,6 @@ Rails.application.routes.draw do
   resources :reviews, only: [ :edit, :update, :destroy]
   get "/dashboard", to: "pages#dashboard", as: :dashboard
   get "/chats", to: "pages#chats", as: :chats
+  get "/results", to: "pages#search", as: :search
 
 end

@@ -5,9 +5,10 @@ class Post < ApplicationRecord
   has_many :users, through: :transactions
   has_many :messages, dependent: :destroy
   include PgSearch::Model
-  multisearchable against: [ :store_name, :discount ],
+  pg_search_scope :global_search,
+    against: [ :store_name, :discount ],
     associated_against: {
-      category: :name
+      category: [ :name ]
     },
     using: {
       tsearch: { prefix: true }

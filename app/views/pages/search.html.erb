@@ -1,0 +1,17 @@
+<%= render partial: 'shared/header', locals: {:title => "Hi, #{@user.first_name}", :myclass => "main-title" } %>
+  <% @post_results.each do |result| %>
+    <% if result.nil? %>
+      <p>No live deals</p>
+    <% else %>
+      <%= result.store_name %>
+      <%= result.discount%>
+    <% end %>
+  <% end %>
+<% @deal_results.each do |result| %>
+  <% if result.nil?  %>
+    <p>No promotions</p>
+  <% else %>
+    <%= result.title%>
+    <%= result.description%>
+  <% end %>
+<% end %>
