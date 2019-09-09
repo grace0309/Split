@@ -1,5 +1,5 @@
 class Deal < ApplicationRecord
-  has_many :favourites
+  has_many :favourites, dependent: :destroy
   include PgSearch::Model
    pg_search_scope :deal_search,
     against: [ :title, :description],
