@@ -1,5 +1,7 @@
 class PagesController < ApplicationController
   def home
+    location = request.location
+    @nearby_posts = Post.near([location.latitude, location.longitude], 1, units: :km)
     @posts = Post.all
     @posts_active = Post.where(status: true)
     @deals = Deal.all

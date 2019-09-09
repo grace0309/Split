@@ -46,6 +46,7 @@ def without_user(user)
 end
 
 def generate_posts(user, category_name, start_time, end_time)
+  address = ['Orchard Ion', 'Bishan Junction 8', 'Orchard Takashimaya', 'Jurong Westgate', 'Paya Lebar Square']
   if category_name == 'Beauty'
     beauty = ['Watsons', 'Guardian', 'Sephora', 'Sasa', 'Innisfree', 'The Face Shop', 'Lush']
     disc_per = rand(10..30)
@@ -79,12 +80,13 @@ def generate_posts(user, category_name, start_time, end_time)
     store_name = food.sample
     units  = 'People'
   end
+  chosen_address = address.sample
   category = Category.find_by(name: category_name)
   total_contribution = starting_contribution
   start_time = Time.now - 900*rand(start_time)
   end_time = start_time + 900*rand(end_time)
   status = end_time > Time.now
-  Post.create(user: user, discount: discount, store_name: store_name, category:category, quota: quota, units: units, starting_contribution: starting_contribution, total_contribution: total_contribution, start_time: start_time, end_time: end_time)
+  Post.create(user: user, discount: discount, store_name: store_name, category:category, quota: quota, units: units, starting_contribution: starting_contribution, total_contribution: total_contribution, start_time: start_time, end_time: end_time, address: chosen_address)
 end
 
 puts 'Beauty posts'
