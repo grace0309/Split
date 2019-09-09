@@ -19,7 +19,7 @@
       <% end %>
     </div>
   <div class="cards">
-    <% @posts_active.sample(6).each do |post| %>
+    <% @posts_active.sample(4).each do |post| %>
     <div class="card-product mx-2 my-1">
       <%= image_tag "#{post.store_name.downcase.delete(' ')}" %>
     <%= link_to post_path(post), html_options = {:class => "post-link"} do %>

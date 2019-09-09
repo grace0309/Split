@@ -16,3 +16,4 @@ hideItems()
 
 import { display } from '../components/displaypic'
 display()
+
