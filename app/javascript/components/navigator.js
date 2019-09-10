@@ -21,15 +21,17 @@ const initNavigator = async function () {
 }
 
 const bindNearby = function () {
-  initNavigator();
-  const button = document.querySelector("#nearby")
-  button.addEventListener('click', (event) => {
-  // Do something (callback)
-    document.querySelector("#lat_query").value = window.lat
-    document.querySelector("#long_query").value = window.long
-    const form = document.querySelector(".simple_form.search")
-    setTimeout(function() {form.submit()},300)
-  });
+  if (document.querySelector("#nearby")) {
+    initNavigator();
+    const button = document.querySelector("#nearby")
+    button.addEventListener('click', (event) => {
+    // Do something (callback)
+      document.querySelector("#lat_query").value = window.lat
+      document.querySelector("#long_query").value = window.long
+      const form = document.querySelector(".simple_form.search")
+      setTimeout(function() {form.submit()},300)
+    });
+  }
 }
 
 export { bindNearby }
