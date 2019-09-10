@@ -21,11 +21,11 @@
     </small>
   <!-- Card content -->
     <%= link_to post_path(post) do %>
-    <%# if post.photo.present? %>
-        <%#= cl_image_tag post.photo, class: "index-img"%>
-      <%# else %>
-      <%= image_tag "#{post.store_name.downcase.delete(' ')}", class: "index-img" %>
-      <%# end %>
+    <% if post.photo.present? %>
+        <%= cl_image_tag post.photo, class: "index-img"%>
+      <% else %>
+      <%= image_tag"https://res.cloudinary.com/dtsg1dlrd/image/upload/v1568106458/Photos/#{post.store_name.downcase.delete(' ')}", class: "index-img" %>
+      <% end %>
       <svg class="card__svg" viewBox="0 0 800 500">
 
         <path d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400 L 800 500 L 0 500" stroke="#DCE6F2" fill="white"/>
