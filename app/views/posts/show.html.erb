@@ -58,6 +58,16 @@
             <%= render 'transactions/new', post: @post, transaction: @transaction%>
           </p>
             <% end %>
+          <% else %>
+            <%=simple_form_for (@post) do |f| %>
+              <div class="form-inputs">
+                <%= f.hidden_field :completed, value: true %>
+                <%= f.hidden_field :status, value: false %>
+              </div>
+              <div class="form-actions">
+                  <%= f.button :submit, 'Completed!', class: "btn btn-primary"%>
+              </div>
+            <% end %>
           <% end %>
         </div>
         <div class="modal-footer">

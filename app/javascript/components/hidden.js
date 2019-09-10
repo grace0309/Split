@@ -2,7 +2,7 @@ const hideItems = function() {
   if (document.querySelector(".wrapper-dash")) {
 const wrap = document.querySelector(".wrapper-dash");
   wrap.addEventListener("click", function() {
-    let class_active = document.getElementsByClassName('active')[1].text;
+    let class_active = document.querySelector('.active').text;
 
     if (class_active === "Ongoing") {
     let hidden = document.querySelector(".ongoing");
