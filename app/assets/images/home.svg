@@ -1,9 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="20px" height="20px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
-<rect x="8" y="13" width="4" height="7"/>
-<path d="M19.7,9.3l-9-9c-0.4-0.4-1-0.4-1.4,0l-9,9c-0.4,0.4-0.4,1,0,1.4s1,0.4,1.4,0L2,10.4V19c0,0.6,0.4,1,1,1h3v-2H4V8.4l6-6l6,6
-	V18h-2v2h3c0.6,0,1-0.4,1-1v-8.6l0.3,0.3c0.4,0.4,1,0.4,1.4,0C20.1,10.3,20.1,9.7,19.7,9.3z"/>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="64px"
+	 height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+<g id="eye">
+	<path fill="#1D1D1B" d="M2.765,33.28c0.479,0,0.965-0.172,1.351-0.521l6.257-5.673v28.762c0,3.331,2.709,6.041,6.041,6.041h32.223
+		c3.331,0,6.041-2.71,6.041-6.041V27.303l5.95,5.45c0.386,0.354,0.873,0.527,1.357,0.527c0.547,0,1.09-0.219,1.487-0.651
+		c0.751-0.822,0.693-2.096-0.126-2.847L33.886,2.795c-0.08-0.07-0.178-0.1-0.261-0.155c-0.114-0.078-0.223-0.159-0.346-0.208
+		c-0.122-0.051-0.246-0.066-0.373-0.093c-0.126-0.024-0.249-0.057-0.377-0.057c-0.13,0-0.251,0.032-0.378,0.056
+		s-0.251,0.039-0.373,0.09c-0.124,0.047-0.228,0.129-0.34,0.202c-0.089,0.058-0.188,0.085-0.267,0.159L1.408,29.776
+		c-0.822,0.747-0.886,2.021-0.14,2.845C1.667,33.058,2.214,33.28,2.765,33.28z M37.557,57.86H27.491V41.646
+		c0-1.111,0.903-2.015,2.014-2.015h6.038c1.111,0,2.014,0.903,2.014,2.015V57.86z M50.648,23.916v31.932
+		c0,1.109-0.904,2.013-2.013,2.013h-7.051V41.646c0-3.332-2.711-6.042-6.042-6.042h-6.038c-3.332,0-6.04,2.71-6.04,6.042V57.86
+		h-7.052c-1.109,0-2.015-0.903-2.015-2.013V23.916c0-0.146-0.052-0.271-0.081-0.407L32.516,7.007L50.7,23.661
+		C50.688,23.747,50.648,23.825,50.648,23.916z"/>
+</g>
+<g id="comment">
+</g>
+<g id="map-marker">
+</g>
+<g id="earth">
+</g>
+<g id="heart">
+</g>
+<g id="twitter">
+</g>
+<g id="bucket">
+</g>
+<g id="paperclip">
+</g>
+<g id="undo">
+</g>
+<g id="redo">
+</g>
+<g id="chevron-left">
+</g>
+<g id="chevron-right">
+</g>
+<g id="cross">
+</g>
+<g id="search">
+</g>
+<g id="hamburger">
+</g>
 </svg>

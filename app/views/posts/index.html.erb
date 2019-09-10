@@ -5,39 +5,51 @@
 <!-- Card -->
 <% if post.status == true %>
 <div class="card mx-2 my-2">
+  <!-- Card footer -->
+  <small class="lighten-3 text-center pt-1" id="timer">
+      <ul class="list-unstyled list-inline font-small mx-3">
+        <li class="list-inline-item  white-text">
+        <p class="timer">
+        <i class="far fa-clock pr-1"></i>
+          <span class="end_time_data" data-time="<%=post.end_time%>"></span>
+          <span class="hours"></span>:
+          <span class="minutes"></span>:
+          <span class="seconds"></span>
+        </p>
+        </li>
+      </ul>
+    </small>
   <!-- Card content -->
     <%= link_to post_path(post) do %>
+    <% if post.photo.present? %>
+        <%= cl_image_tag post.photo, class: "index-img"%>
+      <% else %>
+      <%= image_tag "#{post.store_name.downcase.delete(' ')}", class: "index-img" %>
+      <% end %>
+      <svg class="card__svg" viewBox="0 0 800 500">
+
+        <path d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400 L 800 500 L 0 500" stroke="#DCE6F2" fill="white"/>
+        <path  d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400" stroke="#DCE6F2" stroke-width="3" fill="transparent"/>
+      </svg>
+
+
       <div class="card-body">
         <!-- Title -->
-        <div class="d-flex">
         <h4 class="card-title"><%= post.store_name %></h4> <!-- Button -->
-        <a class="btn-floating btn-action ml-auto mr-4 lighten-3"><i class="fas fa-chevron-right pl-1"></i></a>
-        </div>
         <hr>
         <!-- Text -->
         <p class="card-text"><%= post.discount %></p>
+        <p class="card-text">Target:</p>
          <div class="progress">
           <span class="total_contribution" data-contribution="<%=post.total_contribution%>"></span>
           <span class="quota" data-quota="<%=post.quota%>"></span>
           <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 75%">75%</div>
         </div>
+      <li class="list-inline-item"><a href="#" class="white-text">
+        <%= image_tag 'users.svg', class: "mini-icons" %>
+        <%= post.transactions.length + 1 %></a></li>
       </div>
     <% end %>
-  <!-- Card footer -->
-  <small class="rounded-bottom mdb-color lighten-3 text-center pt-1">
-    <ul class="list-unstyled list-inline font-small mx-3">
-      <li class="list-inline-item  white-text">
-      <p class="timer">
-      <i class="far fa-clock pr-1"></i>
-        <span class="end_time_data" data-time="<%=post.end_time%>"></span>
-        <span class="hours"></span>:
-        <span class="minutes"></span>:
-        <span class="seconds"></span>
-      </p>
-      </li>
-      <li class="list-inline-item"><a href="#" class="white-text"><i class="far fa-comments pr-1"></i>12</a></li>
-    </ul>
-  </small>
 </div>
   <% end %>
 <% end %>
