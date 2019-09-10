@@ -9,14 +9,20 @@
 
 <div class="post-card">
   <!--timer -->
-  <div>
-    <p class="timer timer-post">
-      <span class="end_time_data" data-time="<%=@post.end_time%>"></span>
-      <span class="hours"></span>:
-      <span class="minutes"></span>:
-      <span class="seconds"></span>mins left
-    </p>
-  </div>
+  <% if @post.status == false && @post.completed == true %>
+    <p>COMPLETED</p>
+  <% elsif @post.status == false && @post.completed == false %>
+    <p>EXPIRED</p>
+  <% else %>
+    <div>
+      <p class="timer timer-post">
+        <span class="end_time_data" data-time="<%=@post.end_time%>"></span>
+        <span class="hours"></span>:
+        <span class="minutes"></span>:
+        <span class="seconds"></span>mins left
+      </p>
+    </div>
+  <% end %>
   <!--progress bar -->
     <p class="progress-bar-details mx-1"><%= (@post.quota - @post.total_contribution) %> <%= @post.units %> more to go!</p>
   <div class="progress mb-3 mx-1">
@@ -58,7 +64,7 @@
             <%= render 'transactions/new', post: @post, transaction: @transaction%>
           </p>
             <% end %>
-          <% elsif @post.user == current_user && @post.quota <= @post.total_contribution %>
+          <% elsif @post.user == current_user && @post.notify == true %>
             <%=simple_form_for (@post) do |f| %>
               <div class="form-inputs">
                 <%= f.hidden_field :status, value: false %>
