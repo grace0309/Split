@@ -1,9 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<!-- Generator: Adobe Illustrator 19.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-	 width="20px" height="20px" viewBox="0 0 20 20" enable-background="new 0 0 20 20" xml:space="preserve">
-<path d="M10,10L10,10c-2.2,0-4-1.8-4-4V4c0-2.2,1.8-4,4-4h0c2.2,0,4,1.8,4,4v2C14,8.2,12.2,10,10,10z"/>
-<path d="M18,20H2c-0.6,0-1-0.4-1-1v-1c0-3.3,2.7-6,6-6h6c3.3,0,6,2.7,6,6v1C19,19.6,18.6,20,18,20z M3,18h14c0-2.2-1.8-4-4-4H7
-	C4.8,14,3,15.8,3,18z"/>
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="64px"
+	 height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+<g id="eye">
+	<g>
+		<path fill="#1D1D1B" d="M63.834,61.199c-0.767-3.404-6.562-24.541-31.855-24.541c-27.372,0-31.908,24.748-31.951,24.999
+			c-0.098,0.581,0.062,1.179,0.444,1.63C0.853,63.739,1.414,64,2.004,64h59.951c0.016,0,0.027,0,0.041,0
+			C63.101,64,64,63.103,64,61.994C64,61.712,63.941,61.441,63.834,61.199z M4.575,59.988c1.742-5.632,7.977-19.317,27.403-19.317
+			S57.64,54.356,59.382,59.988H4.575z"/>
+		<path fill="#1D1D1B" d="M31.977,32.895c9.063,0,16.436-7.377,16.436-16.447C48.412,7.379,41.04,0,31.977,0
+			c-9.06,0-16.43,7.379-16.43,16.447C15.547,25.518,22.917,32.895,31.977,32.895z M31.977,4.012c6.854,0,12.428,5.578,12.428,12.436
+			c0,6.856-5.573,12.436-12.428,12.436c-6.849,0-12.422-5.579-12.422-12.436C19.555,9.59,25.128,4.012,31.977,4.012z"/>
+	</g>
+</g>
+<g id="comment">
+</g>
+<g id="map-marker">
+</g>
+<g id="earth">
+</g>
+<g id="heart">
+</g>
+<g id="twitter">
+</g>
+<g id="bucket">
+</g>
+<g id="paperclip">
+</g>
+<g id="undo">
+</g>
+<g id="redo">
+</g>
+<g id="chevron-left">
+</g>
+<g id="chevron-right">
+</g>
+<g id="cross">
+</g>
+<g id="search">
+</g>
+<g id="hamburger">
+</g>
 </svg>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 16.0.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="64px"
+	 height="64px" viewBox="0 0 64 64" enable-background="new 0 0 64 64" xml:space="preserve">
+<g id="eye">
+	<g>
+		<path fill="#1D1D1B" d="M23.967,34.025H6c-3.309,0-6,2.691-6,6V58c0,3.309,2.691,6,6,6h17.967c3.309,0,6-2.691,6-6V40.025
+			C29.967,36.717,27.275,34.025,23.967,34.025z M25.967,58c0,1.103-0.896,2-2,2H6c-1.104,0-2-0.897-2-2V40.025c0-1.103,0.896-2,2-2
+			h17.967c1.104,0,2,0.897,2,2V58z"/>
+		<path fill="#1D1D1B" d="M58,34.025H40.031c-3.309,0-6,2.691-6,6V58c0,3.309,2.691,6,6,6H58c3.309,0,6-2.691,6-6V40.025
+			C64,36.717,61.309,34.025,58,34.025z M60,58c0,1.103-0.898,2-2,2H40.031c-1.102,0-2-0.897-2-2V40.025c0-1.103,0.898-2,2-2H58
+			c1.102,0,2,0.897,2,2V58z"/>
+		<path fill="#1D1D1B" d="M23.967,0H6C2.691,0,0,2.691,0,6v17.969c0,3.309,2.691,6,6,6h17.967c3.309,0,6-2.691,6-6V6
+			C29.967,2.691,27.275,0,23.967,0z M25.967,23.969c0,1.103-0.896,2-2,2H6c-1.104,0-2-0.897-2-2V6c0-1.103,0.896-2,2-2h17.967
+			c1.104,0,2,0.897,2,2V23.969z"/>
+		<path fill="#1D1D1B" d="M58,0H40.031c-3.309,0-6,2.691-6,6v17.969c0,3.309,2.691,6,6,6H58c3.309,0,6-2.691,6-6V6
+			C64,2.691,61.309,0,58,0z M60,23.969c0,1.103-0.898,2-2,2H40.031c-1.102,0-2-0.897-2-2V6c0-1.103,0.898-2,2-2H58
+			c1.102,0,2,0.897,2,2V23.969z"/>
+	</g>
+</g>
+<g id="comment">
+</g>
+<g id="map-marker">
+</g>
+<g id="earth">
+</g>
+<g id="heart">
+</g>
+<g id="twitter">
+</g>
+<g id="bucket">
+</g>
+<g id="paperclip">
+</g>
+<g id="undo">
+</g>
+<g id="redo">
+</g>
+<g id="chevron-left">
+</g>
+<g id="chevron-right">
+</g>
+<g id="cross">
+</g>
+<g id="search">
+</g>
+<g id="hamburger">
+</g>
+</svg>
