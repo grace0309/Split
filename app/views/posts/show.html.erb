@@ -1,10 +1,10 @@
 <body id="post-show">
   <div>
-    <% if @post.photo.present? %>
-        <%= cl_image_tag @post.photo, class: "post-img" %>
-    <% else %>
+    <%# if @post.photo.present? %>
+        <%#= cl_image_tag @post.photo, class: "post-img" %>
+    <%# else %>
       <%= image_tag "#{@post.store_name.downcase.delete(' ')}", class: "post-img" %>
-    <% end %>
+    <%# end %>
   </div>
 
 <div class="post-container">
