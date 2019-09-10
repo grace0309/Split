@@ -1,7 +1,7 @@
 <div  id="login-page">
   <div class="container justify-content-center w-75" id="centered-login">
-    <div class="text-center">
-    <%= image_tag 'logo.png', style:"max-height: 300px; max-width: 250px;" %>
+    <div class="my-5">
+    <%= image_tag 'logo_banner.png', style:"max-height: 300px; max-width: 250px;" %>
     </div>
 
     <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -17,9 +17,7 @@
         <%= f.input :remember_me, as: :boolean if devise_mapping.rememberable? %>
       </div>
 
-      <div class="form-actions btn btn-outline-secondary w-100 ">
-        <%= f.button :submit, "Log in" %>
-      </div>
+        <%= f.button :submit, "Log in", class: "login-btn" %>
     <% end %>
   <div class="d-flex justify-content-between">
   <%= render "devise/shared/links" %>
