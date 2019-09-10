@@ -5,32 +5,32 @@
   <div id ="horizontal-list">
 
     <!-- Social buttons -->
-    <ul class="d-flex flex-row justify-content-between px-4 my-1">
+    <ul class="d-flex flex-row justify-content-between px-4 mb-1">
       <li class="list-inline-item">
         <a class="btn-floating btn-fb mx-1">
         <%= link_to root_path do %>
-          <i class="fas fa-home"></i>
+          <%= image_tag 'home.svg', class: "svg-icons" %>
         <% end %>
         </a>
       </li>
       <li class="list-inline-item">
         <a class="btn-floating btn-tw mx-1">
           <%= link_to chats_path do%>
-          <i class="far fa-comments"></i>
+          <%= image_tag 'chat.svg', class: "svg-icons" %>
           <% end %>
         </a>
       </li>
       <li class="list-inline-item">
         <a class="btn-floating btn-gplus mx-1">
           <%= link_to new_post_path do%>
-          <i class="far fa-clone"></i>
+          <%= image_tag 'write.svg', class: "svg-icons" %>
           <% end %>
         </a>
       </li>
       <li class="list-inline-item">
         <a class="btn-floating btn-dribbble mx-1">
           <%= link_to dashboard_path do %>
-          <i class="far fa-user"></i>
+          <%= image_tag 'user.svg', class: "svg-icons" %>
           <% end %>
         </a>
       </li>

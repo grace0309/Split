@@ -13,14 +13,15 @@
 </head>
 
 <body>
-   <% if  params[:controller] != "devise/sessions" %>
-    <%= render 'shared/navbar' %>
+  <% if  params[:controller] != "devise/sessions" %>
+    <%= render 'shared/flashes' %>
   <% end %>
-  <%= render 'shared/flashes' %>
   <%= yield %>
   <%= javascript_include_tag 'application' %>
   <%= javascript_pack_tag 'application' %>
-  <%= render 'shared/footer' %>
+  <% if  params[:controller] != "devise/sessions" %>
+    <%= render 'shared/footer' %>
+  <% end %>
 </body>
 
 </html>

@@ -13,23 +13,11 @@
   </button>
 </div>
 <% end %>
-
 <h2><%= @location_greeting %></h2>
-<div class="cards">
+<div class="cards mt-5 pt-1">
   <% @post_results.each do |result| %>
 <!-- Card -->
-  <% if result.status == true %>
-<div class="card mx-2 my-2">
-  <% if result.photo.present? %>
-    <div class="view overlay">
-  <!-- Card image -->
-      <img class="card-img-top" src="<%= cl_image_tag @result.photo%>" alt="result img">
-      <a>
-        <div class="mask rgba-white-slight"></div>
-      </a>
-    </div>
-  <% end %>
-
+<div class="card mx-1 my-1">
   <!-- Card content -->
     <%= link_to post_path(result) do %>
       <div class="card-body">
@@ -47,7 +35,6 @@
           <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: <%= "#{result.total_contribution/result.quota}%"  %>"></div>
         </div>
       </div>
-    <% end %>
   <!-- Card footer -->
   <small class="rounded-bottom mdb-color lighten-3 text-center pt-1">
     <ul class="list-unstyled list-inline font-small mx-3">

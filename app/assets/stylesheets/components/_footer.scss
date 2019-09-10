@@ -1,9 +1,10 @@
 .page-footer{
-  background-color: $white;
+  background-color: $oomph;
   height:50px;
   font-size: 30px;
   width: 100%;
   box-shadow: -5px -2px 6px rgba(0,0,0,0.08);
+  border-radius: 10px 10px 0px 0px;
 }
 
 .list-inline {
@@ -11,6 +12,15 @@
   margin-bottom: 0px !important ;
 }
 
+
 i {
   color: $split-red;
 }
+
+.svg-icons{
+  fill: white !important;
+  height: 30px;
+  width: 30px;
+  filter: invert(94%) sepia(93%) saturate(25%) hue-rotate(48deg) brightness(107%) contrast(100%);
+}
+
