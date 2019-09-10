@@ -11,11 +11,12 @@
         <!-- Title -->
         <div class="d-flex">
         <h4 class="card-title"><%= post.store_name %></h4> <!-- Button -->
-        <a class="btn-floating btn-action ml-auto mr-4 lighten-3"><i class="fas fa-chevron-right pl-1"></i></a>
+        <a class="btn-floating btn-action ml-auto mr-4 lighten-3"></a>
         </div>
         <hr>
         <!-- Text -->
         <p class="card-text"><%= post.discount %></p>
+        <p class="card-text">Target:</p>
          <div class="progress">
           <span class="total_contribution" data-contribution="<%=post.total_contribution%>"></span>
           <span class="quota" data-quota="<%=post.quota%>"></span>
@@ -35,7 +36,9 @@
         <span class="seconds"></span>
       </p>
       </li>
-      <li class="list-inline-item"><a href="#" class="white-text"><i class="far fa-comments pr-1"></i>12</a></li>
+      <li class="list-inline-item"><a href="#" class="white-text">
+        <%= image_tag 'users.svg', class: "mini-icons" %>
+        <%= post.transactions.length + 1 %></a></li>
     </ul>
   </small>
 </div>

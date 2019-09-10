@@ -30,6 +30,7 @@
           <hr>
           <!-- Text -->
           <p class="card-text"><%= result.discount %></p>
+          <p class="card-text">Target</p>
            <div class="progress">
             <span class="total_contribution" data-contribution="<%=result.total_contribution%>"></span>
             <span class="quota" data-quota="<%=result.quota%>"></span>
@@ -49,7 +50,8 @@
         </p>
         </li>
         <li class="list-inline-item"><a href="#" class="white-text">
-        <i class="fas fa-user-friends"></i> <%= result.transactions.length + 1 %></a></li>
+        <%= image_tag 'users.svg', class: "mini-icons" %>
+        <%= post.transactions.length + 1 %></a></li>
       </ul>
     </small>
   </div>
