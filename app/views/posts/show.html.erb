@@ -1,10 +1,10 @@
 <body id="post-show">
   <div>
-    <% if @post.photo.present? %>
-        <%= cl_image_tag @post.photo, class: "post-img" %>
-    <% else %>
-      <%= image_tag "#{@post.store_name.downcase.delete(' ')}", class: "post-img" %>
-    <% end %>
+ <% if @post.photo.present? %>
+        <%= cl_image_tag @post.photo, class: "post-img"%>
+      <% else %>
+      <%= image_tag"https://res.cloudinary.com/dtsg1dlrd/image/upload/v1568106458/Photos/#{@post.store_name.downcase.delete(' ')}", class: "post-img" %>
+      <% end %>
   </div>
 
 <div class="post-container">
