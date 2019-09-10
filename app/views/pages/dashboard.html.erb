@@ -1,7 +1,8 @@
 <%= render partial: 'shared/header', locals: {:title => "#{@user.first_name}'s Dashboard", :myclass => "sub-title"} %>
-<%= link_to "Log out", destroy_user_session_path, method: :delete %>
-
-
+<div class="profile d-flex flex-column justify-content-center align-items-center my-2">
+<img src= <%= "https://source.unsplash.com/200x200/?woman" %>, class="avatar-dash" />
+ <h2>Hello, <%= current_user.first_name %></h2>
+</div>
 <div class="wrapper-dash">
   <nav class="tabs justify-content-center">
     <div class="selector"></div>

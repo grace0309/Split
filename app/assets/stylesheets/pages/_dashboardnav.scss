@@ -1,10 +1,9 @@
 .wrapper-dash{
   text-align:center;
-  margin:50px auto;
+  margin:15px auto;
 }
 
 .tabs{
-  margin-top:50px;
   font-size:15px;
   padding:0px;
   list-style:none;
@@ -38,18 +37,18 @@
   height:100%;
   display:inline-block;
   position:absolute;
-  left:35px;
+  left:42px;
   top:0px;
   z-index:1;
   border-radius:50px;
   transition-duration:0.6s;
   transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
 
-  background: #05abe0;
-  background: -moz-linear-gradient(45deg, #05abe0 0%, #8200f4 100%);
-  background: -webkit-linear-gradient(45deg, #05abe0 0%,#8200f4 100%);
-  background: linear-gradient(45deg, #05abe0 0%,#8200f4 100%);
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#05abe0', endColorstr='#8200f4',GradientType=1 );
+  background: #e0c505;
+  background: -moz-linear-gradient(45deg, #e0c505 0%, #f400a9 100%);
+  background: -webkit-linear-gradient(45deg, #e0c505 0%,#f400a9 100%);
+  background: linear-gradient(45deg, #e0c505 0%,#f400a9 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e0c505', endColorstr='#f400a9',GradientType=1 );
 }
 
 .hidden {

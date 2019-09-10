@@ -1,4 +1,10 @@
 <%= simple_form_for([post, message ], remote: true) do |form| %>
-  <%= form.input :message_content, as: :text %>
-  <%= form.button :submit %>
+<div class="d-flex">
+  <div class="msg-content">
+  <%= form.input :message_content, as: :text , input_html: { class: 'new-message' }%>
+  </div>
+  <%= button_tag type: "submit", class: "send-btn" do %>
+  <i class="far fa-paper-plane"></i>
+  <% end %>
+</div>
 <% end %>
