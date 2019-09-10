@@ -11,8 +11,13 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
 
+
   def joined_posts
     post_ids = self.transactions.pluck(:post_id)
     Post.where(id: post_ids)
+  end
+
+  def has_notification?
+    self.posts.where(notify: true).any?
   end
 end

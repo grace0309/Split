@@ -43,8 +43,7 @@ class PostsController < ApplicationController
     authorize @post
     @post.update(post_params)
     @posts = Post.all
-    redirect_to dashboard_path
-
+    redirect_to post_messages_path(@post)
   end
 
   def destroy
@@ -61,7 +60,7 @@ class PostsController < ApplicationController
   end
 
   def post_params
-    params.require(:post).permit(:store_name, :details, :discount, :quota, :starting_contribution, :units, :photo, :category_id, :start_time, :end_time, :status, :completed)
+    params.require(:post).permit(:store_name, :details, :discount, :quota, :starting_contribution, :units, :photo, :category_id, :start_time, :end_time, :status, :completed, :notify, :address)
   end
 
 end
