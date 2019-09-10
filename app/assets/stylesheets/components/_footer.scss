@@ -17,13 +17,3 @@ i {
   color: $split-red;
 }
 
-.svg-icons{
-  fill: white !important;
-  height: 30px;
-  width: 30px;
-  filter: invert(94%) sepia(93%) saturate(25%) hue-rotate(48deg) brightness(107%) contrast(100%);
-}
-
-.svg-icons:active{
-  filter: invert(96%) sepia(3%) saturate(2606%) hue-rotate(179deg) brightness(99%) contrast(91%);
-}
