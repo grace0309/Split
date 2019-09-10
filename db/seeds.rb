@@ -64,7 +64,7 @@ def generate_posts(user, category_name, start_time, end_time)
     store_name = technology.sample
     units  = 'Dollars'
   elsif category_name == 'Fashion'
-    fashion = ['H&M', 'Uniqlo', 'Mango', 'SuperDry', 'TopShop', 'Zara', 'Bata', 'Charles & Keith']
+    fashion = ['H&M', 'Uniqlo', 'Mango', 'SuperDry', 'Zara', 'Bata', 'Charles & Keith']
     disc_per = rand(10..20)
     quota = rand(3..5)
     discount = "Enjoy #{disc_per}% off storewide. Min #{quota} pieces"
