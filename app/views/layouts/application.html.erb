@@ -8,9 +8,11 @@
   <%= csrf_meta_tags %>
   <%= action_cable_meta_tag %>
   <%= stylesheet_link_tag 'application', media: 'all' %>
+   <link rel="manifest" href="<%= asset_path 'manifest.json' %>">
   <%#= stylesheet_pack_tag 'application', media: 'all' %>
   <!-- Uncomment if you import CSS in app/javascript/packs/application.js -->
-</head>
+<link rel="manifest" href="/manifest.json" />
+<meta name="apple-mobile-web-app-capable" content="yes"></head>
 
 <body>
   <% if  params[:controller] != "devise/sessions" %>
