@@ -28,29 +28,53 @@
     </div>
   <div class="cards">
     <% @posts_active.sample(2).each do |post| %>
-    <div class="card-product mx-2 my-1">
-      <% if post.photo.present? %>
-        <%= cl_image_tag post.photo, class: "post-img" %>
+  <% if post.status == true %>
+<div class="card home mx-2 my-2">
+  <!-- Card footer -->
+  <small class="lighten-3 text-center pt-1" id="timer">
+      <ul class="list-unstyled list-inline font-small mx-3">
+        <li class="list-inline-item  white-text">
+        <p class="timer">
+        <i class="far fa-clock pr-1"></i>
+          <span class="end_time_data" data-time="<%=post.end_time%>"></span>
+          <span class="hours"></span>:
+          <span class="minutes"></span>:
+          <span class="seconds"></span>
+        </p>
+        </li>
+      </ul>
+    </small>
+  <!-- Card content -->
+    <%= link_to post_path(post) do %>
+    <% if post.photo.present? %>
+        <%= cl_image_tag post.photo, class: "index-img"%>
       <% else %>
-      <%= image_tag "#{post.store_name.downcase.delete(' ')}", class: "post-img" %>
+      <%= image_tag "#{post.store_name.downcase.delete(' ')}", class: "home-img" %>
       <% end %>
-    <%= link_to post_path(post), html_options = {:class => "post-link"} do %>
-      <div class="card-product-infos">
-        <h2><%= post.store_name%></h2>
-        <strong><p class="timer">
-          Ends in:
-        <span class="end_time_data" data-time="<%=post.end_time%>"></span>
-        <span class="hours"></span>:
-        <span class="minutes"></span>:
-        <span class="seconds"></span>
-        </p></strong>
-        <p><%= post.discount.truncate(20, separator: '') %></p>
+      <svg class="homecard__svg" viewBox="0 0 800 500">
+
+        <path d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400 L 800 500 L 0 500" stroke="#DCE6F2" fill="white"/>
+        <path  d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400" stroke="#DCE6F2" stroke-width="3" fill="transparent"/>
+      </svg>
+
+
+      <div class="card-body home-content">
+        <!-- Title -->
+        <p><strong><%= post.store_name %></strong> </p>
+        <hr>
+        <p class="card-text"><%= post.discount.truncate(20) %></p>
       </div>
     <% end %>
-    </div>
-    <% end %>
-    </div>
+</div>
   <% end %>
+    <% end %>
+
+    </div>
+
+  <% end %>
+
+
+
     <% if @deals.empty? %>
       <h2>No deals found</h2>
     <% else %>
