@@ -13,8 +13,12 @@
         <% end %>
         </a>
       </li>
+
       <li class="list-inline-item">
         <a class="btn-floating btn-tw mx-1">
+          <% if current_user.has_notification? %>
+            <i class="fas fa-circle notify-icon"></i>
+          <% end %>
           <%= link_to chats_path do%>
           <%= image_tag 'chat.svg', class: "svg-icons" %>
           <% end %>

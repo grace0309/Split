@@ -58,6 +58,16 @@
             <%= render 'transactions/new', post: @post, transaction: @transaction%>
           </p>
             <% end %>
+          <% elsif @post.user == current_user && @post.quota <= @post.total_contribution %>
+            <%=simple_form_for (@post) do |f| %>
+              <div class="form-inputs">
+                <%= f.hidden_field :status, value: false %>
+                <%= f.hidden_field :notify, value: false %>
+              </div>
+              <div class="form-actions">
+                  <%= f.button :submit, 'Completed!', class: "btn btn-primary"%>
+              </div>
+            <% end %>
           <% end %>
         </div>
         <div class="modal-footer">

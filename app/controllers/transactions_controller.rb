@@ -58,7 +58,12 @@ class TransactionsController < ApplicationController
 
   def add_contribution
     @post.total_contribution += @transaction.contribution
-    @post.post_complete
+    if @post.completed == false && @post.status == true
+      if @post.check_if_post_complete?
+        @post.completed = true
+        @post.notify = true
+      end
+    end
     @post.save
   end
 
