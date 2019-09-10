@@ -43,9 +43,11 @@ class Post < ApplicationRecord
   end
 
   def check_if_expired
-    if self.end_time <= Time.now
-      self.status = false
-    end
+    check_time
     self.save
+  end
+
+  def check_if_post_complete?
+    self.total_contribution >= self.quota
   end
 end
