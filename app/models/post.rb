@@ -36,13 +36,6 @@ class Post < ApplicationRecord
     self.status == true
   end
 
-  def post_complete
-    if self.total_contribution >= self.quota
-      self.status = false
-      self.save
-    end
-  end
-
   def check_time
     if self.end_time <= Time.now
       self.status = false

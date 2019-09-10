@@ -58,7 +58,6 @@ class TransactionsController < ApplicationController
 
   def add_contribution
     @post.total_contribution += @transaction.contribution
-    @post.post_complete
     @post.save
   end
 
