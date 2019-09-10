@@ -12,10 +12,15 @@
   margin-bottom: 0px !important ;
 }
 
-#footer-icon {
-  color: $white;
-}
 
 i {
   color: $split-red;
 }
+
+.svg-icons{
+  fill: white !important;
+  height: 30px;
+  width: 30px;
+  filter: invert(94%) sepia(93%) saturate(25%) hue-rotate(48deg) brightness(107%) contrast(100%);
+}
+
