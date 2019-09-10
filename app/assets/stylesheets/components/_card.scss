@@ -18,6 +18,7 @@
   flex-grow: 1;
   display:grid;
   margin-bottom: 22px;
+
 }
 
 #main-deal{
@@ -61,6 +62,7 @@
 
 .card{
   border-radius: 10px;
+  background-color:ivory;
 }
 
 img {
@@ -101,5 +103,19 @@ img {
 .card__svg {
   position: absolute;
   right: 0;
-  top: 29px;
+  top: 90px;
+}
+
+.card-body{
+  position:relative;
+}
+
+#timer{
+  position: absolute;
+  top: 10px;
+  opacity: 0.8;
+  align-self: flex-end;
+  background-color:floralwhite;
+  height:20px;
+  border-radius: 15px;
 }
