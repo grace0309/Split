@@ -39,18 +39,18 @@
   width: 70%;
   height: 15vw;
   position: absolute;
-  bottom: 0;
+  bottom: -27px;
   left: 55px;
 
 }
 
 .post-container {
-  border-radius: 20px;
   position: absolute;
   margin-left: 20px;
   margin-right: 20px;
   height: 372px;
   top: 270px;
+
 }
 
 .post-header{
@@ -60,6 +60,7 @@
 .sub-content{
   background-color: white;
   height: 267px;
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
 }
 
 .head{

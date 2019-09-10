@@ -37,14 +37,14 @@
   <div class="progress mb-3 mx-1">
     <span class="total_contribution" data-contribution="<%=@post.total_contribution%>"></span>
     <span class="quota" data-quota="<%=@post.quota%>"></span>
-    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: <%= "#{@post.total_contribution/@post.quota}%"  %>"></div>
+    <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: <%= "#{@post.total_contribution/@post.quota}%"  %>"></div>
   </div>
   <!--details -->
   <div class="post-details">
-    <p>Posted by: <%= @post.user.first_name %></p>
-    <p>Discount: <%= @post.discount %></p>
+    <p><%= @post.discount %></p>
     <p>Target:
       <%= @post.quota %> <%=@post.units.downcase %></p>
+    <p>Posted by: <%= @post.user.first_name %></p>
   </div>
   <!--transaction -->
   <% if current_user != @post.user %>
@@ -55,7 +55,7 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-          <h2>Ready to spree?</h2>
+          <h2>Ready to join?</h2>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body">
