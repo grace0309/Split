@@ -19,3 +19,6 @@ display()
 
 import { bindNearby } from '../components/navigator';
 bindNearby();
+
+import { ching } from '../components/ching';
+ching();
