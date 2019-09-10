@@ -49,7 +49,8 @@ function countdown() {
     for (i = 0; i < endDates.length; i++) {
       let endDate = endDates[i].dataset.time;
       // console.log(endDate)
-      endDate = new Date(endDate).getTime();
+
+      endDate = new Date(endDate.replace(" ","T").replace(" +0800", "").concat('.000+08:00')).getTime();
       if (isNaN(endDate)) {
         return;
       }
