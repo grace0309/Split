@@ -43,7 +43,6 @@ class PostsController < ApplicationController
     authorize @post
     @post.update(post_params)
     @posts = Post.all
-    redirect_to post_messages_path(@post)
   end
 
   def destroy
