@@ -5,6 +5,10 @@ const ching = function() {
     btn.addEventListener("click", (event) => {
     a.play();
     });
+    btn.addEventListener("touchstart", (event) => {
+    a.play();
+    });
+
   }
 }
 
