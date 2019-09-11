@@ -2,9 +2,13 @@
   <div class="d-flex align-items-center justify-content-center mt-5">
     <img src=<%=current_user.avatar %>, class="avatar-dash" />
     <div>
-      <h2 class="mx-4 text-white"><strong>
+      <h2 class="mx-4 text-white" style="
+      font-family: Pompiere, cursive;
+      font-size: 25px;">
+      <strong>
           <%= current_user.first_name %>
-          <%= current_user.last_name %></strong></h2>
+          <%= current_user.last_name %>
+      </strong></h2>
       <h2 class="icon-profile mx-4 justify-content-center">
         <a href="#"><i class="fab fa-instagram "></i></a>
         <a href="#"><i class="fab fa-facebook"></i></a>

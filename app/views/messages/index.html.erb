@@ -1,4 +1,4 @@
-<%= render partial: 'shared/header', locals: {:title => "#{@message.post.user.first_name}, #{@message.post.store_name}", :myclass => "sub-title"} %>
+<%= render partial: 'shared/header', locals: {:title => "#{@message.post.store_name} - #{@message.post.user.first_name} ", :myclass => "sub-title"} %>
 
 <div id="messages" class="massage-margin">
     <% @post.messages.each do |message| %>
