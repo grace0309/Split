@@ -99,7 +99,7 @@ puts 'Beauty posts'
   # Creating dummy messages for now
   selected_not_user = not_user.sample
   Transaction.create(contribution: rand(20..50),post: post, user: selected_not_user)
-  Message.create(user: selected_not_user, post: post, message_content: Faker::TvShows::StrangerThings.quote)
+  # Message.create(user: selected_not_user, post: post, message_content: Faker::TvShows::StrangerThings.quote)
 end
 
 puts 'Technology posts'
@@ -111,7 +111,7 @@ puts 'Technology posts'
   # Creating dummy messages for now
   selected_not_user = not_user.sample
   Transaction.create(contribution: rand(50..100),post: post, user: selected_not_user)
-  Message.create(user: selected_not_user, post: post, message_content: Faker::TvShows::StrangerThings.quote)
+  # Message.create(user: selected_not_user, post: post, message_content: Faker::TvShows::StrangerThings.quote)
 end
 
 puts 'Fashion posts'
@@ -123,7 +123,7 @@ puts 'Fashion posts'
   # Creating dummy messages for now
   selected_not_user = not_user.sample
   Transaction.create(contribution: rand(2..3),post: post, user: selected_not_user)
-  Message.create(user: selected_not_user, post: post, message_content: Faker::TvShows::StrangerThings.quote)
+  # Message.create(user: selected_not_user, post: post, message_content: Faker::TvShows::StrangerThings.quote)
 end
 
 puts 'Food posts'
