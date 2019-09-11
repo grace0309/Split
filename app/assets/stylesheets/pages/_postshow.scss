@@ -36,10 +36,10 @@
   border: 2px solid #FFFFFF;
   box-sizing: border-box;
   border-radius: 10px;
-  width: 70%;
+  width: 227px;
   height: 15vw;
   position: absolute;
-  bottom: -27px;
+  bottom: -26px;
   left: 55px;
 
 }
@@ -47,9 +47,9 @@
 .post-container {
   position: absolute;
   margin-left: 20px;
-  margin-right: 20px;
   height: 372px;
-  top: 270px;
+  top: 263px;
+  width: 335px;
 
 }
 
@@ -61,6 +61,7 @@
   background-color: white;
   height: 267px;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  position: relative;
 }
 
 .head{
