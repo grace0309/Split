@@ -1,4 +1,12 @@
 <div class="header px-4">
+ <div class="dropdown text-right">
+  <button type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" data-hover="dropdown">
+  <%= image_tag 'menu.svg', class: "svg-icons" %>
+  </button>
+  <div class="dropdown-menu active" aria-labelledby="dropdownMenuButton">
   <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+  </div>
+</div>
+
   <h3 class=<%= myclass %>><%= title %></h3>
 </div>
