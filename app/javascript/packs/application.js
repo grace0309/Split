@@ -22,3 +22,6 @@ bindNearby();
 
 import { ching } from '../components/ching';
 ching();
+
+import { selectorhide } from '../components/confirm';
+selectorhide();
