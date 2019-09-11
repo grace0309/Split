@@ -51,6 +51,12 @@
 
 }
 
+.btn-primary:disabled{
+  background-color: grey;
+  border-color: grey;
+}
+
+
 .post-container {
   position: absolute;
   margin-left: 20px;
