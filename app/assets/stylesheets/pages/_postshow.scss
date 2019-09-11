@@ -1,3 +1,7 @@
+.post-timer{
+  line-height: 10px;
+
+}
 .post-timer p{
   font-size: 20px;
   text-align:center;
@@ -13,7 +17,6 @@
 
 .progress-bar-details{
   margin: 0;
-  font-family: PT Serif;
   font-style: normal;
   font-weight: bold;
   font-size: 18px;
@@ -21,7 +24,6 @@
 }
 
 .post-heading{
-  font-family: PT Sans;
   font-style: normal;
   font-weight: normal;
   font-size: 24px;
@@ -29,7 +31,6 @@
 }
 
 .post-details p {
-  font-family: PT Serif;
   font-style: normal;
   font-weight: normal;
   font-size: 18px;
@@ -53,14 +54,17 @@
 .post-container {
   position: absolute;
   margin-left: 20px;
-  height: 372px;
+  height: 420px;
   top: 263px;
   width: 335px;
+  margin-bottom: 50px;
 
 }
 
 .post-header{
   background-color: rgba(255,255,255,0.8);
+  margin: 0px;
+  height: 63px;
 }
 
 .sub-content{
@@ -70,7 +74,4 @@
   position: relative;
 }
 
-.head{
-  margin: 0px;
-}
 
