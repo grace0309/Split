@@ -24,7 +24,7 @@
     <% if post.photo.present? %>
         <%= cl_image_tag post.photo, class: "index-img"%>
       <% else %>
-      <%= image_tag "#{post.store_name.downcase.delete(' ')}", class: "index-img" %>
+      <%= image_tag"https://res.cloudinary.com/dtsg1dlrd/image/upload/v1568106458/Photos/#{post.store_name.downcase.delete(' ')}", class: "index-img" %>
       <% end %>
       <svg class="card__svg" viewBox="0 0 800 500">
 
@@ -35,7 +35,9 @@
 
       <div class="card-body">
         <!-- Title -->
-        <h4 class="card-title"><%= post.store_name %></h4> <!-- Button -->
+        <div class="d-flex justify-content-between">
+          <h4 class="card-title"><%= post.store_name %></h4> <!-- Button -->
+        </div> <!-- Button -->
         <hr>
         <!-- Text -->
         <p class="card-text"><%= post.discount %></p>
@@ -43,11 +45,8 @@
          <div class="progress">
           <span class="total_contribution" data-contribution="<%=post.total_contribution%>"></span>
           <span class="quota" data-quota="<%=post.quota%>"></span>
-          <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 75%">75%</div>
+          <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: 75%">75%</div>
         </div>
-      <li class="list-inline-item"><a href="#" class="white-text">
-        <%= image_tag 'users.svg', class: "mini-icons" %>
-        <%= post.transactions.length + 1 %></a></li>
       </div>
     <% end %>
 </div>

@@ -47,9 +47,9 @@
   <!-- Card content -->
     <%= link_to post_path(post) do %>
     <% if post.photo.present? %>
-        <%= cl_image_tag post.photo, class: "index-img"%>
+        <%= cl_image_tag post.photo, class: "home-img"%>
       <% else %>
-      <%= image_tag "#{post.store_name.downcase.delete(' ')}", class: "home-img" %>
+      <%= image_tag"https://res.cloudinary.com/dtsg1dlrd/image/upload/v1568106458/Photos/#{post.store_name.downcase.delete(' ')}", class: "home-img" %>
       <% end %>
       <svg class="homecard__svg" viewBox="0 0 800 500">
 
@@ -78,7 +78,7 @@
     <% if @deals.empty? %>
       <h2>No deals found</h2>
     <% else %>
-    <div class="mt-3 d-flex justify-content-between">
+    <div class="my-2 d-flex justify-content-between">
       <h2 class= "w-75"><strong>Browse these featured promos</strong></h2>
       <%= link_to deals_path, html_options = {:class => "post-link"} do %>
       <small>see all</small>

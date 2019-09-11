@@ -1,5 +1,5 @@
 #login-page{
-  background-image: image-url('background.png');
+  background-image: white;
   background-repeat: no-repeat;
   background-size: cover;
   height: -webkit-fill-available;
@@ -8,6 +8,10 @@
   background-color:white;
 }
 
+.login-btn{
+  border: solid 1px;
+  width: 250px;
 
+}
 
 

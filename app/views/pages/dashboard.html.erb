@@ -1,114 +1,127 @@
-<%= render partial: 'shared/header', locals: {:title => "#{@user.first_name}'s Dashboard", :myclass => "sub-title"} %>
-<%= link_to "Log out", destroy_user_session_path, method: :delete %>
+<body id="profile-back">
+  <div class="d-flex align-items-center justify-content-center mt-5">
+    <img src= <%= current_user.avatar %>, class="avatar-dash" />
+    <div>
+      <h2 class="mx-4 text-white"><strong><%= current_user.first_name %> <%= current_user.last_name %></strong></h2>
+      <h2 class="icon-profile mx-4 justify-content-center">
+      <a href="#"><i class="fab fa-instagram "></i></a>
+      <a href="#"><i class="fab fa-facebook"></i></a>
+      <a href="#"><i class="fab fa-twitter"></i></a>
+      <a href="#"><i class="fab fa-linkedin"></i></a>
+      </h2>
+    </div>
+  </div>
 
-
-<div class="wrapper-dash">
-  <nav class="tabs justify-content-center">
-    <div class="selector"></div>
+<div class="profile-sec">
+  <div class="wrapper-dash">
+    <nav class="tabs justify-content-center">
+    <div class="selector" style="width: 99.5px; left: 46.0625px;"></div>
     <a href="#" class="active">Ongoing</a>
     <a href="#">History</a>
     <a href="#">Favourites</a>
   </nav>
 </div>
-
-
-<!-- Deals active and deals joined -->
-<div class="ongoing">
-<!-- ONGOING POSTS -->
-<h2 class="mx-1">You posted:</h2>
-<% @ongoing_posts.each do |post| %>
-  <div class="notification">
-    <div class="notification-content">
-      <%= link_to post_path(post) do %>
-        <p class="timer"><small>
-          <span class="end_time_data" data-time="<%=post.end_time%>"></span>
-          <span class="hours"></span>:
-          <span class="minutes"></span>:
-          <span class="seconds"></span>
-        </small></p>
-        <p><%= post.store_name %></p>
-        <p><%= post.discount %></p>
-        <% end %>
-    </div>
-    <div class="notification-actions">
-      <%= link_to edit_post_path(post) do %>
-        Edit <i class="fas fa-pencil-alt"></i>
-      <% end %>
-      <%= link_to  post_path(post), method: :delete do %>
-        Delete <i class="far fa-trash-alt"></i>
-      <% end %>
-    </div>
-  </div>
-<% end %>
-
-<!-- ONGOING TRANSACTIONS -->
-<h2 class="mx-1">You joined:</h2>
-<% @ongoing_transactions.each do |transaction_post| %>
-  <div class="notification">
-    <div class="notification-content">
-      <p class="timer"><small>
-        <span class="end_time_data" data-time="<%=transaction_post.end_time%>"></span>
-        <span class="hours"></span>:
-        <span class="minutes"></span>:
-        <span class="seconds"></span>
-      </small></p>
-      <%= link_to post_path(transaction_post) do %>
-        <p><%= transaction_post.store_name %></p>
-        <p><%= transaction_post.discount %></p>
-      <% end %>
-    </div>
-    <div class="notification-actions">
-    <%= link_to edit_transaction_path(@user.transactions.where(post: transaction_post)) do %>
-      Edit <i class="fas fa-pencil-alt"></i>
-    <% end %>
-    <%= link_to transaction_path(@user.transactions.where(post: transaction_post)), method: :delete do %>
-        Delete <i class="far fa-trash-alt"></i>
+</div>
+  <div class="profile-third">
+          <!--favourite: current user favourite posts -->
+    <div class="favourites hidden">
+    <h2 class="mx-1 text-center mt-2">Favourites</h2>
+    <% current_user.favourites.each do |favourite| %>
+        <div class="notification">
+          <div class="notification-content">
+            <%= link_to deal_path(favourite.deal) do %>
+              <p><%= favourite.deal.title%></p>
+            <% end %>
+          </div>
+        </div>
     <% end %>
     </div>
-  </div>
-<% end %>
-</div>
-
-<!--history: deals expired and deals joined before -->
-<div class="history hidden">
-<h2 class="mx-1">Ended Deals</h2>
-<% @all_expired.each do |post| %>
-  <% if post.completed == true %>
-    <div class="notification">
-      <div class="notification-content">
-        <%= link_to post_path(post) do %>
-          <p><small>Completed</small></p>
-          <p><%= post.store_name%></p>
-          <p><%= post.discount%> </p>
-        <% end %>
+    <!-- Deals active and deals joined -->
+    <div class="ongoing">
+    <!-- ONGOING POSTS -->
+    <h2 class="mx-1 text-center mt-2">You Posted</h2>
+    <% @ongoing_posts.each do |post| %>
+      <div class="notification">
+        <div class="notification-content">
+          <%= link_to post_path(post) do %>
+            <p class="timer"><small>
+              <span class="end_time_data" data-time="<%=post.end_time%>"></span>
+              <span class="hours"></span>:
+              <span class="minutes"></span>:
+              <span class="seconds"></span>
+            </small></p>
+            <p><%= post.store_name %></p>
+            <p><%= post.discount %></p>
+            <% end %>
+        </div>
+        <div class="notification-actions">
+          <%= link_to edit_post_path(post) do %>
+            Edit <i class="fas fa-pencil-alt"></i>
+          <% end %>
+          <%= link_to  post_path(post), method: :delete do %>
+            Delete <i class="far fa-trash-alt"></i>
+          <% end %>
+        </div>
       </div>
+    <% end %>
+
+    <!-- ONGOING TRANSACTIONS -->
+    <h2 class="mx-1 text-center mt-2">You Joined</h2>
+    <% @ongoing_transactions.each do |transaction_post| %>
+      <div class="notification">
+        <div class="notification-content">
+          <p class="timer"><small>
+            <span class="end_time_data" data-time="<%=transaction_post.end_time%>"></span>
+            <span class="hours"></span>:
+            <span class="minutes"></span>:
+            <span class="seconds"></span>
+          </small></p>
+          <%= link_to post_path(transaction_post) do %>
+            <p><%= transaction_post.store_name %></p>
+            <p><%= transaction_post.discount %></p>
+          <% end %>
+        </div>
+        <div class="notification-actions">
+        <%= link_to edit_transaction_path(@user.transactions.where(post: transaction_post)) do %>
+          Edit <i class="fas fa-pencil-alt"></i>
+        <% end %>
+        <%= link_to transaction_path(@user.transactions.where(post: transaction_post)), method: :delete do %>
+            Delete <i class="far fa-trash-alt"></i>
+        <% end %>
+        </div>
+      </div>
+    <% end %>
     </div>
-  <% elsif post.completed == false %>
-    <div class="notification">
-      <div class="notification-content">
-        <%= link_to post_path(post) do %>
-          <p><small>Expired</small></p>
-          <p><%= post.store_name%></p>
-          <p><%= post.discount%></p>
+
+    <!--history: deals expired and deals joined before -->
+    <div class="history hidden">
+    <h2 class="mx-1 text-center mt-2">Ended Deals</h2>
+    <% @all_expired.each do |post| %>
+      <% if post.completed == true %>
+        <div class="notification">
+          <div class="notification-content">
+            <%= link_to post_path(post) do %>
+              <p><small>Completed</small></p>
+              <p><%= post.store_name%></p>
+              <p><%= post.discount%> </p>
+            <% end %>
+          </div>
+        </div>
+      <% elsif post.completed == false %>
+        <div class="notification">
+          <div class="notification-content">
+            <%= link_to post_path(post) do %>
+              <p><small>Expired</small></p>
+              <p><%= post.store_name%></p>
+              <p><%= post.discount%></p>
+          <% end %>
+          </div>
+        </div>
       <% end %>
-      </div>
+    <% end %>
     </div>
-  <% end %>
-<% end %>
-</div>
 
-<!--favourite: current user favourite posts -->
-<div class="favourites hidden">
-<h2 class="mx-1">Favourites</h2>
-<% current_user.favourites.each do |favourite| %>
-    <div class="notification">
-      <div class="notification-content">
-        <%= link_to deal_path(favourite.deal) do %>
-          <p><%= favourite.deal.title%></p>
-        <% end %>
-      </div>
     </div>
-<% end %>
-</div>
-</div>
+  </div>
+</body>
 

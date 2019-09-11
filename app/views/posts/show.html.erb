@@ -1,46 +1,50 @@
 <body id="post-show">
   <div>
-    <% if @post.photo.present? %>
-        <%= cl_image_tag @post.photo, class: "post-img" %>
-    <% else %>
-      <%= image_tag "#{@post.store_name.downcase.delete(' ')}", class: "post-img" %>
-    <% end %>
+ <% if @post.photo.present? %>
+        <%= cl_image_tag @post.photo, class: "post-img"%>
+      <% else %>
+      <%= image_tag"https://res.cloudinary.com/dtsg1dlrd/image/upload/v1568106458/Photos/#{@post.store_name.downcase.delete(' ')}", class: "post-img" %>
+      <% end %>
   </div>
 
-<div class="post-card">
-  <!--timer -->
+<div class="post-container">
+<div class="post-header mt-3 px-3">
   <% if @post.status == false && @post.completed == true %>
     <p>COMPLETED</p>
   <% elsif @post.status == false && @post.completed == false %>
     <p>EXPIRED</p>
   <% else %>
     <div>
-      <p class="timer timer-post">
+  <!--timer -->
+      <p class="timer timer-post pt-2">
         <span class="end_time_data" data-time="<%=@post.end_time%>"></span>
         <span class="hours"></span>:
         <span class="minutes"></span>:
-        <span class="seconds"></span>mins left
+        <span class="seconds"></span> mins left
       </p>
     </div>
   <% end %>
-  <!--progress bar -->
-    <p class="progress-bar-details mx-1"><%= (@post.quota - @post.total_contribution) %> <%= @post.units %> more to go!</p>
-  <div class="progress mb-3 mx-1">
-    <span class="total_contribution" data-contribution="<%=@post.total_contribution%>"></span>
-    <span class="quota" data-quota="<%=@post.quota%>"></span>
-    <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: <%= "#{@post.total_contribution/@post.quota}%"  %>"></div>
-  </div>
   <div>
-    <p class="post-heading border-bottom mx-4">
+    <p class="post-heading head border-bottom mx-2">
       <%= @post.store_name %>@<%= @post.address %>
     </p>
   </div>
+</div>
+
+<div class="sub-content px-3 pt-3">
+  <!--progress bar -->
+    <p class="progress-bar-details mx-1"><%= (@post.quota - @post.total_contribution) %> <%= @post.units.downcase %> more to go!</p>
+  <div class="progress mb-3 mx-1">
+    <span class="total_contribution" data-contribution="<%=@post.total_contribution%>"></span>
+    <span class="quota" data-quota="<%=@post.quota%>"></span>
+    <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuemin="0" aria-valuemax="100" style="width: <%= "#{@post.total_contribution/@post.quota}%"  %>"></div>
+  </div>
   <!--details -->
-  <div class="post-details mx-4">
+  <div class="post-details">
+    <p><%= @post.discount %></p>
+    <p>Target:
+      <%= @post.quota %> <%=@post.units.downcase %></p>
     <p>Posted by: <%= @post.user.first_name %></p>
-    <p>Discount: <%= @post.discount %></p>
-    <p>Quota:
-      <%= @post.quota %> <%=@post.units%></p>
   </div>
   <!--transaction -->
   <% if current_user != @post.user %>
@@ -51,7 +55,7 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
-          <h2>Ready to spree?</h2>
+          <h2>Ready to join?</h2>
           <button type="button" class="close" data-dismiss="modal">&times;</button>
         </div>
         <div class="modal-body">
@@ -83,6 +87,6 @@
     </div>
   </div>
 </div>
-
-
+</div>
+</div>
 </body>
