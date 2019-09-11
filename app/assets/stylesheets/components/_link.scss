@@ -1,6 +1,7 @@
 a{
   color: $black;
-  :hover{
-      color:$split-red;
-  }
 }
+a:hover{
+      color:$split-red;
+      text-decoration: none;
+  }
