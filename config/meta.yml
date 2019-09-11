@@ -1,0 +1,5 @@
+meta_product_name: "Split"
+meta_title: "Split - Alone no more"
+meta_description: "Find people around you to share deals with now!"
+meta_image: "resized.png" # should exist in `app/assets/images/`
+twitter_account: "@split_twitter_account"   # required for Twitter Cards
