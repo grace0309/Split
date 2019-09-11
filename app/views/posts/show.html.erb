@@ -9,21 +9,6 @@
 
 <div class="post-container">
 <div class="post-header mt-3 px-3">
-  <% if @post.status == false && @post.completed == true %>
-    <p>COMPLETED</p>
-  <% elsif @post.status == false && @post.completed == false %>
-    <p>EXPIRED</p>
-  <% else %>
-    <div>
-  <!--timer -->
-      <p class="timer timer-post pt-2">
-        <span class="end_time_data" data-time="<%=@post.end_time%>"></span>
-        <span class="hours"></span>:
-        <span class="minutes"></span>:
-        <span class="seconds"></span> mins left
-      </p>
-    </div>
-  <% end %>
   <div>
     <p class="post-heading head border-bottom mx-2">
       <%= @post.store_name %>@<%= @post.address %>
@@ -33,7 +18,9 @@
 
 <div class="sub-content px-3 pt-3">
   <!--progress bar -->
-    <p class="progress-bar-details mx-1"><%= (@post.quota - @post.total_contribution) %> <%= @post.units.downcase %> more to go!</p>
+    <p class="progress-bar-details mx-1">
+      <%=  (@post.quota - @post.total_contribution) %> more <%= @post.units.downcase %> to go!</p>
+    </p>
   <div class="progress mb-3 mx-1">
     <span class="total_contribution" data-contribution="<%=@post.total_contribution%>"></span>
     <span class="quota" data-quota="<%=@post.quota%>"></span>
@@ -41,10 +28,31 @@
   </div>
   <!--details -->
   <div class="post-details">
-    <p><%= @post.discount %></p>
     <p>Target:
       <%= @post.quota %> <%=@post.units.downcase %></p>
+    <p><%= @post.discount %></p>
     <p>Posted by: <%= @post.user.first_name %></p>
+  </div>
+  <!--timer -->
+  <div class="post-timer">
+  <% if @post.status == false && @post.completed == true %>
+    <p>COMPLETED</p>
+  <% elsif @post.status == false && @post.completed == false %>
+    <p>EXPIRED</p>
+  <% else %>
+    <div>
+      <div class="d-flex justify-content-center">
+        <i class="far fa-clock px-1 py-1"></i>
+        <h2>Ending in</h2>
+      </div>
+      <p class="timer timer-post">
+        <span class="end_time_data" data-time="<%=@post.end_time%>"></span>
+        <span class="hours"></span>:
+        <span class="minutes"></span>:
+        <span class="seconds"></span>
+      </p>
+    </div>
+  <% end %>
   </div>
   <!--transaction -->
   <% if current_user != @post.user %>
@@ -79,9 +87,6 @@
               </div>
             <% end %>
           <% end %>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
         </div>
       </div>
     </div>

@@ -1,10 +1,15 @@
-
-.timer-post {
-  font-size: 10px;
-  line-height: 13px;
-  margin: 10px;
-  text-align-last: right;
+.post-timer p{
+  font-size: 20px;
+  text-align:center;
+  color: $split-red;
 }
+
+.post-timer h2{
+  font-size: 20px;
+  text-align:center;
+  color: $split-red;
+}
+
 
 .progress-bar-details{
   margin: 0;
@@ -23,23 +28,24 @@
   line-height: 31px;
 }
 
-.post-details {
+.post-details p {
   font-family: PT Serif;
   font-style: normal;
   font-weight: normal;
-  font-size: 14px;
-  line-height: 21px;
+  font-size: 18px;
+  line-height: 20px;
 }
+
 
 .post-btn {
   background-color: $little-oomph;
   border: 2px solid #FFFFFF;
   box-sizing: border-box;
   border-radius: 10px;
-  width: 70%;
+  width: 227px;
   height: 15vw;
   position: absolute;
-  bottom: -27px;
+  bottom: -26px;
   left: 55px;
 
 }
@@ -47,9 +53,9 @@
 .post-container {
   position: absolute;
   margin-left: 20px;
-  margin-right: 20px;
   height: 372px;
-  top: 270px;
+  top: 263px;
+  width: 335px;
 
 }
 
@@ -59,10 +65,12 @@
 
 .sub-content{
   background-color: white;
-  height: 267px;
+  height: 300px;
   box-shadow: 0 0 15px rgba(0,0,0,0.1);
+  position: relative;
 }
 
 .head{
   margin: 0px;
 }
+
