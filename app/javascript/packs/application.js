@@ -23,16 +23,8 @@ bindNearby();
 import { ching } from '../components/ching';
 ching();
 
-import ConfettiGenerator from "confetti-js";
+import { confetti } from '../components/confetti';
+confetti();
 
-const canvas = document.querySelector("#my-canvas")
-if ( canvas ) {
-  canvas.style.display = "none";
-  const completed = document.querySelector("#completed");
-  completed.addEventListener("click", function() {
-    var confettiSettings = { target: 'my-canvas' };
-    var confetti = new ConfettiGenerator(confettiSettings);
-    confetti.render();
-  });
-}
+
 
