@@ -61,3 +61,10 @@ h1{
 h2{
   font-size: 18px;
 }
+
+.btn-primary{
+  background-color: transparent;
+  border: 2px solid $split-red;
+  color: black;
+  border-radius: 10px;
+}

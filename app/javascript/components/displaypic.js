@@ -10,7 +10,6 @@ const display = function() {
         // read the image file as a data URL.
         reader.readAsDataURL(this.files[0]);
     };
-
   }
 }
 
