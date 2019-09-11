@@ -112,7 +112,7 @@
         </div>
         <div class="notification tail hidden mb-2">
           <div class="second-icon">
-            <i class="far fa-times-circle"></i>
+            <i class="far fa-times-circle" onClick=""></i>
           </div>
           <div class="notification-actions profile-notif">
             <%= link_to edit_post_path(post) do %>
@@ -165,7 +165,7 @@
         </div>
         <div class="notification tail hidden mb-2">
           <div class="second-icon">
-            <i class="far fa-times-circle"></i>
+            <i class="far fa-times-circle" onClick=""></i>
           </div>
           <div class="notification-actions profile-notif">
             <%= link_to edit_transaction_path(@user.transactions.find_by(post: transaction)) do %>
