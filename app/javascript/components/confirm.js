@@ -7,12 +7,6 @@ function selectorhide() {
         btn2.classList.remove("hidden")
         btn2.classList.add("tail-shown")
       }
-
-      if (event.target.classList[1] === "fa-times-circle") {
-        let closebtn = event.target.parentElement.parentElement;
-        closebtn.classList.remove("tail-shown")
-        closebtn.classList.add("hidden")
-      }
     });
   }
 }

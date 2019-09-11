@@ -25,3 +25,6 @@ ching();
 
 import { selectorhide } from '../components/confirm';
 selectorhide();
+
+import { selectorunhide } from '../components/unhidden';
+selectorunhide();
