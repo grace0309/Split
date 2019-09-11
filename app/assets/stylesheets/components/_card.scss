@@ -14,6 +14,11 @@
   border-radius: 10px;
 }
 
+.card-deal a{
+  color: white;
+}
+
+
 .cards{
   flex-grow: 1;
   display:grid;
@@ -118,14 +123,13 @@ img {
 #timer{
   position: absolute;
   top: 10px;
-  opacity: 0.9;
+  opacity: 0.92;
   align-self: center;
-  background-color:floralwhite;
+  background-color:$little-oomph;
   color: $split-red;
   font-weight:bold;
   font-size: 15px;
   height:25px;
-  border-radius: 15px;
   width: 100%;
 
 }
@@ -155,3 +159,4 @@ img {
   background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
 
 }
+

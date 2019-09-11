@@ -26,5 +26,8 @@ ching();
 import { confetti } from '../components/confetti';
 confetti();
 
+import { selectorhide } from '../components/confirm';
+selectorhide();
 
-
+import { selectorunhide } from '../components/unhidden';
+selectorunhide();

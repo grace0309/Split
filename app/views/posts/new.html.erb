@@ -7,7 +7,12 @@
         <%= f.error_notification %>
         <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
         <div class="form-inputs">
-            <%= f.input :photo, as: :file, label: '<i class="fas fa-camera"></i> Choose a photo'.html_safe, input_html: { id: 'files'} %>
+          <div class="photo-area">
+          <div class="text-center mt-2" id="photo-upload">
+            <%= f.input :photo, as: :file, label: "#{image_tag('camera.svg')}".html_safe , input_html: { id: 'files', class: 'hidden'} %>
+          </div>
+          <p class="text-center">upload a photo</p>
+          </div>
             <%= f.input :photo_cache, as: :hidden %>
             <img class="w-100 h-50" id="image" />
             <%= f.input :discount, label: '<i class="fas fa-volume-up"></i> Share your discount'.html_safe, placeholder:"e.g $120 to get 20\% off", input_html: { class: 'new-input' } %>

@@ -34,14 +34,18 @@
 }
 
 .speech-me {
-  align-self: flex-end;
+  text-align: end;
   position: relative;
-  background: $split-red;
+  background: $little-oomph;
   border-radius: .4em;
-  color: white;
+  color: black;
   margin: 5px 20px 20px 20px;
   padding: 5px 15px;
-  box-shadow: 0 0 15px rgba(0,0,0,0.1)A
+  box-shadow: 0 0 15px rgba(0,0,0,0.1);
+}
+
+#text{
+  width: 100%;
 }
 
 .speech-me:after {
@@ -52,7 +56,7 @@
   width: 0;
   height: 0;
   border: 20px solid transparent;
-  border-top-color: $split-red;
+  border-top-color: $little-oomph;
   border-bottom: 0;
   border-right: 0;
   margin-left: -10px;

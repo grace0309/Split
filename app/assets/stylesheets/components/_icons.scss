@@ -15,3 +15,17 @@
   filter: invert(48%) sepia(10%) saturate(1989%) hue-rotate(314deg) brightness(89%) contrast(86%);
 
 }
+
+#photo-upload{
+  border: 1px solid;
+  border-radius: 50%;
+  height:50px;
+  width: 50px;
+  color: $split-red;
+  filter: invert(45%) sepia(90%) saturate(217%) hue-rotate(315deg) brightness(84%) contrast(101%);
+  padding-top: 5px;
+  margin-left: 127px;
+}
+.post_photo{
+  margin-bottom: 0px;
+}
