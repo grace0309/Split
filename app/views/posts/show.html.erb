@@ -1,3 +1,5 @@
+<canvas id="my-canvas"></canvas>
+
 <body id="post-show">
   <div>
  <% if @post.photo.present? %>
@@ -82,7 +84,7 @@
                 <%= f.hidden_field :status, value: false %>
                 <%= f.hidden_field :notify, value: false %>
               </div>
-              <div class="form-actions">
+              <div class="form-actions", id="completed">
                   <%= f.button :submit, 'Completed!', class: "btn btn-primary"%>
               </div>
             <% end %>

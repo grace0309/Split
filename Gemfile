@@ -21,7 +21,7 @@ gem 'simple_form'
 gem 'uglifier'
 gem 'webpacker'
 gem 'pundit'
-
+gem 'funfetti'
 gem 'faker'
 gem 'cloudinary', '~> 1.9.1'
 gem 'carrierwave', '~>1.2'

@@ -23,6 +23,9 @@ bindNearby();
 import { ching } from '../components/ching';
 ching();
 
+import { confetti } from '../components/confetti';
+confetti();
+
 import { selectorhide } from '../components/confirm';
 selectorhide();
 
