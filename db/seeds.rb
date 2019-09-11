@@ -11,6 +11,7 @@ require 'nokogiri'
 
 puts 'Destroying data...'
 Message.destroy_all
+Favourite.destroy_all
 Post.destroy_all
 Category.destroy_all
 User.destroy_all

@@ -36,11 +36,7 @@
     </small>
   <!-- Card content -->
     <%= link_to post_path(result) do %>
-    <% if result.photo.present? %>
-        <%= cl_image_tag result.photo, class: "index-img"%>
-      <% else %>
-      <%= image_tag "#{result.store_name.downcase.delete(' ')}", class: "index-img" %>
-      <% end %>
+      <%= image_tag"https://res.cloudinary.com/dtsg1dlrd/image/upload/v1568106458/Photos/#{result.store_name.downcase.delete(' ')}", class: "home-img" %>
       <svg class="card__svg" viewBox="0 0 800 500">
 
         <path d="M 0 100 Q 50 200 100 250 Q 250 400 350 300 C 400 250 550 150 650 300 Q 750 450 800 400 L 800 500 L 0 500" stroke="white" fill="white"/>
