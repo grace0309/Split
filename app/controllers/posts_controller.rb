@@ -29,7 +29,7 @@ class PostsController < ApplicationController
     @post.total_contribution = @post.starting_contribution
     @post.user = current_user
     if @post.save
-      redirect_to post_path(@post)
+      redirect_to dashboard_path
     else
       render :new
     end
@@ -43,6 +43,11 @@ class PostsController < ApplicationController
     authorize @post
     @post.update(post_params)
     @posts = Post.all
+    if @post.save
+      redirect_to dashboard_path
+    else
+      render :edit
+    end
   end
 
   def destroy
