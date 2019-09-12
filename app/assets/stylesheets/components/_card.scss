@@ -157,6 +157,20 @@ img {
 
 .index-img{
   background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
-
 }
 
+
+#celebration-message {
+  position: absolute;
+  text-align: center;
+  color: $oomph;
+  font-size: 30px;
+  font-weight: bold;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  top: 330px;
+}
+
+
+#my-canvas {
+  position: relative
+}

@@ -1,7 +1,7 @@
 <%= render partial: 'shared/header', locals: {:title => "#{@message.post.store_name} - #{@message.post.user.first_name} ", :myclass => "sub-title"} %>
 
 <div id="messages" class="massage-margin">
-    <% @post.messages.each do |message| %>
+    <% @post.messages.order(created_at: :asc).each do |message| %>
       <%= render 'messages/show', message: message %>
   <% end %>
 </div>
