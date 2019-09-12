@@ -26,7 +26,7 @@ function confetti() {
       document.querySelector(".post-container").style.display = "block";
       document.querySelector(".pyro").style.display = "none"
       document.querySelector("#background-wrap").style.display = "none"
-      }, 10000)
+      }, 13000)
    });
  };
  }
