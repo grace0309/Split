@@ -7,7 +7,7 @@
         <%= f.error_notification %>
         <%= f.error_notification message: f.object.errors[:base].to_sentence if f.object.errors[:base].present? %>
         <div class="form-inputs">
-          <div class="photo-area">
+          <div class="photo-area mx-4">
           <div class="text-center mt-2" id="photo-upload">
             <%= f.input :photo, as: :file, label: "#{image_tag('camera.svg')}".html_safe , input_html: { id: 'files', class: 'hidden'} %>
           </div>
