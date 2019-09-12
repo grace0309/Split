@@ -86,13 +86,13 @@ def generate_posts(user, category_name, start_time, end_time)
   category = Category.find_by(name: category_name)
   total_contribution = starting_contribution
   start_time = Time.now
-  end_time = start_time + 900*rand(end_time)
+  end_time = start_time + 10000*rand(end_time)
   status = end_time > Time.now
   Post.create(user: user, discount: discount, store_name: store_name, category:category, quota: quota, units: units, starting_contribution: starting_contribution, total_contribution: total_contribution, start_time: start_time, end_time: end_time, address: chosen_address)
 end
 
 puts 'Beauty posts'
-10.times do
+20.times do
   users = User.all
   user = users.sample
   not_user = users - [user]
@@ -104,7 +104,7 @@ puts 'Beauty posts'
 end
 
 puts 'Technology posts'
-8.times do
+20.times do
   users = User.all
   user = users.sample
   not_user = users - [user]
@@ -116,7 +116,7 @@ puts 'Technology posts'
 end
 
 puts 'Fashion posts'
-10.times do
+20.times do
   users = User.all
   user = users.sample
   not_user = users - [user]
@@ -128,7 +128,7 @@ puts 'Fashion posts'
 end
 
 puts 'Food posts'
-5.times do
+10.times do
   users = User.all
   user = users.sample
   not_user = users - [user]

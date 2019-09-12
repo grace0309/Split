@@ -3,7 +3,7 @@
 <div class="cards">
 <% @posts.each do |post| %>
 <!-- Card -->
-<% if post.status == true %>
+<% if post.status == true && post.total_contribution < post.quota %>
 <div class="card mx-2 my-2">
   <!-- Card footer -->
   <small class="lighten-3 text-center py-1 px-2" id="timer">
