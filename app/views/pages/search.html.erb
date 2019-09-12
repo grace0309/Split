@@ -14,7 +14,7 @@
 </div>
 <% end %>
 <div class="content">
-  <h2><%= @location_greeting %></h2>
+  <h2 class="text-center"><%= @location_greeting %><strong> <u><%= @place %></strong></u></h2>
   <div class="cards">
     <% @post_results.each do |result| %>
   <!-- Card -->
@@ -49,7 +49,7 @@
       <div class="d-flex justify-content-between">
         <h4 class="card-title"><%= result.store_name %></h4> <!-- Button -->
       </div>
-        <hr>
+        <hr id="search-break">
         <!-- Text -->
         <p class="card-text"><%= result.discount %></p>
         <p class="card-text">Target:</p>

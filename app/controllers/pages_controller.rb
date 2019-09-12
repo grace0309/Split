@@ -13,7 +13,8 @@ class PagesController < ApplicationController
       @deal_results = Deal.deal_search(params[:query])
     elsif params[:location].present? && params[:location][:lat] != '' && params[:location][:long] != ''
       place = Geocoder.search([params[:location][:lat], params[:location][:long]]).first.suburb
-      @location_greeting = "You are searching in #{place}"
+      @place = place
+      @location_greeting = "You are searching in"
       @post_results = Post.near([params[:location][:lat], params[:location][:long]], 1)
     else
       redirect_to root_path
