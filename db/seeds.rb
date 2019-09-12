@@ -46,9 +46,9 @@ def without_user(user)
 end
 
 def generate_posts(user, category_name, start_time, end_time)
-  address = ['Orchard Ion', 'Bishan Junction 8', 'Orchard Takashimaya', 'Jurong Westgate', 'Paya Lebar Square']
+  address = ['Orchard Ion', 'Bishan Junction 8', 'Orchard Takashimaya', 'Jurong Westgate', 'Paya Lebar Square', 'VivoCity Singapore', 'Wheelock Place Orchard', 'Funan Singapore', 'Jewel Changi Singapore', 'Tangs Orchard', 'Orchard Central']
   if category_name == 'Beauty'
-    beauty = ['Watsons', 'Guardian', 'Sephora', 'Sasa', 'Innisfree', 'The Face Shop', 'Lush']
+    beauty = ['Watsons', 'Guardian', 'Sephora', 'Sasa', 'Innisfree', 'The Face Shop', 'Lush', 'Aesop', 'The Body Shop', 'Lancome']
     disc_per = rand(10..30)
     quota = disc_per*5
     discount = "Get #{disc_per}% off with minimum spending of $#{quota}"
@@ -56,7 +56,7 @@ def generate_posts(user, category_name, start_time, end_time)
     store_name = beauty.sample
     units  = 'Dollars'
   elsif category_name == 'Technology'
-    technology = ['Harvey Norman', 'Challenger', 'Best Denki', 'Courts', 'Parisilk']
+    technology = ['Harvey Norman', 'Challenger', 'Best Denki', 'Courts', 'Parisilk', 'Gain City']
     disc_per = rand(10..20)
     quota = disc_per*10
     discount = "#{disc_per}% off! Minimum spend $#{quota}"
@@ -64,7 +64,7 @@ def generate_posts(user, category_name, start_time, end_time)
     store_name = technology.sample
     units  = 'Dollars'
   elsif category_name == 'Fashion'
-    fashion = ['Uniqlo', 'Mango', 'SuperDry', 'Zara', 'Bata', 'Topshop']
+    fashion = ['Uniqlo', 'Mango', 'SuperDry', 'Zara', 'Bata', 'Topshop', 'Superga', 'Bershka', 'Cotton On']
     disc_per = rand(10..20)
     quota = rand(3..5)
     discount = "Enjoy #{disc_per}% off storewide. Min #{quota} pieces"
@@ -72,9 +72,11 @@ def generate_posts(user, category_name, start_time, end_time)
     store_name = fashion.sample
     units  = 'Pieces'
   elsif category_name == 'Food'
-    food = ['McDonalds', 'Jollibee', 'Starbucks', 'Burger King']
-    discount = "1 for 1! Good deals come in pairs"
-    quota = 2
+    food = ['McDonalds', 'Jollibee', 'Starbucks', 'Burger King', '4 Fingers', 'PastaMania', 'Ramen San', 'Toast Box', 'Boost', 'Salad Stop']
+    friends = rand(1..3)
+    discount_arr = ["#{friends} for 1! A deal is made better with friends", "Bring #{friends} friends & we will give you a surprise"]
+    discount = discount_arr.sample
+    quota = friends + 1
     starting_contribution = 1
     total_contribution = starting_contribution
     store_name = food.sample
