@@ -8,7 +8,6 @@
 require 'open-uri'
 require 'nokogiri'
 
-
 puts 'Destroying data...'
 Message.destroy_all
 Favourite.destroy_all
@@ -53,7 +52,7 @@ def generate_posts(user, category_name, start_time, end_time)
     disc_per = rand(10..30)
     quota = disc_per*5
     discount = "Get #{disc_per}% off with minimum spending of $#{quota}"
-    starting_contribution = quota*rand(0.1..0.5).round(2)
+    starting_contribution = quota*rand(0.3..0.6).round(2)
     store_name = beauty.sample
     units  = 'Dollars'
   elsif category_name == 'Technology'
@@ -61,7 +60,7 @@ def generate_posts(user, category_name, start_time, end_time)
     disc_per = rand(10..20)
     quota = disc_per*10
     discount = "#{disc_per}% off! Minimum spend $#{quota}"
-    starting_contribution = quota*rand(0.1..0.5).round(2)
+    starting_contribution = quota*rand(0.3..0.6).round(2)
     store_name = technology.sample
     units  = 'Dollars'
   elsif category_name == 'Fashion'
@@ -69,7 +68,7 @@ def generate_posts(user, category_name, start_time, end_time)
     disc_per = rand(10..20)
     quota = rand(3..5)
     discount = "Enjoy #{disc_per}% off storewide. Min #{quota} pieces"
-    starting_contribution = rand(1..2)
+    starting_contribution = rand(2..3)
     store_name = fashion.sample
     units  = 'Pieces'
   elsif category_name == 'Food'
@@ -84,7 +83,7 @@ def generate_posts(user, category_name, start_time, end_time)
   chosen_address = address.sample
   category = Category.find_by(name: category_name)
   total_contribution = starting_contribution
-  start_time = Time.now - 900*rand(start_time)
+  start_time = Time.now
   end_time = start_time + 900*rand(end_time)
   status = end_time > Time.now
   Post.create(user: user, discount: discount, store_name: store_name, category:category, quota: quota, units: units, starting_contribution: starting_contribution, total_contribution: total_contribution, start_time: start_time, end_time: end_time, address: chosen_address)
@@ -97,8 +96,8 @@ puts 'Beauty posts'
   not_user = users - [user]
   post = generate_posts(user, 'Beauty', 15, 30)
   # Creating dummy messages for now
-  selected_not_user = not_user.sample
-  Transaction.create(contribution: rand(20..50),post: post, user: selected_not_user)
+  # selected_not_user = not_user.sample
+  # Transaction.create(contribution: rand(20..50),post: post, user: selected_not_user)
   # Message.create(user: selected_not_user, post: post, message_content: Faker::TvShows::StrangerThings.quote)
 end
 
@@ -109,8 +108,8 @@ puts 'Technology posts'
   not_user = users - [user]
   post = generate_posts(user, 'Technology', 15, 30)
   # Creating dummy messages for now
-  selected_not_user = not_user.sample
-  Transaction.create(contribution: rand(50..100),post: post, user: selected_not_user)
+  # selected_not_user = not_user.sample
+  # Transaction.create(contribution: rand(50..100),post: post, user: selected_not_user)
   # Message.create(user: selected_not_user, post: post, message_content: Faker::TvShows::StrangerThings.quote)
 end
 
@@ -121,8 +120,8 @@ puts 'Fashion posts'
   not_user = users - [user]
   post = generate_posts(user, 'Fashion', 15, 30)
   # Creating dummy messages for now
-  selected_not_user = not_user.sample
-  Transaction.create(contribution: rand(2..3),post: post, user: selected_not_user)
+  # selected_not_user = not_user.sample
+  # Transaction.create(contribution: rand(2..3),post: post, user: selected_not_user)
   # Message.create(user: selected_not_user, post: post, message_content: Faker::TvShows::StrangerThings.quote)
 end
 
