@@ -43,7 +43,9 @@ class PostsController < ApplicationController
     authorize @post
     @post.update(post_params)
     @posts = Post.all
-    if @post.save
+    @post.save
+    if @post.status == false
+    elsif @post.save
       redirect_to dashboard_path
     else
       render :edit
