@@ -19,6 +19,7 @@
 }
 
 
+
 .cards{
   flex-grow: 1;
   display:grid;
@@ -118,6 +119,7 @@ img {
 }
 .card-body{
   position:relative;
+  padding-top: 0px;
 }
 
 #timer{
