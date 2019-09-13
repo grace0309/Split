@@ -132,7 +132,7 @@ puts 'Food posts'
   users = User.all
   user = users.sample
   not_user = users - [user]
-  post = generate_posts(user, 'Fashion', 15, 30)
+  post = generate_posts(user, 'Food', 15, 30)
   # Creating dummy messages for now
   # selected_not_user = not_user.sample
   # Transaction.create(contribution: rand(0..1),post: post, user: selected_not_user)
